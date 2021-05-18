@@ -12,16 +12,16 @@ class Header extends Component {
         <div className="brand">
           <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>
         </div>
-        <div className="calendar">          
+        <div className="calendar">
           <Link to="/"><i class="fas fa-home"></i></Link>
         </div>
         <div className="calendar">          
           <Link to="/"><i class="fas fa-user-friends"></i></Link>
         </div>
-        <div className="calendar">          
-          <Link to="/"><i class="fas fa-adjust"></i></Link>
+        <div className="calendar">
+          <Link to="/AdminPanel"><i class="fas fa-adjust"></i></Link>
         </div>
-        <div className="calendar">          
+        <div className="calendar">
           <Link to="/"><i class="far fa-comment-alt"></i></Link>
         </div>
       </div>

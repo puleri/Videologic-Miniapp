@@ -5,13 +5,17 @@
 }
 
 .background {z-index: -9999;
+  display: block;
   position: absolute;
   left:0;
   right:0;
-  height: 1300px;
+  vertical-align: middle;
+  min-height: 100%;
   width:100%;
-  background: rgb(136, 201, 202);
-  background: linear-gradient(180deg, rgb(219, 196, 169) 0%, #F04235);
+  background-image: url("support-hero.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  /* background: linear-gradient(180deg, white, white); */
 }
 .App-logo {
   height: 40vmin;
@@ -100,7 +104,7 @@ input[type=submit] {
   background-color:rgb(136, 201, 202);
   cursor:pointer;
   margin-top: 5px;
-  
+
 
 }
 input[type=submit]:hover {
@@ -115,14 +119,15 @@ body, button, input, .submit {
   font-family: 'Work Sans', sans-serif;
   font-weight: 300;
  }
- 
+
  h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
  }
 .form-div {
   position: absolute;
-  right: 0;
+  top: -250px;
+  right: 50%;
   left: 0;
   margin-top: 255px;
  }
@@ -130,9 +135,9 @@ body, button, input, .submit {
    margin: 50px;
  }
  .form-header{
-   font-size: 40px;
+   font-size: 20px;
    text-align:left;
-   color: #F04235;
+   color: black;
  }
 .header-div {
   display: flex;
@@ -142,13 +147,22 @@ body, button, input, .submit {
   right: 0;
   padding-top: 70px;
   padding-bottom:20px;
-  color: #f03f35;
+  color: #1F1C1C;
 }
 
 .header {
-  text-align:left;
-  margin-top: -10px;
-  margin-left: 40px;
+  text-align: left;
+  position: absolute;
+  right: 30px;
+  width: 495px;
+  top: 90px;
+}
+
+.support-header {
+  text-align: left;
+  position: absolute;
+  right: 30px;
+  top:-20px;
 }
 h1 {
   font-size: 60px;
@@ -157,6 +171,8 @@ h1 {
   height: 200px;
 }
 label {
+  font-size: 12px;
+  display: block;
   color:#1F1C1C;
   text-align:left;
   font-family: 'Montserrat', sans-serif;
@@ -178,7 +194,7 @@ label {
 .mid-page-top {
   position:relative;
   margin-top: 30px;
-  
+
   top:250px;
   height: 6px;
   width: 33%;
@@ -226,6 +242,59 @@ label {
     margin-bottom:20px;
     margin-right:30px;
   }
+}
+
+@media (max-width: 1001px) {
+  .header {
+    text-align: left;
+    position: absolute;
+    right: 30px;
+    width: 50%;
+    top: 160px;
+  }
+
+  .support-header {
+    text-align: left;
+    position: absolute;
+    width: 50%;
+    right: 30px;
+    top:-20px;
+  }
+
+  .form-div {
+    position: absolute;
+    top: -250px;
+    right: 50%;
+    left: 0;
+    margin-top: 255px;
+   }
+}
+
+@media (max-width: 801px) {
+  .background {
+    background-size: auto;
+  }
+  .header {
+    text-align: left;
+    position: absolute;
+    left: 50px;
+    top: 160px;
+  }
+
+  .support-header {
+    text-align: left;
+    position: absolute;
+    left: 50px;
+    top:-20px;
+  }
+
+  .form-div {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    margin-top: 255px;
+   }
 }
 
 .homepage-link {
@@ -305,4 +374,125 @@ label {
   right: 0;
   height: 1px;
   background-color: black;
+}
+
+.admin-container {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top:69px;
+  left: 0;
+  right: 0;
+  display: flex;
+
+}
+
+.admin-panel {
+  background: #F6F6F6;
+  position: absolute;
+  width: 380px;
+  height: 100%;
+  border-right: 1px solid lightgray;
+}
+
+.admin-header {
+  font-size: 40px;
+}
+
+.admin-panel-item1 {
+  position: absolute;
+  overflow: hidden;
+  top: 100px;
+  left: 20px;
+  height: 120px;
+  width: 340px;
+  background-color: white;
+}
+
+.item1-accent {
+  background-color: #325662;
+  width: 38%;
+  height: 100%;
+}
+
+.admin-panel-item2 {
+  position: absolute;
+  top: 240px;
+  left: 20px;
+  height: 120px;
+  width: 340px;
+  background-color: white;
+}
+
+.item2-accent {
+  background-color: #C2260E;
+  width: 38%;
+  height: 100%;
+}
+.item3-accent {
+  background-color: #B099AC;
+  width: 38%;
+  height: 100%;
+}
+.item4-accent {
+  background-color: #40B31E;
+  width: 38%;
+  height: 100%;
+}
+.item5-accent {
+  background-color: #EB851C;
+  width: 38%;
+  height: 100%;
+}
+
+.admin-panel-item3 {
+  position: absolute;
+  top: 380px;
+  left: 20px;
+  height: 120px;
+  width: 340px;
+  background-color: white;
+}
+
+.admin-panel-item4 {
+  position: absolute;
+  top: 520px;
+  left: 20px;
+  height: 120px;
+  width: 340px;
+  background-color: white;
+}
+
+.admin-panel-item5 {
+  position: absolute;
+  top: 660px;
+  left: 20px;
+  height: 120px;
+  width: 340px;
+  background-color: white;
+}
+
+.item {
+  box-shadow: -12px 28px 30px 0px #E0E0E0;
+}
+
+.status-check {
+  margin-top: 5px;
+}
+
+.item-content {
+  position: absolute;
+  margin-right: 20%;
+  top: 0;
+  right: 0;
+}
+
+.content-slide {
+  margin-right: 55px;
+}
+
+.panel-icon {
+  color: white;
+  margin-top: 35px;
+  font-size: 50px;
 }

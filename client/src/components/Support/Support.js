@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import logo from './elephant.png';
+// import logo from './elephant.png';
 import 'whatwg-fetch';
 
 class Support extends Component {
@@ -16,8 +16,8 @@ class Support extends Component {
   }
     this.getPHP = this.getPHP.bind(this);
   }
-  
-  getPHP() 
+
+  getPHP()
   {
     var fd = new FormData();
     fd.append('content', 'test2');
@@ -26,7 +26,7 @@ class Support extends Component {
     fd.append('strEmail', this.state.strEmail)
     fd.append('strMessage', this.state.strMessage)
     // console.log(Array.from(fd));
-    fetch(`http://localhost:9000/react.js-w-php/just-react.js/docroot/demo.php`, {
+    fetch(`http://localhost:9000/docroot/demo.php`, {
       method: 'POST',
       body: fd,
     }).then(res => res.json())
@@ -37,25 +37,19 @@ class Support extends Component {
       console.log(err)
     } );
   }
-  
-  render() 
+
+  render()
   {
     return (
       <div className='background'>
         <div className="header-div">
             <div>
-              <h1 className="header">Support Center</h1>
+              <h1 className="support-header">Support Center</h1>
               <h4 className="header">Need help? Submit a support request and we'll get back to you ASAP.</h4>
-            </div>
-            <div>
-              <img className="elephant" src={logo} alt="elephant" />
             </div>
         </div>
         <br />
         <br />
-        
-        <div className="mid-page-top"></div>
-        <div className="mid-page-bottom"></div>
         <div className="form-div">
           <div className="form">
           <h1 className="form-header">Get in touch</h1>
@@ -80,8 +74,8 @@ class Support extends Component {
               value={this.state.strMessage}
               onChange={e => this.setState({ strMessage: e.target.value })}
             />
-            
-          </form>            
+
+          </form>
           <Link to="/ThankYou"><button className="load" onClick={this.getPHP}>Send it along</button></Link>
           </div>
         </div>
@@ -89,5 +83,9 @@ class Support extends Component {
     )
   }
 }
+
+// sliding accent on load
+// <div className="mid-page-top"></div>
+// <div className="mid-page-bottom"></div>
 
 export default withRouter(Support);
