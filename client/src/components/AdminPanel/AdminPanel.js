@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 
 class AdminPanel extends Component {
+  constructor(props){
+    super(props);
+    this.state= {
+      strUsername: '',
+      bolAll: false,
+      bolCreate: false,
+      bolDelete: false,
+      bolDrop: false,
+      bolExecute: false,
+      bolInsert: false,
+      bolSelect: false,
+      bolShow: false,
+      bolUpdate: false
+  }
+}
   render() {
     return (
       <div class="admin-container">
@@ -52,6 +67,77 @@ class AdminPanel extends Component {
             <h5>Support Tickets</h5>
             <h2>4</h2>
           </div>
+        </div>
+        <div className="db-manager">
+        <h5 className="db-form-header">Database-Manager</h5>
+          <div className="db-form">
+          <form className="form-inline">
+            <label className="username">Username</label>
+            <input className="username" type="text" id="firstname" placeholder="your name..."
+              value={this.state.strFname}
+              onChange={e => this.setState({ strFname: e.target.value })}
+            />
+            <label className="chk-label">All</label>
+            <input className="checkbox"type="checkbox"/>
+            <label className="chk-label">Create</label>
+            <input className="checkbox"type="checkbox"/>
+            <label className="chk-label">Delete</label>
+            <input className="checkbox"type="checkbox"/>
+            <label className="chk-label">Drop</label>
+            <input className="checkbox"type="checkbox"/>
+            <label className="chk-label execute">Execute</label>
+            <input className="checkbox"type="checkbox"/>
+            <label className="chk-label">Insert</label>
+            <input className="checkbox"type="checkbox"/>
+            <label className="chk-label">Select</label>
+            <input className="checkbox"type="checkbox"/>
+            <label className="chk-label">Show</label>
+            <input className="checkbox"type="checkbox"/>
+            <label className="chk-label">Update</label>
+            <input className="checkbox"type="checkbox"/>
+            <button className="add-user load" type="submit"><i class="add-user db-add fas fa-user-plus"></i></button>
+          </form>
+          </div>
+          <table id="db-manager-table">
+            <tr>
+              <th>Username</th>
+              <th>All</th>
+              <th>Create</th>
+              <th>Delete</th>
+              <th>Drop</th>
+              <th>Execute</th>
+              <th>Insert</th>
+              <th>Select</th>
+              <th>Show</th>
+              <th>Update</th>
+              <th>Edit | Delete</th>
+            </tr>
+            <tr>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>bang boom</td>
+            </tr>
+            <tr>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+              <td>hi</td>
+            </tr>
+          </table>
         </div>
       </div>
     )
