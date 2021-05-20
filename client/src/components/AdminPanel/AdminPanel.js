@@ -123,7 +123,7 @@ class AdminPanel extends Component {
               <td>hi</td>
               <td>hi</td>
               <td>hi</td>
-              <td>bang boom</td>
+              <td><i class="db-U fas fa-user-edit"></i>  <i class="db-D fas fa-user-minus"></i></td>
             </tr>
             <tr>
               <td>hi</td>

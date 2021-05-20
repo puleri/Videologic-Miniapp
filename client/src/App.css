@@ -103,9 +103,7 @@ input[type=submit] {
 .load:hover {
   background-color:rgb(136, 201, 202);
   cursor:pointer;
-  margin-top: 5px;
-
-
+  margin-top: -5px;
 }
 input[type=submit]:hover {
    background-color:rgb(136, 201, 202);
@@ -592,10 +590,14 @@ label.execute {
   border: 1px solid #ddd;
   padding: 8px;
 }
+#db-manager-table tr {
+  transition: background-color .3s;
+}
+#db-manager-table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
 
-#db-manager-table tr:nth-child(even){background-color: #f2f2f2;}
-
-#db-manager-table tr:hover {background-color: #ddd;}
+#db-manager-table tr:hover {background-color: #DDDDDD;}
 
 #db-manager-table th {
   padding-top: 12px;
@@ -603,4 +605,26 @@ label.execute {
   text-align: left;
   background-color: #4CAF50;
   color: white;
+}
+
+.db-U {
+  margin-top: 0;
+  color: #EB851C;
+  margin-right: 5px;
+  transition: color .3s;
+}
+
+.db-U:hover {
+  color: #bd6d1a;
+}
+
+.db-D {
+  margin-top: 0;
+  color: #C2260E;
+  margin-left: 7px;
+  transition: color .3s;
+}
+
+.db-D:hover {
+  color: #8a2516;
 }
