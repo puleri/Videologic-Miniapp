@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 
 class AdminPanel extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state= {
+    this.state = {
       strUsername: '',
       bolAll: false,
       bolCreate: false,
@@ -15,8 +15,44 @@ class AdminPanel extends Component {
       bolSelect: false,
       bolShow: false,
       bolUpdate: false
+    }
   }
-}
+  handleCheck = (event) => {
+    event.persist()
+    console.log(this.state)
+    // this.setState(prevState => ({
+    //   event: !prevState.completed
+    // }))
+  }
+ 
+  handleSubmit = (event) => {
+    event.persist()
+    // console.log(this.state)
+    var fd = new FormData();
+    fd.append('content', 'test');
+    fd.append('strUsername', this.state.strUsername)
+    fd.append('bolAll', this.state.bolAll)
+    fd.append('bolCreate', this.state.bolCreate)
+    fd.append('bolDelete', this.state.bolDelete)
+    fd.append('bolDrop', this.state.bolDrop)
+    fd.append('bolExecute', this.state.bolExecute)
+    fd.append('bolInsert', this.state.bolInsert)
+    fd.append('bolSelect', this.state.bolSelect)
+    fd.append('bolShow', this.state.bolShow)
+    fd.append('bolUpdate', this.state.bolUpdate)
+
+    // console.log(Array.from(fd));
+    fetch(`http://localhost:9000/Videologic-Miniapp/docroot/add_user.php`, {
+      method: 'POST',
+      body: fd,
+    }).then(res => res.json())
+    .then(response => {
+      console.log('response: ', response)
+    })
+    .catch(err => {
+      console.log(err)
+    } );
+  }
   render() {
     return (
       <div class="admin-container">
@@ -69,61 +105,48 @@ class AdminPanel extends Component {
           </div>
         </div>
         <div className="db-manager">
-        <h5 className="db-form-header">Database-Manager</h5>
+          <h5 className="db-form-header">Database-Manager</h5>
           <div className="db-form">
-          <form className="form-inline">
-            <label className="username">Username</label>
-            <input className="username" type="text" id="firstname" placeholder="your name..."
-              value={this.state.strUsername}
-              onChange={e => this.setState({ strUsername: e.target.value })}
-            />
-            <label className="chk-label">All</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolAll}
-            onChange={e => this.setState({ bolAll: e.target.value })}
-            />
-            <label className="chk-label">Create</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolCreate}
-            onChange={e => this.setState({ bolCreate: e.target.value })}
-            />
-            <label className="chk-label">Delete</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolDelete}
-            onChange={e => this.setState({ bolDelete: e.target.value })}
-            />
-            <label className="chk-label">Drop</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolDrop}
-            onChange={e => this.setState({ bolDrop: e.target.value })}
-            />
-            <label className="chk-label execute">Execute</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolExecute}
-            onChange={e => this.setState({ bolExecute: e.target.value })}
-            />
-            <label className="chk-label">Insert</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolInsert}
-            onChange={e => this.setState({ bolInsert: e.target.value })}
-            />
-            <label className="chk-label">Select</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolSelect}
-            onChange={e => this.setState({ bolSelect: e.target.value })}
-            />
-            <label className="chk-label">Show</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolShow}
-            onChange={e => this.setState({ bolShow: e.target.value })}
-            />
-            <label className="chk-label">Update</label>
-            <input className="checkbox"type="checkbox"
-            value={this.state.bolUpdate}
-            onChange={e => this.setState({ bolUpdate: e.target.value })}
-            />
-            <button className="add-user load" type="submit"><i class="add-user db-add fas fa-user-plus"></i></button>
-          </form>
+            <form className="form-inline">
+              <label className="username">Username</label>
+              <input className="username" type="text" id="firstname" placeholder="username..."
+                value={this.state.strUsername}
+                onChange={e => this.setState({ strUsername: e.target.value })}
+              />
+              <label className="chk-label">All</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() =>
+                  this.setState({ bolAll: !this.state.bolAll })} checked={this.state.bolAll}
+              />
+              <label className="chk-label">Create</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() => this.setState({ bolCreate: !this.state.bolCreate })} checked={this.state.bolCreate}
+              />
+              <label className="chk-label">Delete</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() => this.setState({ bolDelete: !this.state.bolDelete })} checked={this.state.bolDelete}
+              />
+              <label className="chk-label">Drop</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() => this.setState({ bolDrop: !this.state.bolDrop })} checked={this.state.bolDrop}
+              />
+              <label className="chk-label execute">Execute</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() => this.setState({ bolExecute: !this.state.bolExecute })} checked={this.state.bolExecute} />
+              <label className="chk-label">Insert</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() => this.setState({ bolInsert: !this.state.bolInsert })} checked={this.state.bolInsert} />
+              <label className="chk-label">Select</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() => this.setState({ bolSelect: !this.state.bolSelect })} checked={this.state.bolSelect} />
+              <label className="chk-label">Show</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() => this.setState({ bolShow: !this.state.bolShow })} checked={this.state.bolShow} />
+              <label className="chk-label">Update</label>
+              <input className="checkbox" type="checkbox"
+                onClick={() => this.setState({ bolUpdate: !this.state.bolUpdate })} checked={this.state.bolUpdate} />
+            </form>
+            <button onClick={this.handleSubmit} className="add-user load" type="submit"><i class="add-user db-add fas fa-user-plus"></i></button>
           </div>
           <table id="db-manager-table">
             <tr>

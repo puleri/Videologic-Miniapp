@@ -26,7 +26,7 @@ class Support extends Component {
     fd.append('strEmail', this.state.strEmail)
     fd.append('strMessage', this.state.strMessage)
     // console.log(Array.from(fd));
-    fetch(`http://localhost:9000/docroot/demo.php`, {
+    fetch(`http://localhost:9000/Videologic-Miniapp/docroot/demo.php`, {
       method: 'POST',
       body: fd,
     }).then(res => res.json())
