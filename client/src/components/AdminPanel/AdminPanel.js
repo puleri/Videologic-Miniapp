@@ -74,28 +74,55 @@ class AdminPanel extends Component {
           <form className="form-inline">
             <label className="username">Username</label>
             <input className="username" type="text" id="firstname" placeholder="your name..."
-              value={this.state.strFname}
-              onChange={e => this.setState({ strFname: e.target.value })}
+              value={this.state.strUsername}
+              onChange={e => this.setState({ strUsername: e.target.value })}
             />
             <label className="chk-label">All</label>
-            <input className="checkbox"type="checkbox"/>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolAll}
+            onChange={e => this.setState({ bolAll: e.target.value })}
+            />
             <label className="chk-label">Create</label>
-            <input className="checkbox"type="checkbox"/>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolCreate}
+            onChange={e => this.setState({ bolCreate: e.target.value })}
+            />
             <label className="chk-label">Delete</label>
-            <input className="checkbox"type="checkbox"/>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolDelete}
+            onChange={e => this.setState({ bolDelete: e.target.value })}
+            />
             <label className="chk-label">Drop</label>
-            <input className="checkbox"type="checkbox"/>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolDrop}
+            onChange={e => this.setState({ bolDrop: e.target.value })}
+            />
             <label className="chk-label execute">Execute</label>
-            <input className="checkbox"type="checkbox"/>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolExecute}
+            onChange={e => this.setState({ bolExecute: e.target.value })}
+            />
             <label className="chk-label">Insert</label>
-            <input className="checkbox"type="checkbox"/>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolInsert}
+            onChange={e => this.setState({ bolInsert: e.target.value })}
+            />
             <label className="chk-label">Select</label>
-            <input className="checkbox"type="checkbox"/>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolSelect}
+            onChange={e => this.setState({ bolSelect: e.target.value })}
+            />
             <label className="chk-label">Show</label>
-            <input className="checkbox"type="checkbox"/>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolShow}
+            onChange={e => this.setState({ bolShow: e.target.value })}
+            />
             <label className="chk-label">Update</label>
-            <input className="checkbox"type="checkbox"/>
-            <button className="hoverButton load" type="submit"><i class="add-user db-add fas fa-user-plus"></i></button>
+            <input className="checkbox"type="checkbox"
+            value={this.state.bolUpdate}
+            onChange={e => this.setState({ bolUpdate: e.target.value })}
+            />
+            <button className="add-user load" type="submit"><i class="add-user db-add fas fa-user-plus"></i></button>
           </form>
           </div>
           <table id="db-manager-table">
