@@ -497,6 +497,7 @@ label {
 
 .form-inline {
   display: flex;
+  margin-bottom:10px;
   flex-flow: row wrap;
   align-items: center;
 }
@@ -568,14 +569,6 @@ label.execute {
   margin-right: -35px;
 }
 
-.add-user {
-  width: 60px;
-  height: 60px;
-  font-size: 20px;
-  margin-bottom: 50px;
-  margin-top: 8px;
-}
-
 .db-add {
   margin-left: -18px;
 }
@@ -627,4 +620,31 @@ label.execute {
 
 .db-D:hover {
   color: #8a2516;
+}
+
+.db-check {
+  margin: 5px;
+}
+
+.hoverButton {
+  text-align: right;
+  width: 60px;
+  height: 60px;
+  margin:20px;
+  padding: 0px;
+  float:left;
+	-webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+}
+
+.hoverButton:hover {
+  cursor:pointer;
+  margin-top: 5px;
+}
+
+.add-user {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-right:15px;
 }

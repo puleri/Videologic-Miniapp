@@ -95,7 +95,7 @@ class AdminPanel extends Component {
             <input className="checkbox"type="checkbox"/>
             <label className="chk-label">Update</label>
             <input className="checkbox"type="checkbox"/>
-            <button className="add-user load" type="submit"><i class="add-user db-add fas fa-user-plus"></i></button>
+            <button className="hoverButton load" type="submit"><i class="add-user db-add fas fa-user-plus"></i></button>
           </form>
           </div>
           <table id="db-manager-table">
@@ -113,29 +113,30 @@ class AdminPanel extends Component {
               <th>Edit | Delete</th>
             </tr>
             <tr>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
+              <td>test@vectorventures.com</td>
+              <td></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
               <td><i class="db-U fas fa-user-edit"></i>  <i class="db-D fas fa-user-minus"></i></td>
             </tr>
             <tr>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
-              <td>hi</td>
+              <td>demo@vectorventures.com</td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-check fas fa-check"></i></td>
+              <td><i class="db-U fas fa-user-edit"></i>  <i class="db-D fas fa-user-minus"></i></td>
             </tr>
           </table>
         </div>
