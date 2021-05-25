@@ -6,24 +6,24 @@ $db_password = "root";
 $db_db = "database-manager";
 $db_port = 9001;
 
-$mysqli = new mysqli(
+$conn = new mysqli(
   $db_host,
   $db_user,
   $db_password,
   $db_db
 );
 
-if ($mysqli->connect_error) {
-  echo "Errno: " . $mysqli->errno;
+if ($conn->connect_error) {
+  echo "Errno: " . $conn->errno;
   echo "<br />";
-  echo "Error: ". $mysqli->connect_error;
+  echo "Error: ". $conn->connect_error;
   exit();
 }
 
 echo "Success: A proper connection to MySQL was made.";
 echo "<br />";
-echo "Host information: ". $mysqli->host_info;
+echo "Host information: ". $conn->host_info;
 echo "<br />";
-echo "Protocol version: ". $mysqli->protocol_version;
+echo "Protocol version: ". $conn->protocol_version;
 
-$mysqli->close();
+$conn->close();

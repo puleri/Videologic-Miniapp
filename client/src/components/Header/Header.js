@@ -13,16 +13,16 @@ class Header extends Component {
           <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>
         </div>
         <div className="calendar">
-          <Link to="/"><i class="fas fa-home"></i></Link>
-        </div>
-        <div className="calendar">          
-          <Link to="/"><i class="fas fa-user-friends"></i></Link>
+          <Link to="/"><i className="fas fa-home"></i></Link>
         </div>
         <div className="calendar">
-          <Link to="/AdminPanel"><i class="fas fa-adjust"></i></Link>
+          <Link to="/"><i className="fas fa-user-friends"></i></Link>
         </div>
         <div className="calendar">
-          <Link to="/"><i class="far fa-comment-alt"></i></Link>
+          <Link to="/AdminPanel"><i className="fas fa-adjust"></i></Link>
+        </div>
+        <div className="calendar">
+          <Link to="/"><i className="far fa-comment-alt"></i></Link>
         </div>
       </div>
       <div id="Navbar-bottomline"></div>

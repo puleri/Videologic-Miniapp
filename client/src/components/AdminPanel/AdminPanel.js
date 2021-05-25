@@ -24,7 +24,7 @@ class AdminPanel extends Component {
     //   event: !prevState.completed
     // }))
   }
- 
+
   handleSubmit = (event) => {
     event.persist()
     // console.log(this.state)
@@ -42,7 +42,7 @@ class AdminPanel extends Component {
     fd.append('bolUpdate', this.state.bolUpdate)
 
     // console.log(Array.from(fd));
-    fetch(`http://localhost:9000/Videologic-Miniapp/docroot/add_user.php`, {
+    fetch(`http://localhost:9000/docroot/create_user.php`, {
       method: 'POST',
       body: fd,
     }).then(res => res.json())
@@ -55,22 +55,22 @@ class AdminPanel extends Component {
   }
   render() {
     return (
-      <div class="admin-container">
-        <div class="admin-panel">
-          <h1 class="admin-header">Admin Panel</h1>
+      <div className="admin-container">
+        <div className="admin-panel">
+          <h1 className="admin-header">Admin Panel</h1>
         </div>
         <div className="admin-panel-item1 item">
           <div className="item1-accent">
-            <i class="panel-icon fas fa-heartbeat"></i>
+            <i className="panel-icon fas fa-heartbeat"></i>
           </div>
           <div className="item-content content-slide">
             <h5>Database Status</h5>
-            <i class="status-check fas fa-check"></i>
+            <i className="status-check fas fa-check"></i>
           </div>
         </div>
         <div className="admin-panel-item2 item">
           <div className="item2-accent">
-            <i class="panel-icon fas fa-users"></i>
+            <i className="panel-icon fas fa-users"></i>
           </div>
           <div className="item-content">
             <h5>Total Users</h5>
@@ -79,7 +79,7 @@ class AdminPanel extends Component {
         </div>
         <div className="admin-panel-item3 item">
           <div className="item3-accent">
-            <i class="panel-icon fas fa-running"></i>
+            <i className="panel-icon fas fa-running"></i>
           </div>
           <div className="item-content">
             <h5>Active Users</h5>
@@ -88,7 +88,7 @@ class AdminPanel extends Component {
         </div>
         <div className="admin-panel-item4 item">
           <div className="item4-accent">
-            <i class="panel-icon fas fa-cog"></i>
+            <i className="panel-icon fas fa-cog"></i>
           </div>
           <div className="item-content">
             <h5>Total Admin</h5>
@@ -97,7 +97,7 @@ class AdminPanel extends Component {
         </div>
         <div className="admin-panel-item5 item">
           <div className="item5-accent">
-            <i class="panel-icon fas fa-comment-alt"></i>
+            <i className="panel-icon fas fa-comment-alt"></i>
           </div>
           <div className="item-content content-slide">
             <h5>Support Tickets</h5>
@@ -115,40 +115,41 @@ class AdminPanel extends Component {
               />
               <label className="chk-label">All</label>
               <input className="checkbox" type="checkbox"
-                onClick={() =>
+                onChange={() =>
                   this.setState({ bolAll: !this.state.bolAll })} checked={this.state.bolAll}
               />
               <label className="chk-label">Create</label>
               <input className="checkbox" type="checkbox"
-                onClick={() => this.setState({ bolCreate: !this.state.bolCreate })} checked={this.state.bolCreate}
+                onChange={() => this.setState({ bolCreate: !this.state.bolCreate })} checked={this.state.bolCreate}
               />
               <label className="chk-label">Delete</label>
               <input className="checkbox" type="checkbox"
-                onClick={() => this.setState({ bolDelete: !this.state.bolDelete })} checked={this.state.bolDelete}
+                onChange={() => this.setState({ bolDelete: !this.state.bolDelete })} checked={this.state.bolDelete}
               />
               <label className="chk-label">Drop</label>
               <input className="checkbox" type="checkbox"
-                onClick={() => this.setState({ bolDrop: !this.state.bolDrop })} checked={this.state.bolDrop}
+                onChange={() => this.setState({ bolDrop: !this.state.bolDrop })} checked={this.state.bolDrop}
               />
               <label className="chk-label execute">Execute</label>
               <input className="checkbox" type="checkbox"
-                onClick={() => this.setState({ bolExecute: !this.state.bolExecute })} checked={this.state.bolExecute} />
+                onChange={() => this.setState({ bolExecute: !this.state.bolExecute })} checked={this.state.bolExecute} />
               <label className="chk-label">Insert</label>
               <input className="checkbox" type="checkbox"
-                onClick={() => this.setState({ bolInsert: !this.state.bolInsert })} checked={this.state.bolInsert} />
+                onChange={() => this.setState({ bolInsert: !this.state.bolInsert })} checked={this.state.bolInsert} />
               <label className="chk-label">Select</label>
               <input className="checkbox" type="checkbox"
-                onClick={() => this.setState({ bolSelect: !this.state.bolSelect })} checked={this.state.bolSelect} />
+                onChange={() => this.setState({ bolSelect: !this.state.bolSelect })} checked={this.state.bolSelect} />
               <label className="chk-label">Show</label>
               <input className="checkbox" type="checkbox"
-                onClick={() => this.setState({ bolShow: !this.state.bolShow })} checked={this.state.bolShow} />
+                onChange={() => this.setState({ bolShow: !this.state.bolShow })} checked={this.state.bolShow} />
               <label className="chk-label">Update</label>
               <input className="checkbox" type="checkbox"
-                onClick={() => this.setState({ bolUpdate: !this.state.bolUpdate })} checked={this.state.bolUpdate} />
+                onChange={() => this.setState({ bolUpdate: !this.state.bolUpdate })} checked={this.state.bolUpdate} />
             </form>
-            <button onClick={this.handleSubmit} className="add-user load" type="submit"><i class="add-user db-add fas fa-user-plus"></i></button>
+            <button onClick={this.handleSubmit} className="add-user load" type="submit"><i className="add-user db-add fas fa-user-plus"></i></button>
           </div>
           <table id="db-manager-table">
+          <tbody>
             <tr>
               <th>Username</th>
               <th>All</th>
@@ -165,29 +166,30 @@ class AdminPanel extends Component {
             <tr>
               <td>test@vectorventures.com</td>
               <td></td>
-              <td><i class="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
               <td></td>
               <td></td>
               <td></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-U fas fa-user-edit"></i>  <i class="db-D fas fa-user-minus"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-U fas fa-user-edit"></i>  <i className="db-D fas fa-user-minus"></i></td>
             </tr>
             <tr>
               <td>demo@vectorventures.com</td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-check fas fa-check"></i></td>
-              <td><i class="db-U fas fa-user-edit"></i>  <i class="db-D fas fa-user-minus"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-check fas fa-check"></i></td>
+              <td><i className="db-U fas fa-user-edit"></i>  <i className="db-D fas fa-user-minus"></i></td>
             </tr>
+          </tbody>
           </table>
         </div>
       </div>
