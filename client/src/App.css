@@ -663,6 +663,10 @@ label.execute {
   border-collapse:collapse;
   border:1px solid #777;
 }
+tbody {
+  /* position: absolute; */
+  margin-left: 100px;
+}
 th {
   padding:20px 7px;
   font-size:15px;
@@ -675,8 +679,32 @@ td {
 }
 .tbl-outer {
   overflow-x: scroll;
+  width: 500px;
+  margin-left: 30%;
+  overflow-y: visible;
+  padding: 0;
 }
 
 th, td {
   min-width: 100px;
 }
+
+.headcol {
+  border: none !important;
+  color: black !important;
+  background-color: white !important;
+  text-align: left;
+  position: absolute;
+ width: 15em;
+ height: 48px;
+ left: 27%;
+ top: auto;
+ border-top-width: 1px;
+ /*only relevant for first row*/
+ margin-top: -1px;
+ /*compensate for top border*/
+}
+/* .afterhead {
+  position: relative;
+  margin-left: 30px;
+} */

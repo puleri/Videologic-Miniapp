@@ -153,8 +153,8 @@ class AdminPanel extends Component {
           <table className="tbl-inner" id="db-manager-table">
           <tbody>
             <tr>
-              <th>Username</th>
-              <th>All</th>
+              <th className="headcol">Username</th>
+              <th className="afterhead">All</th>
               <th>Create</th>
               <th>Delete</th>
               <th>Drop</th>
@@ -166,8 +166,8 @@ class AdminPanel extends Component {
               <th>Edit | Delete</th>
             </tr>
             <tr>
-              <td>test@vectorventures.com</td>
-              <td></td>
+              <td className="headcol">test@vectorventures.com</td>
+              <td className="afterhead"></td>
               <td><i className="db-check fas fa-check"></i></td>
               <td></td>
               <td></td>
@@ -179,8 +179,8 @@ class AdminPanel extends Component {
               <td><i className="db-U fas fa-user-edit"></i>  <i className="db-D fas fa-user-minus"></i></td>
             </tr>
             <tr>
-              <td>demo@vectorventures.com</td>
-              <td><i className="db-check fas fa-check"></i></td>
+              <td className="headcol">demo@vectorventures.com</td>
+              <td className="afterhead"><i className="db-check fas fa-check"></i></td>
               <td><i className="db-check fas fa-check"></i></td>
               <td><i className="db-check fas fa-check"></i></td>
               <td><i className="db-check fas fa-check"></i></td>
