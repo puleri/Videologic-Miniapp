@@ -542,6 +542,7 @@ label {
 } */
 .db-manager {
   margin-left: 35%;
+  max-width: 64%;
 }
 .db-form {
   display: flex;
@@ -576,7 +577,6 @@ label.execute {
 
 #db-manager-table {
   border-collapse: collapse;
-  width: 100%;
 }
 
 #db-manager-table td, #db-manager-table th {
@@ -650,5 +650,33 @@ label.execute {
   height: 60px;
   width: 60px;
 }
+.tbl-outer {
+  max-width: 94%;
+  border:1px solid lightgray;
+  box-shadow: 0px 20px 20px 0px #E0E0E0;
+}
+.tbl-inner{
+  table-layout: fixed;
+  margin: auto 0px auto;
+}
+.tbl-inner, td, th {
+  border-collapse:collapse;
+  border:1px solid #777;
+}
+th {
+  padding:20px 7px;
+  font-size:15px;
+  color:#444;
+  background:#66C2E0;
+}
+td {
+  padding:5px 10px;
+  height:35px;
+}
+.tbl-outer {
+  overflow-x: scroll;
+}
 
-
+th, td {
+  min-width: 100px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 
+
 class AdminPanel extends Component {
   constructor(props) {
     super(props);
@@ -148,7 +149,8 @@ class AdminPanel extends Component {
             </form>
             <button onClick={this.handleSubmit} className="add-user load" type="submit"><i className="add-user db-add fas fa-user-plus"></i></button>
           </div>
-          <table id="db-manager-table">
+          <div className="tbl-outer">
+          <table className="tbl-inner" id="db-manager-table">
           <tbody>
             <tr>
               <th>Username</th>
@@ -191,6 +193,7 @@ class AdminPanel extends Component {
             </tr>
           </tbody>
           </table>
+          </div>
         </div>
       </div>
     )
