@@ -19,7 +19,7 @@ function App() {
       <Route exact path='/ThankYou' render={() => (
         <ThankYou />
       )} />
-      <Route exact path='/AdminPanel' render={() => (
+      <Route path='/AdminPanel' render={() => (
         <AdminPanel />
       )} />
     </div>

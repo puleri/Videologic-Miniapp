@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
+import IndexUsers from '../IndexUsers/IndexUsers.js';
+import { withRouter } from 'react-router-dom';
 
 
 class AdminPanel extends Component {
@@ -115,36 +116,38 @@ class AdminPanel extends Component {
                 onChange={e => this.setState({ strUsername: e.target.value })}
               />
               <label className="chk-label">All</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() =>
                   this.setState({ bolAll: !this.state.bolAll })} checked={this.state.bolAll}
               />
               <label className="chk-label">Create</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() => this.setState({ bolCreate: !this.state.bolCreate })} checked={this.state.bolCreate}
               />
               <label className="chk-label">Delete</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() => this.setState({ bolDelete: !this.state.bolDelete })} checked={this.state.bolDelete}
               />
               <label className="chk-label">Drop</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() => this.setState({ bolDrop: !this.state.bolDrop })} checked={this.state.bolDrop}
               />
+              <br/>
+              <br />
               <label className="chk-label execute">Execute</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() => this.setState({ bolExecute: !this.state.bolExecute })} checked={this.state.bolExecute} />
               <label className="chk-label">Insert</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() => this.setState({ bolInsert: !this.state.bolInsert })} checked={this.state.bolInsert} />
               <label className="chk-label">Select</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() => this.setState({ bolSelect: !this.state.bolSelect })} checked={this.state.bolSelect} />
               <label className="chk-label">Show</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() => this.setState({ bolShow: !this.state.bolShow })} checked={this.state.bolShow} />
               <label className="chk-label">Update</label>
-              <input className="checkbox" type="checkbox"
+              <input className="" type="checkbox"
                 onChange={() => this.setState({ bolUpdate: !this.state.bolUpdate })} checked={this.state.bolUpdate} />
             </form>
             <button onClick={this.handleSubmit} className="add-user load" type="submit"><i className="add-user db-add fas fa-user-plus"></i></button>
@@ -152,8 +155,8 @@ class AdminPanel extends Component {
           <div className="tbl-outer">
           <table className="tbl-inner" id="db-manager-table">
           <tbody>
-            <tr>
-              <th className="headcol">Username</th>
+            <tr className="tablehead">
+              <th className="headcol labelcol">Username</th>
               <th className="afterhead">All</th>
               <th>Create</th>
               <th>Delete</th>
@@ -165,32 +168,7 @@ class AdminPanel extends Component {
               <th>Update</th>
               <th>Edit | Delete</th>
             </tr>
-            <tr>
-              <td className="headcol">test@vectorventures.com</td>
-              <td className="afterhead"></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-U fas fa-user-edit"></i>  <i className="db-D fas fa-user-minus"></i></td>
-            </tr>
-            <tr>
-              <td className="headcol">demo@vectorventures.com</td>
-              <td className="afterhead"><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-check fas fa-check"></i></td>
-              <td><i className="db-U fas fa-user-edit"></i>  <i className="db-D fas fa-user-minus"></i></td>
-            </tr>
+            <IndexUsers />
           </tbody>
           </table>
           </div>

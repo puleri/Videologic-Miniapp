@@ -577,6 +577,7 @@ label.execute {
 
 #db-manager-table {
   border-collapse: collapse;
+  width: auto;
 }
 
 #db-manager-table td, #db-manager-table th {
@@ -590,7 +591,7 @@ label.execute {
   background-color: #f2f2f2;
 }
 
-#db-manager-table tr:hover {background-color: #DDDDDD;}
+#db-manager-table tr:hover {background-color: rgb(102, 194, 224, .2)}
 
 #db-manager-table th {
   padding-top: 12px;
@@ -701,10 +702,34 @@ th, td {
  top: auto;
  border-top-width: 1px;
  /*only relevant for first row*/
- margin-top: -1px;
+ margin-top: 5px;
+ vertical-align: middle !important;
  /*compensate for top border*/
 }
-/* .afterhead {
-  position: relative;
-  margin-left: 30px;
-} */
+.update-submit {
+  padding: 10px;
+  border-radius: 13px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+
+  background-color: #B7E3E4;
+}
+.update-submit:hover {
+  background-color:rgb(136, 201, 202);
+}
+
+@media (max-width: 1440px) {
+  .headcol {
+    background-color: rgb(102, 194, 224, .2) !important;
+    position: relative;
+    left: 0px;
+ font: inherit;
+ vertical-align: middle;
+  }
+  .labelcol {
+    font-weight: bold;
+    color: white !important;
+    background-color: #4CAF50 !important;
+  }
+}
