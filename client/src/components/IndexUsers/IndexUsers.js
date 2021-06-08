@@ -7,18 +7,16 @@ class IndexUsers extends Component {
     super(props)
     this.state = {
       users: [],
-      user: {
-        strUsername: '',
-        bolAll: false,
-        bolCreate: false,
-        bolDelete: false,
-        bolDrop: false,
-        bolExecute: false,
-        bolInsert: false,
-        bolSelect: false,
-        bolShow: false,
-        bolUpdate: false,
-      }
+      strUsername: '',
+      bolAll: '',
+      bolCreate: '',
+      bolDelete: '',
+      bolDrop: '',
+      bolExecute: '',
+      bolInsert: '',
+      bolSelect: '',
+      bolShow: '',
+      bolUpdate: ''
     }
     this.indexUsers = this.indexUsers.bind(this);
   }
@@ -45,23 +43,110 @@ class IndexUsers extends Component {
       return <i className="db-check fas fa-check"></i>;
     }
   }
-
-  updateUsers(id) {
-    if (this.props.location.search === id) {
-      console.log('yes')
-    }
-    console.log('no')
+  updateUser(state) {
+    this.setState({
+      bolAll: state.all_permission
+    })
+    console.log(this.state.user)
   }
 
 
   render() {
     // const table = this.data
+    const handleChange = (event) => {
+      // this.setState({ user: this.state.users.find(user => user.user_number === this.props.location.search) })
+      // console.log('event.target.name is', event.target.name)
+      if (event.target.checked) {
+        this.setState(oldUser => {
+          return { ...oldUser, [event.target.name] : '1' }
+        })
+      }
+      else {
+        this.setState(oldUser => {
+          return { ...oldUser, [event.target.name] : '0' }
+        })
+      }
+
+    // if (event.target.name === '1') {
+
+      // this.setState(oldUser => {
+      //   return { ...oldUser, event.target.name: !oldProject.completed }
+      // })
+      // console.log('event.target.checked is ', event.target.checked)
+    }
+
+    // handleUpdate will send an update request to the server with the state attatched as data. it will then return a response from the server.
+    const handleUpdate = (event) => {
+      event.persist()
+      const user_number = this.props.location.search.slice(-1)
+
+      // console.log(this.state)
+      var fd = new FormData();
+      fd.append('content', 'test');
+      fd.append('user_number', user_number)
+      fd.append('bolAll', this.state.bolAll)
+      fd.append('bolCreate', this.state.bolCreate)
+      fd.append('bolDelete', this.state.bolDelete)
+      fd.append('bolDrop', this.state.bolDrop)
+      fd.append('bolExecute', this.state.bolExecute)
+      fd.append('bolInsert', this.state.bolInsert)
+      fd.append('bolSelect', this.state.bolSelect)
+      fd.append('bolShow', this.state.bolShow)
+      fd.append('bolUpdate', this.state.bolUpdate)
+
+      // console.log(Array.from(fd));
+      fetch(`http://localhost:9000/docroot/update_user.php`, {
+        method: 'POST',
+        body: fd,
+      }).then(res => res.json())
+      .then(response => {
+        console.log('response: ', response)
+      })
+      .catch(err => {
+        console.log(err)
+      } );
+    }
+
+// updateState is a READ crud action which uses the user_number selected to make a GET req. this info will be used to populate the STATE with our data to be updated.
+    const updateState = (num) => {
+      // setting the state to be whatever the individual row is
+      // console.log(num)
+      this.setState(
+        {
+          strUsername: '',
+          bolAll: '',
+          bolCreate: '',
+          bolDelete: '',
+          bolDrop: '',
+          bolExecute: '',
+          bolInsert: '',
+          bolSelect: '',
+          bolShow: '',
+          bolUpdate: ''
+        }
+      )
+    }
+    const handleReset = (event) => {
+      event.persist()
+      this.setState({
+        strUsername: '',
+        bolAll: '',
+        bolCreate: '',
+        bolDelete: '',
+        bolDrop: '',
+        bolExecute: '',
+        bolInsert: '',
+        bolSelect: '',
+        bolShow: '',
+        bolUpdate: ''
+      })
+    }
     const { users } = this.state
     return (
       <>
           {users.map(user =>
             {if ("?=id" + user.user_number != this.props.location.search) {
-              console.log(this.props.location)
+              // console.log(this.props.location)
               return (<tr key={user.user_number}>
                   <td className="headcol">{user.username}</td>
                   <td className="afterhead">{this.permission(user.all_permission)}</td>
@@ -73,22 +158,23 @@ class IndexUsers extends Component {
                   <td>{this.permission(user.select_permission)}</td>
                   <td>{this.permission(user.show_permission)}</td>
                   <td>{this.permission(user.update_permission)}</td>
-                  <td><Link to={"/AdminPanel/?=id" + user.user_number}><i className="db-U fas fa-user-edit"></i></Link>  <i className="db-D fas fa-user-minus"></i></td>
+                  <td><Link to={"/AdminPanel/?=id" + user.user_number} onClick={() => { updateState(user.user_number) }}><i className="db-U fas fa-user-edit"></i></Link>  <i className="db-D fas fa-user-minus"></i></td>
               </tr>)
             }
+
           return (
             <tr key={user.user_number}>
                 <td className="headcol">{user.username}</td>
-                <td className="afterhead"><input type="checkbox"/></td>
-                <td><input type="checkbox"/></td>
-                <td><input type="checkbox"/></td>
-                <td><input type="checkbox"/></td>
-                <td><input type="checkbox"/></td>
-                <td><input type="checkbox"/></td>
-                <td><input type="checkbox"/></td>
-                <td><input type="checkbox"/></td>
-                <td><input type="checkbox"/></td>
-                <td><Link className="update-submit" to={"/AdminPanel/?=id" + user.user_number}>Submit</Link></td>
+                <td className="afterhead"><input name="bolAll" onChange={handleChange} defaultChecked={user.all_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><input name="bolCreate" onChange={handleChange} defaultChecked={user.create_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><input name="bolDelete" onChange={handleChange} defaultChecked={user.delete_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><input name="bolDrop" onChange={handleChange} defaultChecked={user.drop_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><input name="bolExecute" onChange={handleChange} defaultChecked={user.execute_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><input name="bolInsert" onChange={handleChange} defaultChecked={user.insert_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><input name="bolSelect" onChange={handleChange} defaultChecked={user.select_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><input name="bolShow" onChange={handleChange} defaultChecked={user.show_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><input name="bolUpdate" onChange={handleChange} defaultChecked={user.update_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
+                <td><button className="update-submit" onClick={handleUpdate}>Update</button><Link className="update-submit" onClick={handleReset} to={"/AdminPanel"}>Cancel</Link></td>
             </tr>
           )}
             )}

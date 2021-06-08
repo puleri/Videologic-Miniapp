@@ -107,14 +107,19 @@ class AdminPanel extends Component {
           </div>
         </div>
         <div className="db-manager">
-          <h5 className="db-form-header">Database-Manager</h5>
+          <h1 className="db-form-header">Database-Manager</h1>
           <div className="db-form">
             <form className="form-inline">
+            <h3 className="form-label">Add user</h3>
               <label className="username">Username</label>
               <input className="username" type="text" id="firstname" placeholder="username..."
                 value={this.state.strUsername}
                 onChange={e => this.setState({ strUsername: e.target.value })}
               />
+
+              <br/>
+              <br/>
+
               <label className="chk-label">All</label>
               <input className="" type="checkbox"
                 onChange={() =>
@@ -147,10 +152,10 @@ class AdminPanel extends Component {
               <input className="" type="checkbox"
                 onChange={() => this.setState({ bolShow: !this.state.bolShow })} checked={this.state.bolShow} />
               <label className="chk-label">Update</label>
-              <input className="" type="checkbox"
+              <input className="update-clear-right" type="checkbox"
                 onChange={() => this.setState({ bolUpdate: !this.state.bolUpdate })} checked={this.state.bolUpdate} />
             </form>
-            <button onClick={this.handleSubmit} className="add-user load" type="submit"><i className="add-user db-add fas fa-user-plus"></i></button>
+            <button onClick={this.handleSubmit} className="clear-add-button" type="submit"><i className="add-user fas fa-user-plus"></i></button>
           </div>
           <div className="tbl-outer">
           <table className="tbl-inner" id="db-manager-table">
@@ -166,7 +171,7 @@ class AdminPanel extends Component {
               <th>Select</th>
               <th>Show</th>
               <th>Update</th>
-              <th>Edit | Delete</th>
+              <th className="dbU-D-th">Edit | Delete</th>
             </tr>
             <IndexUsers />
           </tbody>
