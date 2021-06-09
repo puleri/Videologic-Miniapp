@@ -59,20 +59,17 @@ class IndexUsers extends Component {
       if (event.target.checked) {
         this.setState(oldUser => {
           return { ...oldUser, [event.target.name] : '1' }
-        })
+        }
+        // , () => { console.log(this.state) }
+        )
       }
-      else {
-        this.setState(oldUser => {
-          return { ...oldUser, [event.target.name] : '0' }
-        })
+        else {
+          this.setState(oldUser => {
+            return { ...oldUser, [event.target.name] : '0' }
+          }
+        // , () => { console.log(this.state) }
+        )
       }
-
-    // if (event.target.name === '1') {
-
-      // this.setState(oldUser => {
-      //   return { ...oldUser, event.target.name: !oldProject.completed }
-      // })
-      // console.log('event.target.checked is ', event.target.checked)
     }
 
     // handleUpdate will send an update request to the server with the state attatched as data. it will then return a response from the server.
@@ -107,24 +104,30 @@ class IndexUsers extends Component {
       } );
     }
 
-// updateState is a READ crud action which uses the user_number selected to make a GET req. this info will be used to populate the STATE with our data to be updated.
     const updateState = (num) => {
-      // setting the state to be whatever the individual row is
-      // console.log(num)
+
+      const clicked = this.state.users.filter(user => {
+        return user.user_number === num
+      })[0]
+
+      // console.log("clicked user is ", clicked)
+
       this.setState(
         {
-          strUsername: '',
-          bolAll: '',
-          bolCreate: '',
-          bolDelete: '',
-          bolDrop: '',
-          bolExecute: '',
-          bolInsert: '',
-          bolSelect: '',
-          bolShow: '',
-          bolUpdate: ''
+          strUsername: clicked.username,
+          bolAll: clicked.all_permission,
+          bolCreate: clicked.create_permission,
+          bolDelete: clicked.delete_permission,
+          bolDrop: clicked.drop_permission,
+          bolExecute: clicked.execute_permission,
+          bolInsert: clicked.insert_permission,
+          bolSelect: clicked.select_permission,
+          bolShow: clicked.show_permission,
+          bolUpdate: clicked.update_permission
         }
+        // , () => { console.log(this.state) }
       )
+
     }
     const handleReset = (event) => {
       event.persist()
