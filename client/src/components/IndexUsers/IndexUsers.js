@@ -43,15 +43,16 @@ class IndexUsers extends Component {
       return <i className="db-check fas fa-check"></i>;
     }
   }
-  updateUser(state) {
-    this.setState({
-      bolAll: state.all_permission
-    })
-    console.log(this.state.user)
-  }
+  // updateUser(state) {
+  //   this.setState({
+  //     bolAll: state.all_permission
+  //   })
+  //   console.log(this.state.user)
+  // }
 
 
   render() {
+
     // const table = this.data
     const handleChange = (event) => {
       // this.setState({ user: this.state.users.find(user => user.user_number === this.props.location.search) })
@@ -75,6 +76,7 @@ class IndexUsers extends Component {
     // handleUpdate will send an update request to the server with the state attatched as data. it will then return a response from the server.
     const handleUpdate = (event) => {
       event.persist()
+      // console.log("history?", this.props)
       const user_number = this.props.location.search.slice(-1)
 
       // console.log(this.state)
@@ -96,9 +98,11 @@ class IndexUsers extends Component {
         method: 'POST',
         body: fd,
       }).then(res => res.json())
-      .then(response => {
-        console.log('response: ', response)
-      })
+      // .then(response => {
+      //   console.log('response: ', response)
+      // })
+      .then(this.props.history.push('AdminPanel'))
+      .then(() => { this.indexUsers() })
       .catch(err => {
         console.log(err)
       } );
@@ -110,7 +114,7 @@ class IndexUsers extends Component {
         return user.user_number === num
       })[0]
 
-      // console.log("clicked user is ", clicked)
+      console.log("clicked user is ", clicked)
 
       this.setState(
         {
@@ -129,6 +133,23 @@ class IndexUsers extends Component {
       )
 
     }
+    const handleDelete = (num) => {
+      
+      var fd = new FormData();
+      fd.append('user_number', num);
+
+      fetch(`http://localhost:9000/docroot/delete_user.php`, {
+        method: 'POST',
+        body: fd,
+      }).then(res => res.json())
+      .then(response => {
+        console.log('response: ', response)
+      })
+      .catch(err => {
+        console.log(err)
+      } );
+    }
+
     const handleReset = (event) => {
       event.persist()
       this.setState({
@@ -161,7 +182,7 @@ class IndexUsers extends Component {
                   <td>{this.permission(user.select_permission)}</td>
                   <td>{this.permission(user.show_permission)}</td>
                   <td>{this.permission(user.update_permission)}</td>
-                  <td><Link to={"/AdminPanel/?=id" + user.user_number} onClick={() => { updateState(user.user_number) }}><i className="db-U fas fa-user-edit"></i></Link>  <i className="db-D fas fa-user-minus"></i></td>
+                  <td><Link to={"/AdminPanel/?=id" + user.user_number} onClick={() => { updateState(user.user_number) }}><i className="db-U fas fa-user-edit"></i></Link> <Link to={"/AdminPanel/"} onClick={() => { handleDelete(user.user_number) }}><i className="db-D fas fa-user-minus"></i></Link></td>
               </tr>)
             }
 
