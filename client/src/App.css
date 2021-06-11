@@ -1,7 +1,31 @@
 /* Palette black:#1F1C1C  brown:#8A6855  salmon: #F04235  lightblue: #B7E3E4   sheetmetal: #9C9A9A  */
-
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100% !important;
+}
+.main-content {
+  height: 100%;
+  padding-bottom: 2.5rem;
+}
+.Footer {
+  background-color: #2C7593;
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+.clear {
+  clear:both;
+}
+/* .absolute {
+  position: absolute;
+  bottom: 0;
+} */
 .App {
   text-align: center;
+  margin:0;
+  min-height: 100%;
 }
 
 .background {z-index: -9999;
@@ -55,10 +79,7 @@
 * {
   box-sizing: border-box;
 }
-.App {
-   max-width: 420px;
-   margin: 0 auto;
-}
+
 p {
    text-align: center;
    font-weight: 500;
@@ -394,7 +415,7 @@ table {
   background: #F6F6F6;
   position: relative;
   width: 400px;
-  height: 800px;
+  height: 830px;
   border-right: 1px solid lightgray;
 }
 
@@ -491,7 +512,8 @@ table {
 }
 
 .content-slide {
-  margin-right: 55px;
+  left: 45%;
+  right: -40px;
 }
 
 .panel-icon {
@@ -501,6 +523,8 @@ table {
 }
 
 .form-inline {
+  width: 60vw;
+  display: block;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -519,7 +543,7 @@ table {
   background-color: #fff;
   border: 1px solid #ddd;
 }
-
+.checkbox-div {}
 
 /* Style the submit button */
 /* .form-inline button {
@@ -563,8 +587,7 @@ table {
   display: inline;
 }
 input.username {
-  width: 200px;
-  margin-right: 90%;
+  width: 100%;
   margin-bottom: 30px;
 }
 .form-label {
@@ -572,15 +595,17 @@ input.username {
 }
 
 .checkbox {
-  width: 30px;
+  /* margin: 100px; */
+  width: 80px;
 }
 label.chk-label {
   margin-bottom: 80px;
   margin-right: -20px;
   transform: rotate(-65deg);
 }
-label.execute {
-  margin-right: -35px;
+
+.create-user-button {
+  margin-top: 40px;
 }
 
 .db-add {
@@ -685,6 +710,8 @@ td {
 }
 .tbl-outer {
   overflow-x: scroll;
+  overflow-y: scroll;
+  max-height: 300px;
   width: 94%;
   margin-left: 3%;
   margin-right: 3%;
@@ -714,19 +741,21 @@ th, td {
 .update-submit:hover {
   background-color:rgb(136, 201, 202);
 }
+.check-div {
+  width: 30vw
+}
 .clear-add-button {
   background-color: #B7E3E4 ;
   color: #1F1C1C;
   font-weight: bold;
   font-size: 15px;
   border: none;
-  border-radius: 200px;
+  border-radius: 5px;
   cursor: pointer;
   font-family:'Montserrat', sans-serif;
-  width: 300px;
+  width: 60vw;
   height: 50px;
   position: relative;
-  left: -225px;
   bottom: 20px;
   margin-bottom: 10px;
   box-shadow: 0px 10px 10px 0px #E0E0E0;
@@ -737,7 +766,6 @@ th, td {
 .clear-add-button:hover {
 
   position: relative;
-  left: -225px;
   box-shadow: none;
 }
 
@@ -754,4 +782,65 @@ th, td {
     font-weight: bold;
     color: black !important;
     background-color: white !important;
+  }
+
+  @media (max-width: 1337px) {
+
+    .admin-container {
+      width:100%;
+      margin-top: -67px;
+      position: relative;
+    }
+    .admin-panel {
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .db-manager {
+      position: absolute;
+      right: 15%;
+      top:800px;
+      height: 800px;
+    }
+    .admin-panel-item1, .admin-panel-item2,
+    .admin-panel-item3, .admin-panel-item4, .admin-panel-item5
+      {
+      left: 10%;
+      width: 80%;
+    }
+
+    .item-content {
+      width: 20%;
+      text-align: center;
+      left: 55%;
+      right: 15%;
+      margin-right: none
+    }
+
+    .db-form-header {
+      position: relative;
+      width: 150%;
+      left:-30%;
+
+    }
+
+    .username {
+      width: 100%;
+    }
+    .check-div {
+    text-align: left;
+     width: 80vw;
+    }
+    .clear-add-button {
+      width: 80vw;
+    }
+    .form-inline {
+      width: 80vw;
+    }
+    .tbl-outer  {
+      position: absolute;
+      left: -16%;
+      width: 80vw;
+    }
   }

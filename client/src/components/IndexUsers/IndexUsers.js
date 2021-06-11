@@ -43,18 +43,19 @@ class IndexUsers extends Component {
       return <i className="db-check fas fa-check"></i>;
     }
   }
-  // updateUser(state) {
-  //   this.setState({
-  //     bolAll: state.all_permission
-  //   })
-  //   console.log(this.state.user)
-  // }
+  updateUser(state) {
+    this.setState({
+      bolAll: state.all_permission
+    })
+    console.log(this.state.user)
+  }
 
 
   render() {
 
     // const table = this.data
     const handleChange = (event) => {
+      event.persist()
       // this.setState({ user: this.state.users.find(user => user.user_number === this.props.location.search) })
       // console.log('event.target.name is', event.target.name)
       if (event.target.checked) {
@@ -73,16 +74,15 @@ class IndexUsers extends Component {
       }
     }
 
-    // handleUpdate will send an update request to the server with the state attatched as data. it will then return a response from the server.
-    const handleUpdate = (event) => {
+    
+    const handleUpdate = (event, num) => {
       event.persist()
       // console.log("history?", this.props)
-      const user_number = this.props.location.search.slice(-1)
 
-      // console.log(this.state)
+      console.log(num)
       var fd = new FormData();
       fd.append('content', 'test');
-      fd.append('user_number', user_number)
+      fd.append('user_number', num)
       fd.append('bolAll', this.state.bolAll)
       fd.append('bolCreate', this.state.bolCreate)
       fd.append('bolDelete', this.state.bolDelete)
@@ -98,11 +98,12 @@ class IndexUsers extends Component {
         method: 'POST',
         body: fd,
       }).then(res => res.json())
-      // .then(response => {
-      //   console.log('response: ', response)
-      // })
-      .then(this.props.history.push('AdminPanel'))
-      .then(() => { this.indexUsers() })
+      .then(response => {
+        console.log('response: ', response)
+      })
+      // .then(() => { this.indexUsers() })
+      //
+      // .then(this.props.history.push('AdminPanel'))
       .catch(err => {
         console.log(err)
       } );
@@ -113,7 +114,7 @@ class IndexUsers extends Component {
       const clicked = this.state.users.filter(user => {
         return user.user_number === num
       })[0]
-
+      console.log(num)
       console.log("clicked user is ", clicked)
 
       this.setState(
@@ -129,12 +130,12 @@ class IndexUsers extends Component {
           bolShow: clicked.show_permission,
           bolUpdate: clicked.update_permission
         }
-        // , () => { console.log(this.state) }
+        // , () => { console.log("the state is now", this.state) }
       )
 
     }
     const handleDelete = (num) => {
-      
+
       var fd = new FormData();
       fd.append('user_number', num);
 
@@ -142,9 +143,6 @@ class IndexUsers extends Component {
         method: 'POST',
         body: fd,
       }).then(res => res.json())
-      .then(response => {
-        console.log('response: ', response)
-      })
       .catch(err => {
         console.log(err)
       } );
@@ -198,7 +196,7 @@ class IndexUsers extends Component {
                 <td><input name="bolSelect" onChange={handleChange} defaultChecked={user.select_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
                 <td><input name="bolShow" onChange={handleChange} defaultChecked={user.show_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
                 <td><input name="bolUpdate" onChange={handleChange} defaultChecked={user.update_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
-                <td><button className="update-submit" onClick={handleUpdate}>Update</button><Link className="update-submit" onClick={handleReset} to={"/AdminPanel"}>Cancel</Link></td>
+                <td><button className="update-submit" onClick={(e) => {handleUpdate(e, user.user_number)}}>Update</button><Link className="update-submit" onClick={handleReset} to={"/AdminPanel"}>Cancel</Link></td>
             </tr>
           )}
             )}

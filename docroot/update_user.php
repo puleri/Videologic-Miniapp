@@ -1,8 +1,6 @@
 <?php
   $link = mysqli_connect("localhost", "root", "root", "database-manager");
 
-
-
   $user_number = $_POST['user_number'];
   $bolAll = $_POST['bolAll'];
   $bolCreate = $_POST['bolCreate'];
@@ -27,4 +25,4 @@
 
   $response = ["bolAll" => $bolAll, "bolCreate" => $bolCreate, "bolDelete" => $bolDelete, "bolDrop" => $bolDrop, "bolExecute" => $bolExecute, "bolInsert" => $bolInsert, "bolSelect" => $bolSelect, "bolShow" => $bolShow, "bolUpdate" => $bolUpdate];
 
-  // echo json_encode($response);
+  echo json_encode($response);

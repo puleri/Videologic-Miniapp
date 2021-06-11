@@ -22,9 +22,6 @@ class AdminPanel extends Component {
   handleCheck = (event) => {
     event.persist()
     console.log(this.state)
-    // this.setState(prevState => ({
-    //   event: !prevState.completed
-    // }))
   }
 
   handleSubmit = (event) => {
@@ -74,7 +71,7 @@ class AdminPanel extends Component {
           <div className="item2-accent">
             <i className="panel-icon fas fa-users"></i>
           </div>
-          <div className="item-content">
+          <div className="item-content content-slide">
             <h5>Total Users</h5>
             <h2>3,425</h2>
           </div>
@@ -83,7 +80,7 @@ class AdminPanel extends Component {
           <div className="item3-accent">
             <i className="panel-icon fas fa-running"></i>
           </div>
-          <div className="item-content">
+          <div className="item-content content-slide">
             <h5>Active Users</h5>
             <h2>20%</h2>
           </div>
@@ -92,7 +89,7 @@ class AdminPanel extends Component {
           <div className="item4-accent">
             <i className="panel-icon fas fa-cog"></i>
           </div>
-          <div className="item-content">
+          <div className="item-content content-slide">
             <h5>Total Admin</h5>
             <h2>30</h2>
           </div>
@@ -119,43 +116,46 @@ class AdminPanel extends Component {
 
               <br/>
               <br/>
-
+              <div className="check-div">
               <label className="chk-label">All</label>
-              <input className="" type="checkbox"
+              <input className="checkbox " type="checkbox"
                 onChange={() =>
                   this.setState({ bolAll: !this.state.bolAll })} checked={this.state.bolAll}
               />
               <label className="chk-label">Create</label>
-              <input className="" type="checkbox"
+              <input className="checkbox " type="checkbox"
                 onChange={() => this.setState({ bolCreate: !this.state.bolCreate })} checked={this.state.bolCreate}
               />
               <label className="chk-label">Delete</label>
-              <input className="" type="checkbox"
+              <input className="checkbox " type="checkbox"
                 onChange={() => this.setState({ bolDelete: !this.state.bolDelete })} checked={this.state.bolDelete}
               />
               <label className="chk-label">Drop</label>
-              <input className="" type="checkbox"
+              <input className="checkbox " type="checkbox"
                 onChange={() => this.setState({ bolDrop: !this.state.bolDrop })} checked={this.state.bolDrop}
               />
               <br/>
               <br />
               <label className="chk-label execute">Execute</label>
-              <input className="" type="checkbox"
+              <input className="checkbox" type="checkbox"
                 onChange={() => this.setState({ bolExecute: !this.state.bolExecute })} checked={this.state.bolExecute} />
               <label className="chk-label">Insert</label>
-              <input className="" type="checkbox"
+              <input className="checkbox " type="checkbox"
                 onChange={() => this.setState({ bolInsert: !this.state.bolInsert })} checked={this.state.bolInsert} />
               <label className="chk-label">Select</label>
-              <input className="" type="checkbox"
+              <input className="checkbox " type="checkbox"
                 onChange={() => this.setState({ bolSelect: !this.state.bolSelect })} checked={this.state.bolSelect} />
               <label className="chk-label">Show</label>
-              <input className="" type="checkbox"
+              <input className="checkbox" type="checkbox"
                 onChange={() => this.setState({ bolShow: !this.state.bolShow })} checked={this.state.bolShow} />
               <label className="chk-label">Update</label>
-              <input className="update-clear-right" type="checkbox"
+              <input className="checkbox update-clear-right" type="checkbox"
                 onChange={() => this.setState({ bolUpdate: !this.state.bolUpdate })} checked={this.state.bolUpdate} />
+                </div>
             </form>
+            <div className="create-user-button">
             <button onClick={this.handleSubmit} className="clear-add-button" type="submit"><i className="add-user fas fa-user-plus"></i></button>
+            </div>
           </div>
           <div className="tbl-outer">
           <table className="tbl-inner" id="db-manager-table">
