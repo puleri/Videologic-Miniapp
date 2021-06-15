@@ -7,11 +7,12 @@ class ThankYou extends Component {
     return (
       <div className="thank-you-div">
         <div className="thank-you">
-          <h2>Thank you</h2>
-          <p>We have recieved your request and should be back to you in the next 48 hours.</p>
-
+          <p>Thank you. We have recieved your request and should be back to you in the next 48 hours.</p>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           <Link className="homepage-link" to="/">Back to the homepage</Link>
+
         </div>
+
       </div>
     )
   }

@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import IndexUsers from '../IndexUsers/IndexUsers.js';
+import UserAmount from '../UserAmount/UserAmount.js';
+import ActiveUsers from '../ActiveUsers/ActiveUsers.js';
+import AdminCount from '../AdminCount/AdminCount.js'
+import Checkmark from '../Checkmark/Checkmark.js'
+import TicketCounter from '../TicketCounter/TicketCounter.js';
 import { withRouter } from 'react-router-dom';
 
 
@@ -48,6 +53,21 @@ class AdminPanel extends Component {
     .then(response => {
       console.log('response: ', response)
     })
+    // reset form
+    .then(
+      this.setState({
+          strUsername: '',
+          bolAll: false,
+          bolCreate: false,
+          bolDelete: false,
+          bolDrop: false,
+          bolExecute: false,
+          bolInsert: false,
+          bolSelect: false,
+          bolShow: false,
+          bolUpdate: false
+      })
+    )
     .catch(err => {
       console.log(err)
     } );
@@ -64,7 +84,7 @@ class AdminPanel extends Component {
           </div>
           <div className="item-content content-slide">
             <h5>Database Status</h5>
-            <i className="status-check fas fa-check"></i>
+            <Checkmark />
           </div>
         </div>
         <div className="admin-panel-item2 item">
@@ -73,7 +93,7 @@ class AdminPanel extends Component {
           </div>
           <div className="item-content content-slide">
             <h5>Total Users</h5>
-            <h2>3,425</h2>
+            <h2><UserAmount/></h2>
           </div>
         </div>
         <div className="admin-panel-item3 item">
@@ -82,7 +102,7 @@ class AdminPanel extends Component {
           </div>
           <div className="item-content content-slide">
             <h5>Active Users</h5>
-            <h2>20%</h2>
+            <h2><ActiveUsers />%</h2>
           </div>
         </div>
         <div className="admin-panel-item4 item">
@@ -91,7 +111,7 @@ class AdminPanel extends Component {
           </div>
           <div className="item-content content-slide">
             <h5>Total Admin</h5>
-            <h2>30</h2>
+            <h2><AdminCount /></h2>
           </div>
         </div>
         <div className="admin-panel-item5 item">
@@ -100,7 +120,7 @@ class AdminPanel extends Component {
           </div>
           <div className="item-content content-slide">
             <h5>Support Tickets</h5>
-            <h2>4</h2>
+            <h2><TicketCounter /></h2>
           </div>
         </div>
         <div className="db-manager">
