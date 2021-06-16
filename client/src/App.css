@@ -7,7 +7,6 @@ body, html {
 }
 .main-content {
   height: 100%;
-  padding-bottom: 2.5rem;
 }
 .Footer {
   background-color: #2C7593;
@@ -187,7 +186,7 @@ body, button, input, .submit {
 .form-div {
   position: absolute;
   top: 0px;
-  right: 0;
+  right: 50%;
   left: 0;
   margin-top: 165px;
  }
@@ -268,12 +267,10 @@ table {
 }
 
 
-@media (max-width: 570px) {
-  .elephant {
-    position: absolute;
-    height:100px;
-    right: 30px;
-    top:110px;
+@media (max-width: 1070px) {
+  .form-div {
+    right: 0;
+
   }
 }
 
@@ -917,4 +914,52 @@ th, td {
   100% {
     box-shadow: inset 0px 0px 0px 30px black;
   }
+}
+
+.blob {
+  position: absolute;
+  left: -900px;
+  top: 0;
+  right:0;
+}
+.oblong{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right:-900px;
+}
+.blorb {
+  position: absolute;
+  top: 300px;
+}
+.greenblob {
+  position: absolute;
+  top:00px;
+  left: 0;
+  right: -300px;
+}
+.orangeblob {
+  position: absolute;
+  top: 500px;
+  left:0;
+  right: -1100px;
+}
+
+.login {
+  position: relative;
+  left: 0;
+  top: 1px;
+  right: 0;
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.login-element {
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  margin-top: 150px;
+  background: pink;
 }
