@@ -4,7 +4,18 @@ class Footer extends Component {
   render() {
     return (
       <div  className="Footer">
-        <h1>hi</h1>
+        <div className="grid">
+        <h3>One</h3>
+        </div>
+        <div className="grid">
+        <h3>Two</h3>
+        </div>
+        <div className="grid">
+        <h3>Three</h3>
+        </div>
+        <div className="grid">
+        <h3>Social</h3>
+        </div>
       </div>
     )
   }

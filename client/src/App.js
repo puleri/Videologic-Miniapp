@@ -5,7 +5,7 @@ import Header from './components/Header/Header.js';
 import AdminPanel from './components/AdminPanel/AdminPanel.js'
 import Support from './components/Support/Support.js'
 import ThankYou from './components/ThankYou/ThankYou.js'
-// import Footer from './components/Footer/Footer.js'
+import Footer from './components/Footer/Footer.js'
 
 function App() {
 
@@ -27,6 +27,9 @@ function App() {
       <Route path='/AdminPanel' render={() => (
         <AdminPanel />
       )} />
+      <Route path='/' render={() => (
+        <Footer />
+      )}/>
       </div>
 
     </div>
