@@ -13,7 +13,7 @@ class Header extends Component {
           <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>
         </div>
         <div className="calendar">
-          <Link to="/"><i className="fas fa-home"></i></Link>
+          <Link to="/login"><i className="fas fa-home"></i></Link>
         </div>
         <div className="calendar">
           <Link to="/"><i className="fas fa-user-friends"></i></Link>
