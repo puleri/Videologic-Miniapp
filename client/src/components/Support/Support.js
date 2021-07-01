@@ -41,6 +41,11 @@ class Support extends Component {
   render()
   {
     return (
+      <>
+      <div className="support-top">
+      <h2 id="htop">Welcome to the support page</h2>
+      <h4 id="h4top">You're in good company</h4>
+      </div>
       <div className='contain'>
       <div className="support-float">
         <div className="form-div">
@@ -79,6 +84,7 @@ class Support extends Component {
         </div>
         </div>
       </div>
+      </>
     )
   }
 }
