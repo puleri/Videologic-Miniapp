@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import icon from './icon.png';
+import "./Header.css";
 
 
 class Header extends Component {
   render() {
     return (
       <>
-      <div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div>
+      <div className="colorheader"><div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div></div>
       <div className="Nav-containter">
         <div className="brand">
           <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>

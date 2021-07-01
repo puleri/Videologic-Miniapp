@@ -1003,3 +1003,7 @@ th, td {
   margin-top: 150px;
   background: pink;
 }
+.App {
+  position: relative;
+  min-height: 100vh;
+}

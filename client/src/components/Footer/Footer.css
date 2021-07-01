@@ -20,9 +20,9 @@
 }
 
 .Footer {
-  background-color: white;
-  position:absolute;
-  bottom: 0;
+  background-color: lightgray;
+  position:relative;
+  top: 100vh;
   height: 150px;
   width: 100vw;
 }
@@ -49,8 +49,8 @@
   border: none;
 }
 .footercolor {
-  position: absolute;
-  top:300px;
+  position: relative;
+  top:81vh;
   bottom: 0;
 }
 
