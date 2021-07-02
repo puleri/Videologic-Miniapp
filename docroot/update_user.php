@@ -1,4 +1,7 @@
 <?php
+// to make this into a class I can send a message from the client
+// depending on the message the class, the server can respond accordingly
+
   $link = mysqli_connect("localhost", "root", "root", "database-manager");
 
   $user_number = $_POST['user_number'];

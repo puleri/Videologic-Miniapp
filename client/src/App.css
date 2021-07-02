@@ -26,7 +26,7 @@ body, html {
   top: 69px;
   height: 150px;
   width: 100%;
-  background: #f7f7f7;
+  background: #fff5fd;
 }
 #htop {
   margin-left: 5%;
@@ -38,12 +38,11 @@ body, html {
   color: gray;
 }
 .contain {
-  background: #fff5fd;
-  z-index: -20;
+  background:  white;
+  z-index: 0;
   position: absolute;
   top: 168px;
   width: 100%;
-  height: 100%;
 }
 .background {
   position: absolute;
@@ -140,7 +139,8 @@ body, html {
 }
 
 .db-form-header {
-  letter-spacing: .5rem;
+  font-size: 30px;
+  letter-spacing: .3rem;
 }
 
 @keyframes App-logo-spin {
@@ -380,6 +380,7 @@ table {
 }
 
 .brand {
+  text-transform: uppercase;
   display: flex;
 }
 
@@ -394,7 +395,14 @@ table {
   margin-top: 10px;
   height: 30px;
 }
-
+#founded-watermark {
+  font-size: 92px;
+  opacity: .9;
+  text-transform: uppercase;
+  position: absolute;
+  right: 350px;
+  color: #f1f1f1;
+}
 .fas, .far {
   font-size: 20px;
   margin-top: 20px;
@@ -472,8 +480,10 @@ table {
 }
 
 .admin-header {
+  padding-top: 20px;
   letter-spacing: .2vw;
-  font-size: 40px;
+  font-size: 24px;
+
 }
 
 .admin-panel-item1 {
@@ -625,6 +635,7 @@ table {
   max-width: 64%;
 }
 .db-form {
+
   position: relative;
   width: 94%;
   margin-left: 3%;
@@ -839,6 +850,9 @@ th, td {
 
   @media (max-width: 1337px) {
 
+    .contain {
+      margin-bottom: -800px;
+    }
     .admin-header {
       letter-spacing: 3px;
       position: relative;
@@ -985,24 +999,6 @@ th, td {
   right: -1100px;
 }
 
-.login {
-  position: relative;
-  left: 0;
-  top: 1px;
-  right: 0;
-  width: 100%;
-  height: 900px;
-  overflow: hidden;
-  margin-bottom: 0;
-}
-
-.login-element {
-  height: 50%;
-  width: 50%;
-  margin: auto;
-  margin-top: 150px;
-  background: pink;
-}
 .App {
   position: relative;
   min-height: 100vh;

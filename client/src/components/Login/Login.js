@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import "./Login.css";
 
 class Login extends Component {
   render() {
@@ -32,7 +33,14 @@ class Login extends Component {
         </div>
 
         <div className="login-element">
-          
+          <form className="login-form">
+            <h2>Sign In</h2>
+            <label>Email</label>
+            <input type="email" placeholder="email..."/>
+            <label>Password</label>
+            <input id="password" type="password" placeholder="password..."/>
+            <button id="sign-in-button">Submit</button>
+          </form>
         </div>
       </div>
     )

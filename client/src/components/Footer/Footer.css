@@ -9,20 +9,27 @@
   background-color: transparent;
   border: none
 }
-
+#footer-icon {
+  height: 30px;
+}
 .footer_logo {
+  position: absolute;
+  top: 10px;
+  left: 5%;
+
   text-decoration: none;
   color: black;
   margin: 15px;
-  text-transform: uppercase;
   font-weight: bold;
   font-size: 18px;
 }
 
 .Footer {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
   background-color: lightgray;
   position:relative;
-  top: 100vh;
+  top: 105vh;
   height: 150px;
   width: 100vw;
 }
@@ -40,20 +47,33 @@
 }
 
 .Footer_button {
-  background-color: #F5F5F5;
-  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 32px;
+  left: 28%;
+  top: 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 15px 1px darkgray;
+  background: white;
+  font-size: 15px;
   margin-right: 30px;
   font-weight: bold;
   color: #2C7593;
-  width: 120px;
+  width: 150px;
   border: none;
 }
 .footercolor {
   position: relative;
-  top:81vh;
-  bottom: 0;
+  bottom:0;
 }
-
+  @media (max-width: 1337px) {
+    .Footer {
+      top: 215vh;
+    }
+  }
 @media only screen and (min-width: 764px) {
     .F1 {
     position: absolute;

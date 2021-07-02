@@ -43,6 +43,7 @@ class Support extends Component {
     return (
       <>
       <div className="support-top">
+      <h1 id="founded-watermark">Since 2000</h1>
       <h2 id="htop">Welcome to the support page</h2>
       <h4 id="h4top">You're in good company</h4>
       </div>
