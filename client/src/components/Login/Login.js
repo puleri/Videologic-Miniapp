@@ -3,6 +3,26 @@ import { withRouter } from 'react-router-dom';
 import "./Login.css";
 
 class Login extends Component {
+
+  constructor(){
+    super()
+    this.state = {
+      email: '',
+      password: ''
+    }
+}
+
+  handleChange = event => this.setState({
+    [event.target.name]: event.target.value
+  })
+
+
+  onSignIn = event => {
+    event.preventDefault()
+
+    const setUser = this.props
+    console.log(this.state)
+  }
   render() {
     return (
       <div className="login">
@@ -35,11 +55,18 @@ class Login extends Component {
         <div className="login-element">
           <form className="login-form">
             <h2>Sign In</h2>
-            <label>Email</label>
-            <input type="email" placeholder="email..."/>
-            <label>Password</label>
-            <input id="password" type="password" placeholder="password..."/>
-            <button id="sign-in-button">Submit</button>
+            <hr noshade className="hr"/>
+            <label className="login-label">Email</label>
+            <input
+            value={this.state.email}
+            onChange={e => this.setState({ email: e.target.value })}
+            type="email" placeholder="email..."/>
+            <label className="login-label">Password</label>
+            <input
+            value={this.state.password}
+            onChange={e => this.setState({ password: e.target.value })}
+            id="password" type="password" placeholder="password..."/>
+            <button onClick={this.onSignIn}id="sign-in-button">Submit</button>
           </form>
         </div>
       </div>

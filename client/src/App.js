@@ -1,4 +1,7 @@
 import './App.css';
+import { v4 as uuid } from 'uuid'
+import React, { Component } from 'react';
+import AuthenticatedRoute from './components/AuthRoute/Authroute.js';
 import { Route } from 'react-router-dom';
 import Login from './components/Login/Login.js';
 import Header from './components/Header/Header.js';
@@ -6,9 +9,34 @@ import AdminPanel from './components/AdminPanel/AdminPanel.js'
 import Support from './components/Support/Support.js'
 import ThankYou from './components/ThankYou/ThankYou.js'
 import Footer from './components/Footer/Footer.js'
+import UserView from './components/UserView/Userview.js';
 
-function App() {
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      user: null,
+      msgAlerts: []
+    }
+  }
+  setUser = user => this.setState({ user })
 
+  clearUser = () => this.setState({ user: null })
+
+  deleteAlert = (id) => {
+    this.setState((state) => {
+      return { msgAlerts: state.msgAlerts.filter(msg => msg.id !== id) }
+    })
+  }
+
+  msgAlert = ({ heading, message, variant }) => {
+    const id = uuid()
+    this.setState((state) => {
+      return { msgAlerts: [...state.msgAlerts, { heading, message, variant, id }] }
+    })
+  }
+  render() {
+    const { user } = this.state
   return (
     <div className="App">
       <div className="main-content">
@@ -19,7 +47,7 @@ function App() {
         <Support />
       )} />
       <Route path='/login' render={() => (
-        <Login />
+        <Login setUser={this.setUser}/>
       )}/>
       <Route exact path='/ThankYou' render={() => (
         <ThankYou />
@@ -31,10 +59,14 @@ function App() {
       <Route path='/' render={() => (
         <Footer />
       )}/>
+      <AuthenticatedRoute user={user} path='/UserView' render={() => (
+            <UserView msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+          )} />
       </div>
 
     </div>
   );
+}
 }
 
 export default App;

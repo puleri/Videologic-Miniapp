@@ -13,6 +13,7 @@
 }
 
 .login-element {
+  color: white;
   position: absolute;
   left:30%;
   right: 30%;
@@ -24,8 +25,15 @@
   background: #bd5546;
 }
 .login-form {
+  color: white;
   margin: 70px;
   text-align: left;
+}
+.login-label {
+  color: white;
+}
+.hr {
+  border-style: solid;
 }
 #password {
   padding: 10px;
@@ -37,9 +45,11 @@
   height: 40px;
 }
 #sign-in-button {
+  color: white;
+  background-color: transparent;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  border: none;
+  border: 1px solid white;
   border-radius: 15px;
   height: 40px;
   width: 100px;

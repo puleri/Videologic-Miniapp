@@ -7,7 +7,7 @@ import './Footer.css';
 
 const Footer = props => {
   return (
-    <>
+    <footer>
     <Navbar expand="md" className="Footer">
     <div className="footercolor"><div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div></div>
 
@@ -29,7 +29,7 @@ const Footer = props => {
       </ListGroup.Item>
       <ListGroup.Item className="Footer_c">© Videologic 2021</ListGroup.Item>
     </Navbar>
-    </>
+    </footer>
   )
 }
 
