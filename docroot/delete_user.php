@@ -2,18 +2,23 @@
 
 $link = mysqli_connect("localhost", "root", "root", "database-manager");
 
+// sanitize this id
   $id = $_POST['user_number'];
 
   // echo json_encode("The id is " . $id);
 
   $sql = "DELETE FROM user WHERE user_number = $id";
 
-  if($link === false){
+  if($link === false)
+  {
       die("ERROR: Could not connect. " . mysqli_connect_error());
   }
-  if(mysqli_query($link, $sql)){
+  if(mysqli_query($link, $sql))
+  {
       echo "Record deleted successfully.";
-  } else{
+  }
+  else
+  {
       echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
   }
 
