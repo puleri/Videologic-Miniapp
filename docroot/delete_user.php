@@ -2,7 +2,7 @@
 
 $link = mysqli_connect("localhost", "root", "root", "database-manager");
 
-// sanitize this id
+
   $id = $_POST['user_number'];
 
   // echo json_encode("The id is " . $id);
