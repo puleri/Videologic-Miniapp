@@ -1,9 +1,13 @@
+// import react and destructure component out of it to avoid tying "React.Component"
+// import router and this pages css
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import "./Login.css";
 
+// Creating a class component
 class Login extends Component {
-
+// constructor is created to create local state which will be populated with
+// form data
   constructor(){
     super()
     this.state = {
@@ -11,18 +15,39 @@ class Login extends Component {
       password: ''
     }
 }
-
+// any time a change happens in the form the state is updated! thanks react!
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
-
-
-  onSignIn = event => {
+// this is our arrow function for signing in on a click event
+  signIn = event =>
+  {
     event.preventDefault()
-
-    const setUser = this.props
-    console.log(this.state)
+    // creating a new form data object will let us send the data to php easier
+    var fd = new FormData();
+    // here we are appending data to the form object we just created
+    fd.append('content', 'test3');
+    fd.append('email', this.state.email)
+    fd.append('password', this.state.password)
+    fetch(`http://localhost:9000/docroot/admin_login.php`, {
+      method: 'POST',
+      body: fd,
+    })
+    // .then(response => { response.json() })
+    .then(response => {
+      console.log('response: ', response)
+    })
+    .catch(err => {
+      console.log(err)
+    } );
   }
+
+  // onSignIn = event => {
+  //   event.preventDefault()
+  //
+  //   const setUser = this.props
+  //   console.log(this.state)
+  // }
   render() {
     return (
       <div className="login">
@@ -55,7 +80,7 @@ class Login extends Component {
         <div className="login-element">
           <form className="login-form">
             <h2>Sign In</h2>
-            <hr noshade className="hr"/>
+            <hr className="hr"/>
             <label className="login-label">Email</label>
             <input
             value={this.state.email}
@@ -66,7 +91,7 @@ class Login extends Component {
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
             id="password" type="password" placeholder="password..."/>
-            <button onClick={this.onSignIn}id="sign-in-button">Submit</button>
+            <button onClick={this.signIn}id="sign-in-button">Submit</button>
           </form>
         </div>
       </div>

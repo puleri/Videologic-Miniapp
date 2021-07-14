@@ -6,6 +6,7 @@ config/config.js
 
 #Server
 docroot/demo.php
+docroot/admin_creds.php
 
 # Node stuff
 client/node_modules

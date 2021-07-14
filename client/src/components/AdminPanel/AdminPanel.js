@@ -31,7 +31,7 @@ class AdminPanel extends Component {
 
   handleSubmit = (event) => {
     event.persist()
-    // console.log(this.state)
+    console.log(this.state)
     var fd = new FormData();
     fd.append('content', 'test');
     fd.append('strUsername', this.state.strUsername)

@@ -74,7 +74,7 @@ class IndexUsers extends Component {
       }
     }
 
-    
+
     const handleUpdate = (event, num) => {
       event.persist()
       // console.log("history?", this.props)
@@ -135,14 +135,29 @@ class IndexUsers extends Component {
 
     }
     const handleDelete = (num) => {
-
+      var arrU = this.state.users
+      const index = arrU.findIndex(function(person) {
+        return person.user_number == num
+      })
+      arrU.splice(index, 1);
+      console.log("arrU after slice", arrU)
       var fd = new FormData();
       fd.append('user_number', num);
 
       fetch(`http://localhost:9000/docroot/delete_user.php`, {
         method: 'POST',
         body: fd,
-      }).then(res => res.json())
+      })
+      .then(res => res.json())
+      // set local state without deleted user
+      .then(this.setState(
+          {
+            users:[...arrU]
+
+          }
+        )
+      )
+      // .then(console.log("index of deleted", index))
       .catch(err => {
         console.log(err)
       } );
@@ -196,7 +211,7 @@ class IndexUsers extends Component {
                 <td><input name="bolSelect" onChange={handleChange} defaultChecked={user.select_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
                 <td><input name="bolShow" onChange={handleChange} defaultChecked={user.show_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
                 <td><input name="bolUpdate" onChange={handleChange} defaultChecked={user.update_permission === '1' ? 'checked' : ''} type="checkbox"/></td>
-                <td><button className="update-submit" onClick={(e) => {handleUpdate(e, user.user_number)}}>Update</button><Link className="update-submit" onClick={handleReset} to={"/AdminPanel"}>Cancel</Link></td>
+                <td><Link className="update-submit" onClick={(e) => {handleUpdate(e, user.user_number)}}>Update</Link><Link className="update-submit" onClick={handleReset} to={"/AdminPanel"}>Cancel</Link></td>
             </tr>
           )}
             )}
