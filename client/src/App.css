@@ -3,10 +3,9 @@ body, html {
   letter-spacing: 1.5px;
   margin: 0;
   padding: 0;
-  /* min-height: 100% !important; */
+  min-height: 100% !important;
 }
 .main-content {
-  height: 100%;
 }
 
 .grid {
@@ -17,13 +16,19 @@ body, html {
 }
 
 .App {
+  overflow: auto;
+  position: relative;
   text-align: center;
   margin:0;
-  min-height: 100%;
+}
+.support-container-div {
+  position: relative;
+  overflow: auto;
+  height: 700px;
 }
 .support-top {
-  position: absolute;
-  top: 69px;
+  position: relative;
+  top: -20px;
   height: 150px;
   width: 100%;
   background: #fff5fd;
@@ -39,9 +44,9 @@ body, html {
 }
 .contain {
   background:  white;
+  top:50px;
   z-index: 0;
   position: absolute;
-  top: 168px;
   width: 100%;
 }
 .background {
@@ -290,10 +295,10 @@ table {
 
 .thank-you-div {
 
-  position: absolute;
+  position: relative;
   justify-content: center;
   align-items: center;
-  top: 69px;
+  top: 0;
   left:0;
   right:0;
   width:100%;
@@ -302,7 +307,8 @@ table {
 }
 
 .thank-you {
-  margin: 20%;
+  margin: 0px 20% 20% 20%;
+  padding: 20% 0 0 0;
   color: #b8d2db;
 }
 
@@ -459,10 +465,10 @@ table {
 }
 
 .admin-container {
-  position: absolute;
+  position: relative;
   width: 100vw;
-  height:100%;
-  top:69px;
+  min-height:100%;
+  top: 0;
   left: 0;
   right: 0;
   display: flex;
@@ -849,6 +855,9 @@ th, td {
   }
 
   @media (max-width: 1337px) {
+    .App {
+      height: 100%;
+    }
 
     .contain {
       margin-bottom: -800px;
@@ -862,7 +871,8 @@ th, td {
 
     .admin-container {
       width:100%;
-      margin-top: -67px;
+      margin-top: 0;
+      height: 100%;
       position: relative;
     }
     .admin-panel {
@@ -993,13 +1003,9 @@ th, td {
   right: -300px;
 }
 .orangeblob {
+  height: 100px;
   position: absolute;
   top: 500px;
   left:0;
   right: -1100px;
-}
-
-.App {
-  position: relative;
-  min-height: 100vh;
 }

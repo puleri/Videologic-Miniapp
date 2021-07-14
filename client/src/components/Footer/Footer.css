@@ -29,7 +29,7 @@
   font-family: 'Montserrat', sans-serif;
   background-color: lightgray;
   position:relative;
-  top: 105vh;
+  bottom: 0;
   height: 150px;
   width: 100vw;
 }

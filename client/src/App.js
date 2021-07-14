@@ -56,14 +56,14 @@ class App extends Component {
       <Route path='/AdminPanel' render={() => (
         <AdminPanel />
       )} />
-      <Route path='/' render={() => (
-        <Footer />
-      )}/>
+
       <AuthenticatedRoute user={user} path='/UserView' render={() => (
             <UserView msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
       </div>
-
+      <Route path='/' render={() => (
+            <Footer />
+          )}/>
     </div>
   );
 }
