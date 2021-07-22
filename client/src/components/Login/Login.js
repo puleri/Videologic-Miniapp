@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import "./Login.css";
+import 'whatwg-fetch';
 
 // Creating a class component
 class Login extends Component {
@@ -14,6 +15,7 @@ class Login extends Component {
       email: '',
       password: ''
     }
+    this.signIn = this.signIn.bind(this);
 }
 // any time a change happens in the form the state is updated! thanks react!
   handleChange = event => this.setState({
@@ -23,17 +25,19 @@ class Login extends Component {
   signIn = event =>
   {
     event.preventDefault()
+    const { setUser } = this.props
     // creating a new form data object will let us send the data to php easier
-    var fd = new FormData();
+    var login = new FormData();
     // here we are appending data to the form object we just created
-    fd.append('content', 'test3');
-    fd.append('email', this.state.email)
-    fd.append('password', this.state.password)
+    login.append('Login', 'Credentials');
+    login.append('email', this.state.email)
+    login.append('password', this.state.password)
     fetch(`http://localhost:9000/docroot/admin_login.php`, {
       method: 'POST',
-      body: fd,
+      body: login
     })
-    // .then(response => { response.json() })
+    // .then(console.log(login.get('email')))
+    // .then(res => res.json())
     .then(response => {
       console.log('response: ', response)
     })

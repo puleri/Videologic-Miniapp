@@ -17,13 +17,13 @@ class Header extends Component {
           <Link to="/login"><i className="fas fa-home"></i></Link>
         </div>
         <div className="calendar">
-          <Link to="/"><i className="fas fa-user-friends"></i></Link>
+          <><i className="fas fa-user-friends"></i></>
         </div>
         <div className="calendar">
           <Link to="/AdminPanel"><i className="fas fa-adjust"></i></Link>
         </div>
         <div className="calendar">
-          <Link to="/"><i className="far fa-comment-alt"></i></Link>
+          <Link to="/Support"><i className="far fa-comment-alt"></i></Link>
         </div>
       </div>
       <div id="Navbar-bottomline"></div>

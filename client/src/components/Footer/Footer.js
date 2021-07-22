@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter, Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
@@ -14,7 +15,7 @@ const Footer = props => {
       <Navbar.Brand className="footer_logo" href="#">
         Videologic<img id="footer-icon"src={icon} alt="icon"/>
     </Navbar.Brand>
-      <Button href='#' className="Footer_button F1">Support</Button>
+      <Link to='/Support' className="Footer_button F1">Support</Link>
       <ListGroup.Item className="Footer_Nav F2">
         About
       </ListGroup.Item>
@@ -33,4 +34,4 @@ const Footer = props => {
   )
 }
 
-export default Footer
+export default withRouter(Footer)

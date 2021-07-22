@@ -78,9 +78,9 @@ class Support extends Component {
           <h5 className="support-header">Support Center</h5>
           <h6 className="header">Need help? Submit a support request and we'll get back to you ASAP.</h6>
 
-          <p className='al-left'><i class="contact-icon fas fa-phone"></i>1.800.123.4567</p>
-          <p className='al-left'><i class="contact-icon fas fa-paper-plane"></i>user@vectorventures.com</p>
-          <p className='al-left'><i class="contact-icon2 fas fa-map-pin"></i>2244 High St.</p>
+          <p className='al-left'><i className="contact-icon fas fa-phone"></i>1.800.123.4567</p>
+          <p className='al-left'><i className="contact-icon fas fa-paper-plane"></i>user@vectorventures.com</p>
+          <p className='al-left'><i className="contact-icon2 fas fa-map-pin"></i>2244 High St.</p>
           <p className='al-left shf-r'>Columbus, OH 43215</p>
         </div>
         </div>

@@ -10,6 +10,7 @@ import Support from './components/Support/Support.js'
 import ThankYou from './components/ThankYou/ThankYou.js'
 import Footer from './components/Footer/Footer.js'
 import UserView from './components/UserView/Userview.js';
+import LandingPage from './components/LandingPage/LandingPage.js'
 
 class App extends Component {
   constructor() {
@@ -41,9 +42,13 @@ class App extends Component {
     <div className="App">
       <div className="main-content">
       <Route path='/' render={() => (
+        <>
         <Header />
+          <LandingPage />
+        <Footer />
+        </>
       )}/>
-      <Route exact path='/' render={() => (
+      <Route exact path='/Support' render={() => (
         <Support />
       )} />
       <Route path='/login' render={() => (
@@ -61,9 +66,6 @@ class App extends Component {
             <UserView msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
       </div>
-      <Route path='/' render={() => (
-            <Footer />
-          )}/>
     </div>
   );
 }

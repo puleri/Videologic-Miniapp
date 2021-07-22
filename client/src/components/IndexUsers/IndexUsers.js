@@ -21,6 +21,8 @@ class IndexUsers extends Component {
     this.indexUsers = this.indexUsers.bind(this);
   }
   indexUsers() {
+
+    // console.log("props is ", this.props)
     fetch(`http://localhost:9000/docroot/index_user.php`, {
       method: 'GET',
     })
@@ -29,6 +31,12 @@ class IndexUsers extends Component {
       this.setState({ users: response })
       // this.setState(users: response)
     })
+    // .then(this.setState(prevState => ({
+    //   users: {
+    //     ...prevState.users,
+    //
+    //   }
+    // })))
     .catch(err=> {
       console.log(err)
     });
@@ -36,6 +44,11 @@ class IndexUsers extends Component {
 
   componentDidMount() {
     this.indexUsers();
+  }
+
+
+  componentWillReceiveProps(nextProps) {
+    console.log("next props are ", nextProps)
   }
 
   permission(data) {
@@ -134,11 +147,16 @@ class IndexUsers extends Component {
       )
 
     }
+
+    // delete from local state and db
     const handleDelete = (num) => {
+      // reference the users
       var arrU = this.state.users
+      // reference the index of the user to be deleted
       const index = arrU.findIndex(function(person) {
         return person.user_number == num
       })
+      // remove from array referencing the users state
       arrU.splice(index, 1);
       console.log("arrU after slice", arrU)
       var fd = new FormData();
