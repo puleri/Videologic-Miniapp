@@ -42,11 +42,10 @@ class App extends Component {
     <div className="App">
       <div className="main-content">
       <Route path='/' render={() => (
-        <>
         <Header />
-          <LandingPage />
-        <Footer />
-        </>
+      )}/>
+      <Route exact path='/' render={() => (
+      <LandingPage />
       )}/>
       <Route exact path='/Support' render={() => (
         <Support />
@@ -65,6 +64,9 @@ class App extends Component {
       <AuthenticatedRoute user={user} path='/UserView' render={() => (
             <UserView msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
+      <Route path='/' render={() => (
+          <Footer />
+        )}/>
       </div>
     </div>
   );
