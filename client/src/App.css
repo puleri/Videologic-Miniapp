@@ -801,12 +801,14 @@ th, td {
   border: none;
   margin: 5px;
   font-size: 10px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 13px;
   text-decoration: none;
   font-weight: bold;
   color: black;
-
+  -webkit-transition: background-color 0.2s ease-out;
+    -moz-transition: background-color 0.2s ease-out;
+    -o-transition: background-color 0.2s ease-out;
   background-color: #B7E3E4;
 }
 .update-submit:hover {
