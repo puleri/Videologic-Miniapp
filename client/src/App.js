@@ -10,6 +10,8 @@ import Support from './components/Support/Support.js'
 import ThankYou from './components/ThankYou/ThankYou.js'
 import Footer from './components/Footer/Footer.js'
 import UserView from './components/UserView/Userview.js';
+import JCLDAP from './components/JCLDAP/JCLDAP.js'
+import DBUserLogin from './components/DBUserLogin/DBUserLogin.js'
 import LandingPage from './components/LandingPage/LandingPage.js'
 
 class App extends Component {
@@ -60,6 +62,10 @@ class App extends Component {
       <Route path='/AdminPanel' render={() => (
         <AdminPanel />
       )} />
+
+      <Route path="/DBUserLogin" component={DBUserLogin} />
+      <Route path="/JCLDAP" component={JCLDAP} />
+
 
       <AuthenticatedRoute user={user} path='/UserView' render={() => (
             <UserView msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />

@@ -10,17 +10,20 @@ $link = mysqli_connect($db_host, $db_user, $db_password, $db_db);
 $strEmail = $_POST['email'];
 $strPassword = $_POST['password'];
 
-if (("mpuleri@vectorventures.com" == $email) && ("12345" == $password))
+$arrResponse = array("email" => $strEmail, "password" => $strPassword);
+// echo json_encode($arrResponse);
+
+if (($strEmail == $email) && ($strPassword == $password))
 {
-  // $respone = "Logging in";
-  var_dump($strEmail);
+  echo json_encode($arrResponse);
+  die();
 }
 else
 {
   echo "error!";
 }
 
-// mysqli_close($link);
+mysqli_close($link);
 
 // $token = hash('sha256', uniqid());
 // echo "hello, $token";

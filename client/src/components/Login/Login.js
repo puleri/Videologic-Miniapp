@@ -37,12 +37,12 @@ class Login extends Component {
       body: login
     })
     // .then(console.log(login.get('email')))
-    // .then(res => res.json())
+    .then(res => res.json())
     .then(response => {
       console.log('response: ', response)
     })
     .catch(err => {
-      console.log(err)
+      console.log("error is:", err.toString())
     } );
   }
 
