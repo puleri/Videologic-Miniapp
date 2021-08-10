@@ -16,13 +16,18 @@ $index = [];
 
 $result = $link->query($sql);
 
-while($row = $result->fetch_assoc()) {
-
+while($row = $result->fetch_assoc())
+{
 $user_row = ['COUNT(1)'=> $row['COUNT(1)']] ;
-
 array_push($index, $user_row);
 }
-echo json_encode($index);
+// Pulls the nested 1:0 telling if user exists
+foreach ($index as $v) {
+  foreach ($v as $j)  {
+  echo json_encode('value:' . $j);
+  }
+}
+// echo json_encode($index);
 
 mysqli_close($link);
 
