@@ -25,7 +25,7 @@ class UserAmount extends Component {
   }
   render(){
     const arr = this.state.arrUser.length
-    console.log(arr)
+    // console.log(arr)
   return (
     <CountUp end={arr} duration={arr/3} />
   )

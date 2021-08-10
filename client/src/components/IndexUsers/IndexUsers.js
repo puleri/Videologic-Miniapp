@@ -48,7 +48,7 @@ class IndexUsers extends Component {
 
 
   componentWillReceiveProps(nextProps) {
-    console.log("next props are ", nextProps)
+    // console.log("next props are ", nextProps)
   }
 
   permission(data) {
@@ -60,7 +60,7 @@ class IndexUsers extends Component {
     this.setState({
       bolAll: state.all_permission
     })
-    console.log(this.state.user)
+    // console.log(this.state.user)
   }
 
 
@@ -92,7 +92,7 @@ class IndexUsers extends Component {
       event.persist()
       // console.log("history?", this.props)
 
-      console.log(num)
+      // console.log(num)
       var fd = new FormData();
       fd.append('content', 'test');
       fd.append('user_number', num)

@@ -26,7 +26,7 @@ class AdminPanel extends Component {
   }
   handleCheck = (event) => {
     event.persist()
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   handleSubmit = (event) => {
