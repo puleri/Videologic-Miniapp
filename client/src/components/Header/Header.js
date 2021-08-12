@@ -5,6 +5,21 @@ import "./Header.css";
 
 
 class Header extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      
+    }
+
+  }
+  logOut = event => {
+    event.preventDefault()
+    // console.log("logging out")
+    localStorage.removeItem("user")
+    this.props.history.push('/')
+
+  }
   render() {
     return (
       <>
@@ -24,6 +39,9 @@ class Header extends Component {
         </div>
         <div className="calendar">
           <Link to="/Support"><i className="far fa-comment-alt"></i></Link>
+        </div>
+        <div className="calendar">
+          <button onClick={this.logOut}>Logout</button>
         </div>
       </div>
       <div id="Navbar-bottomline"></div>

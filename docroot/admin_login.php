@@ -32,8 +32,13 @@ foreach ($index as $v) {
       $check[] = $passRow;
       // prints password
       $strValidPassword = $check[0]['password'];
+      // cleaning the data
       substr_replace($strValidPassword ,"", -1);
-      echo json_encode($strValidPassword);
+      // echo json_encode($strValidPassword);
+      if ($strValidPassword == $strPassword)
+        {
+          echo json_encode("Logging in...");
+        }
       }
       // Returning 1 or 0 if user exists
       // echo json_encode($j);

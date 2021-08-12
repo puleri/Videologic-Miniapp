@@ -9,11 +9,12 @@ import 'whatwg-fetch';
 class Login extends Component {
 // constructor is created to create local state which will be populated with
 // form data
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      user: null
     }
     this.signIn = this.signIn.bind(this);
 }
@@ -25,7 +26,7 @@ class Login extends Component {
   signIn = event =>
   {
     event.preventDefault()
-    const { setUser } = this.props
+    const { user, setUser } = this.props
     // creating a new form data object will let us send the data to php easier
     var login = new FormData();
     // here we are appending data to the form object we just created
@@ -39,11 +40,23 @@ class Login extends Component {
     // .then(console.log(login.get('email')))
     .then(res => res.json())
     .then(response => {
-      console.log('response: ', response)
+      // create an object with a uniqid and abstract this logic away from the front end
+      if (response === "Logging in..."){
+        localStorage.setItem('user', this.state.email)
+        const loggedIn = localStorage.getItem('user')
+        console.log("logged in user in storage is, ", loggedIn);
+    }
     })
+    .then(this.props.history.push('/'))
+    .then(this.props.history.push('/login'))
     .catch(err => {
       console.log("error is:", err.toString())
     } );
+    if (user) {
+      return (
+        <h1>Hello {this.state.email}</h1>
+      )
+    }
   }
 
   // onSignIn = event => {
@@ -53,6 +66,12 @@ class Login extends Component {
   //   console.log(this.state)
   // }
   render() {
+    if (localStorage.getItem('user')) {
+      const loggedIn = localStorage.getItem('user')
+      return (
+        <h1>logged in as {loggedIn}</h1>
+      )
+    }
     return (
       <div className="login">
         <div className="blob">
