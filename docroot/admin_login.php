@@ -10,7 +10,7 @@ $link = mysqli_connect($db_host, $db_user, $db_password, $db_db);
 $strEmail = $_POST['email'];
 $strPassword = $_POST['password'];
 //  First check if user exists
-$sql = "SELECT COUNT(1) FROM `user` WHERE username = 'test@test.com'";
+$sql = "SELECT COUNT(1) FROM `user` WHERE username = '${strEmail}'";
 
 $index = [];
 
@@ -25,15 +25,18 @@ array_push($index, $user_row);
 foreach ($index as $v) {
   foreach ($v as $j)  {
     if ($j === "1") {
-      $sql_password = "SELECT password FROM `user` WHERE username = 'test@test.com'";
-      $passValidation = mysqli_query($link,"SELECT password FROM `user` WHERE username = 'test@test.com'");
+      // $sql_password = "SELECT password FROM `user` WHERE username = '${strEmail}'";
+      $passValidation = mysqli_query($link,"SELECT password FROM `user` WHERE username = '${strEmail}'");
       while($passRow = mysqli_fetch_assoc($passValidation))
       {
       $check[] = $passRow;
       // prints password
-      echo json_encode($check);
+      $strValidPassword = $check[0]['password'];
+      substr_replace($strValidPassword ,"", -1);
+      echo json_encode($strValidPassword);
       }
-      echo json_encode($j);
+      // Returning 1 or 0 if user exists
+      // echo json_encode($j);
     }
   }
 }
