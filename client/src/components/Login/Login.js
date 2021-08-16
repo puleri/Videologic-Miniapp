@@ -22,11 +22,13 @@ class Login extends Component {
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
+
+
 // this is our arrow function for signing in on a click event
   signIn = event =>
   {
     event.preventDefault()
-    const { user, setUser } = this.props
+    // const { user, setUser } = this.props
     // creating a new form data object will let us send the data to php easier
     var login = new FormData();
     // here we are appending data to the form object we just created
@@ -45,18 +47,14 @@ class Login extends Component {
         localStorage.setItem('user', this.state.email)
         const loggedIn = localStorage.getItem('user')
         console.log("logged in user in storage is, ", loggedIn);
+        // next delete local storage user on logout
     }
     })
     .then(this.props.history.push('/'))
-    .then(this.props.history.push('/login'))
     .catch(err => {
       console.log("error is:", err.toString())
     } );
-    if (user) {
-      return (
-        <h1>Hello {this.state.email}</h1>
-      )
-    }
+
   }
 
   // onSignIn = event => {

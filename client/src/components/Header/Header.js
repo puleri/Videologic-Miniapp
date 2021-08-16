@@ -9,7 +9,7 @@ class Header extends Component {
     super(props)
 
     this.state = {
-      
+      user: localStorage.getItem("user")
     }
 
   }
@@ -21,6 +21,19 @@ class Header extends Component {
 
   }
   render() {
+    // ternary for if user is set and returning auth vs unauth header
+    if (localStorage.getItem('user')) {
+      const loggedIn = localStorage.getItem('user')
+      return (
+        <>
+        <h1>logged in as {loggedIn}</h1>
+        <div className="calendar">
+          <button onClick={this.logOut}>Logout</button>
+        </div>
+        </>
+
+      )
+    }
     return (
       <>
       <div className="colorheader"><div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div></div>
@@ -41,7 +54,7 @@ class Header extends Component {
           <Link to="/Support"><i className="far fa-comment-alt"></i></Link>
         </div>
         <div className="calendar">
-          <button onClick={this.logOut}>Logout</button>
+          <button className="logout-header" onClick={this.logOut}>Logout</button>
         </div>
       </div>
       <div id="Navbar-bottomline"></div>

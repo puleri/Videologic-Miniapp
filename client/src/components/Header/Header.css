@@ -2,3 +2,12 @@
   position: relative;
   padding-bottom: 2px;
 }
+.logout-header {
+  margin-top: 18px;
+  border: none;
+  background: none;
+  font-family:'Montserrat', sans-serif;
+}
+.logout-header:hover {
+  cursor: pointer;
+}

@@ -44,7 +44,7 @@ class App extends Component {
     <div className="App">
       <div className="main-content">
       <Route path='/' render={() => (
-        <Header />
+        <Header user={this.state.user}/>
       )}/>
       <Route exact path='/' render={() => (
       <LandingPage />
