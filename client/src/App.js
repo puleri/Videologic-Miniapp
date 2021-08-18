@@ -22,6 +22,9 @@ class App extends Component {
       msgAlerts: []
     }
   }
+  // This function is passed to the header and the login form
+  // and is excecuted on the App component in order to update
+  // State in both the login form and the header component
   setUser = user => {
     localStorage.setItem('user', user);
     this.setState({ user })
