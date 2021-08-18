@@ -22,7 +22,11 @@ class App extends Component {
       msgAlerts: []
     }
   }
-  setUser = user => this.setState({ user })
+  setUser = user => {
+    localStorage.setItem('user', user);
+    this.setState({ user })
+  }
+
 
   clearUser = () => this.setState({ user: null })
 
@@ -44,7 +48,7 @@ class App extends Component {
     <div className="App">
       <div className="main-content">
       <Route path='/' render={() => (
-        <Header user={this.state.user}/>
+        <Header setUser={this.setUser}/>
       )}/>
       <Route exact path='/' render={() => (
       <LandingPage />

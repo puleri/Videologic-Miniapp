@@ -17,6 +17,8 @@ class Login extends Component {
       user: null
     }
     this.signIn = this.signIn.bind(this);
+    const loggedIn = localStorage.getItem('user')
+
 }
 // any time a change happens in the form the state is updated! thanks react!
   handleChange = event => this.setState({
@@ -44,12 +46,16 @@ class Login extends Component {
     .then(response => {
       // create an object with a uniqid and abstract this logic away from the front end
       if (response === "Logging in..."){
-        localStorage.setItem('user', this.state.email)
-        const loggedIn = localStorage.getItem('user')
-        console.log("logged in user in storage is, ", loggedIn);
+        this.props.setUser(this.state.email)
+        // localStorage.setItem('user', this.state.email)
+        // const loggedIn = localStorage.getItem('user')
+        // console.log("logged in user in storage is, ", loggedIn);
         // next delete local storage user on logout
+    } else {
+      throw "Cannot log in";
     }
     })
+    .then(console.log(this.props))
     .then(this.props.history.push('/'))
     .catch(err => {
       console.log("error is:", err.toString())
