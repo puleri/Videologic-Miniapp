@@ -11,3 +11,20 @@
 .logout-header:hover {
   cursor: pointer;
 }
+.logout-icon{
+  font-size: 22px;
+  margin:auto;
+}
+.icon-text {
+  margin-top: 2px;
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding-top: 2px;
+}
+.calendar {
+  margin-top: -6px;
+}
