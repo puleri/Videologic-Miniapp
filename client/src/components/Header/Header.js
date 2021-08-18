@@ -42,7 +42,7 @@ class Header extends Component {
             <Link style={{ textDecoration: 'none' }} to="/Support"><i className="far fa-comment-alt"/><div className="icon-text">Support</div></Link>
           </div>
           <div className="calendar">
-            <button className="logout-header" onClick={this.logOut}><i class="logout-icon fas fa-sign-out-alt" /><br/><div className="icon-text">Logout</div></button>
+            <button className="logout-header" onClick={this.logOut}><i class="logout-icon fas fa-sign-out-alt" /><br/><div className="icon-text">Log out</div></button>
           </div>
         </div>
         <div id="Navbar-bottomline"></div>
@@ -59,10 +59,10 @@ class Header extends Component {
           <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>
         </div>
         <div className="calendar">
-          <Link to="/"><i className="fas fa-home"></i></Link>
+          <Link style={{ textDecoration: 'none' }} to="/"><i className="fas fa-home"/><div className="icon-text">Home</div></Link>
         </div>
         <div className="calendar">
-          <Link to="/login"><i className="fas fa-user-friends"></i></Link>
+          <Link style={{ textDecoration: 'none' }} to="/login"><i className="fas fa-user-friends"/><div className="icon-text">Log in</div></Link>
         </div>
       </div>
       <div id="Navbar-bottomline"></div>
