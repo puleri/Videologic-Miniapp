@@ -120,6 +120,12 @@ class Login extends Component {
             onChange={e => this.setState({ password: e.target.value })}
             id="password" type="password" placeholder="password..."/>
             <button onClick={this.signIn}id="sign-in-button">Submit</button>
+            <details>
+            <summary>
+            Where can I get help signing in?
+            </summary>
+            Reach out to your administrator or email support at support@vectorventures.com
+            </details>
           </form>
         </div>
       </div>
