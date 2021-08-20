@@ -982,33 +982,3 @@ th, td {
     box-shadow: inset 0px 0px 0px 30px black;
   }
 }
-
-.blob {
-  position: absolute;
-  left: -900px;
-  top: 0;
-  right:0;
-}
-.oblong{
-  position: absolute;
-  top: 50px;
-  left: 0;
-  right:-900px;
-}
-.blorb {
-  position: absolute;
-  top: 300px;
-}
-.greenblob {
-  position: absolute;
-  top:00px;
-  left: 0;
-  right: -300px;
-}
-.orangeblob {
-  height: 100px;
-  position: absolute;
-  top: 500px;
-  left:0;
-  right: -1100px;
-}
