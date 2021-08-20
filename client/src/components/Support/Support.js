@@ -53,12 +53,12 @@ class Support extends Component {
           <div className="form">
           <form>
             <label>Name</label>
-            <input type="text" id="firstname" placeholder="your name..."
+            <input type="text" placeholder="your name..."
               value={this.state.strFname}
               onChange={e => this.setState({ strFname: e.target.value })}
             />
             <label>Email</label>
-            <input type="email" id="email" placeholder="your email..."
+            <input type="email" placeholder="your email..."
               value={this.state.strEmail}
               onChange={e => this.setState({ strEmail: e.target.value })}
             />
