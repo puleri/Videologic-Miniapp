@@ -15,8 +15,8 @@ class Header extends Component {
   }
   logOut = event => {
     event.preventDefault()
+    this.props.logOut()
     // console.log("logging out")
-    localStorage.removeItem("user")
     this.props.history.push('/')
   }
 
@@ -24,7 +24,7 @@ class Header extends Component {
     // ternary for if user is set and returning auth vs unauth header
     // Authenticated
     if (localStorage.getItem('user')) {
-      const loggedIn = localStorage.getItem('user')
+      // const loggedIn = localStorage.getItem('user')
       return (
         <>
         <div className="colorheader"><div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div></div>

@@ -17,7 +17,7 @@ class Login extends Component {
       user: null
     }
     this.signIn = this.signIn.bind(this);
-    const loggedIn = localStorage.getItem('user')
+    // const loggedIn = localStorage.getItem('user')
 
 }
 // any time a change happens in the form the state is updated! thanks react!

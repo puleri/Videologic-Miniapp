@@ -31,7 +31,10 @@ class App extends Component {
   }
 
 
-  clearUser = () => this.setState({ user: null })
+  logOut = () => {
+    localStorage.removeItem("user");
+    this.setState({ user: null })
+  }
 
   deleteAlert = (id) => {
     this.setState((state) => {
@@ -51,7 +54,7 @@ class App extends Component {
     <div className="App">
       <div className="main-content">
       <Route path='/' render={() => (
-        <Header setUser={this.setUser}/>
+        <Header logOut={this.logOut} setUser={this.setUser}/>
       )}/>
       <Route exact path='/' render={() => (
       <LandingPage />
