@@ -47,19 +47,20 @@ class Login extends Component {
       // create an object with a uniqid and abstract this logic away from the front end
       if (response === "Logging in..."){
         this.props.setUser(this.state.email)
+        this.props.history.push('/')
         // localStorage.setItem('user', this.state.email)
         // const loggedIn = localStorage.getItem('user')
         // console.log("logged in user in storage is, ", loggedIn);
         // next delete local storage user on logout
     } else {
-      throw "Cannot log in";
+      throw Error("Cannot log in");
     }
     })
-    .then(console.log(this.props))
-    .then(this.props.history.push('/'))
+    // .then(console.log(this.props))
     .catch(err => {
-      console.log("error is:", err.toString())
+      console.log(err.toString())
     } );
+
 
   }
 
