@@ -107,19 +107,22 @@ class Login extends Component {
 
         <div className="login-element">
           <form className="login-form">
-            <h2>Sign In</h2>
+            <h2 id="login-header">Welcome back!</h2>
+            <h4 id="login-header2">Sign in to continue</h4>
             <hr className="hr"/>
             <label className="login-label">Email</label>
             <input
             value={this.state.email}
             onChange={e => this.setState({ email: e.target.value })}
-            type="email" placeholder="email..."/>
+            type="email"
+            id="email"
+            placeholder="Enter email"/>
             <label className="login-label">Password</label>
             <input
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
-            id="password" type="password" placeholder="password..."/>
-            <button onClick={this.signIn}id="sign-in-button">Submit</button>
+            id="password" type="password" placeholder="Enter password"/>
+            <button onClick={this.signIn} id="sign-in-button">Submit</button>
             <details>
             <summary>
             Where can I get help signing in?
