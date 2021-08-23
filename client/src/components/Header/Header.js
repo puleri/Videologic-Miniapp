@@ -22,6 +22,7 @@ class Header extends Component {
 
   render() {
     // ternary for if user is set and returning auth vs unauth header
+    // Admin Authenticated
     if (localStorage.getItem('user')==="1") {
       // const loggedIn = localStorage.getItem('user')
       return (
@@ -39,6 +40,9 @@ class Header extends Component {
           </div>
           <div className="calendar">
             <Link style={{ textDecoration: 'none' }} to="/Support"><i className="far fa-comment-alt"/><div className="icon-text">Support</div></Link>
+          </div>
+          <div className="calendar">
+            <Link style={{ textDecoration: 'none' }} to="/AccountSettings"><i class="account-icon far fa-user-circle"></i><div className="icon-text">Account</div></Link>
           </div>
           <div className="calendar">
             <button className="logout-header" onClick={this.logOut}><i class="logout-icon fas fa-sign-out-alt" /><br/><div className="icon-text">Log out</div></button>
@@ -64,6 +68,9 @@ class Header extends Component {
           </div>
           <div className="calendar">
             <Link style={{ textDecoration: 'none' }} to="/Support"><i className="far fa-comment-alt"/><div className="icon-text">Support</div></Link>
+          </div>
+          <div className="calendar">
+            <Link style={{ textDecoration: 'none' }} to="/AccountSettings"><i class="account-icon far fa-user-circle"></i><div className="icon-text">Account</div></Link>
           </div>
           <div className="calendar">
             <button className="logout-header" onClick={this.logOut}><i class="logout-icon fas fa-sign-out-alt" /><br/><div className="icon-text">Log out</div></button>

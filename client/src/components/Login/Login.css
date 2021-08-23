@@ -133,7 +133,7 @@ summary:before {
 /* blue */
 .blob {
   position: absolute;
-  left: 00px;
+  left: -100px;
   top: -100px;
 }
 /* red */

@@ -12,7 +12,8 @@ import Footer from './components/Footer/Footer.js'
 import UserView from './components/UserView/Userview.js';
 import JCLDAP from './components/JCLDAP/JCLDAP.js'
 import DBUserLogin from './components/DBUserLogin/DBUserLogin.js'
-import LandingPage from './components/LandingPage/LandingPage.js'
+import LandingPage from './components/LandingPage/LandingPage.js';
+import AccountSettings from './components/AccountSettings/AccountSettings.js';
 
 class App extends Component {
   constructor() {
@@ -71,6 +72,10 @@ class App extends Component {
 
       <Route path='/AdminPanel' render={() => (
         <AdminPanel />
+      )} />
+
+      <Route path='/AccountSettings' render={() => (
+        <AccountSettings />
       )} />
 
       <Route path="/DBUserLogin" component={DBUserLogin} />
