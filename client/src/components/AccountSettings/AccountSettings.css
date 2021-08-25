@@ -13,11 +13,12 @@
   position: absolute;
   left: 0;
   background: white;
-  width: 25%;
+  width: 340px;
   height: 100vh;
 }
 
 .settings-icon-header {
+  display: none;
   bottom: 0;
   color: rgb(194,38,15);
   font-size: 40px;
@@ -32,11 +33,39 @@
   width: 100%;
   height: 100vh;
 }
-.profile-tab {
+.tab {
   position: absolute;
-  z-index: 1;
-  top: 100px;
-  left: 120px;
+  font-family: "Montserrat", sans-serif;
+  left: 100px;
   text-decoration: none;
+  color: grey;
+  z-index: 1;
+  font-size: 20px;
+}
+.profile-tab {
   color: black;
+  top: 100px;
+}
+.credentials-tab {
+  top: 250px;
+  left: 90px;
+}
+.permissions-tab {
+  top: 400px;
+  left: 90px;
+}
+.deleteAcct-tab {
+  top: 550px;
+  left: 80px;
+}
+.tab-highlight {
+  position: absolute;
+  background: rgb(194,38,15);
+  z-index: 1;
+  height: 60px;
+  border-radius: 50px;
+  border: 1px solid rgb(194,38,15);
+  width: 4px;
+  left: 338px;
+  top: 80px;
 }

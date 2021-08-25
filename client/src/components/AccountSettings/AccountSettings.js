@@ -16,10 +16,20 @@ class AccountSettings extends Component {
       <>
         <div className="settings-container">
           <div className="tab-container">
-            <div>
-            <Link className="profile-tab">
+            <Link className="tab profile-tab">
               Profile
             </Link>
+            <Link className="tab credentials-tab">
+              Credentials
+            </Link>
+            <Link className="tab permissions-tab">
+              Permisisons
+            </Link>
+            <Link className="tab deleteAcct-tab">
+              Delete Account
+            </Link>
+            <div className="tab-highlight">
+
             </div>
             <div className="settings-side-bar">
               <i className="settings-icon-header fas fa-cogs"></i>
