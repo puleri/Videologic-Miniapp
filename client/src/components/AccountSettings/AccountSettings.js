@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+import Profile from './Profile.js';
+import Credentials from './Credentials.js';
+import Permissions from './Permissions.js';
+import DeleteAccount from './DeleteAccount.js';
+
+
 import "./AccountSettings.css";
 
 import { withRouter, Link } from 'react-router-dom';
@@ -70,9 +76,10 @@ class AccountSettings extends Component {
 
             </div>
             <div className="settings-side-bar">
-              <i className="settings-icon-header fas fa-cogs"></i>
+            <i className="settings-icon-header fas fa-cogs"></i>
             </div>
           </div>
+          <DeleteAccount />
         </div>
       </>
     )
