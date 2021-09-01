@@ -42,10 +42,10 @@ class Header extends Component {
             <Link style={{ textDecoration: 'none' }} to="/Support"><i className="far fa-comment-alt"/><div className="icon-text">Support</div></Link>
           </div>
           <div className="calendar">
-            <Link style={{ textDecoration: 'none' }} to="/AccountSettings"><i class="account-icon far fa-user-circle"></i><div className="icon-text">Account</div></Link>
+            <Link style={{ textDecoration: 'none' }} to="/AccountSettings"><i className="account-icon far fa-user-circle"></i><div className="icon-text">Account</div></Link>
           </div>
           <div className="calendar">
-            <button className="logout-header" onClick={this.logOut}><i class="logout-icon fas fa-sign-out-alt" /><br/><div className="icon-text">Log out</div></button>
+            <button className="logout-header" onClick={this.logOut}><i className="logout-icon fas fa-sign-out-alt" /><br/><div className="icon-text">Log out</div></button>
           </div>
         </div>
         <div id="Navbar-bottomline"></div>
