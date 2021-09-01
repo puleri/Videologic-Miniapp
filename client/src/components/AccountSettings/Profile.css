@@ -6,7 +6,9 @@
   background: white;
   height: 500px;
   width: 800px;
-  margin: 0 50px 100px 400px;
+  position: absolute;
+  left: 25%;
+  top: 50px;
   border-radius: 5px;
   z-index: -1;
 }

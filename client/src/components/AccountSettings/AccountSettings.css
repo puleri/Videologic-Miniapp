@@ -14,8 +14,8 @@
   position: absolute;
   left: 0;
   background: white;
-  width: 340px;
-  height: 100vh;
+  width: 250px;
+  height: 100%;
 }
 
 .settings-icon-header {
@@ -32,29 +32,30 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
+  z-index: 1;
 }
 .tab {
   position: absolute;
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   color: grey;
-  z-index: 1;
-  font-size: 20px;
+  z-index: 2;
+  font-size: 15px;
   height: 60px;
-  width: 342px;
+  width: 252px;
   left: 0;
   padding-top: 15px;
 }
 .profile-tab {
-  top: 70px;
+  top: 50px;
 }
 .credentials-tab {
-  top: 220px;
+  top: 160px;
 }
 .permissions-tab {
-  top: 370px;
+  top: 280px;
 }
 .deleteAcct-tab {
-  top: 520px;
+  top: 400px;
 }

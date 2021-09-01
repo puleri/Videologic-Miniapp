@@ -58,27 +58,27 @@ class AccountSettings extends Component {
 
     return (
       <>
-        <div className="settings-container">
-          <div className="tab-container">
-            <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
-              Profile
-            </Link>
-            <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
-              Credentials
-            </Link>
-            <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
-              Permissions
-            </Link>
-            <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
-              Delete Account
-            </Link>
-            <div className="tab-highlight">
+      <div className="tab-container">
+        <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+          Profile
+        </Link>
+        <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+          Credentials
+        </Link>
+        <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+          Permissions
+        </Link>
+        <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+          Delete Account
+        </Link>
+        <div className="tab-highlight">
 
-            </div>
-            <div className="settings-side-bar">
-            <i className="settings-icon-header fas fa-cogs"></i>
-            </div>
-          </div>
+        </div>
+        <div className="settings-side-bar">
+        <i className="settings-icon-header fas fa-cogs"></i>
+        </div>
+      </div>
+        <div className="settings-container">
           <DeleteAccount />
         </div>
       </>
