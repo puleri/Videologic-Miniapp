@@ -26,7 +26,7 @@ const Footer = props => {
       Terms of Use
       </ListGroup.Item>
       <ListGroup.Item className="Footer_Nav F5">
-        FAQ
+        Admin
       </ListGroup.Item>
       <ListGroup.Item className="Footer_c">© Videologic 2021</ListGroup.Item>
     </Navbar>

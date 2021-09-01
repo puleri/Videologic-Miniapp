@@ -1,4 +1,5 @@
 .settings-container {
+  z-index: -2;
   background: #EFEFEF;
   position: relative;
   height: 100vh;
