@@ -4,6 +4,8 @@ server with default setting (user 'root' with no password) */
 $link = mysqli_connect("localhost", "root", "root", "database-manager");
 
 $strUsername = $_POST['strUsername'];
+$strFirst = $_POST['strFirst'];
+$strLast = $_POST['strLast'];
 $bolAll = $_POST['bolAll'];
 $bolCreate = $_POST['bolCreate'];
 $bolDelete = $_POST['bolDelete'];
@@ -74,7 +76,7 @@ if($link === false){
 }
 
 // Attempt insert query execution
-$sql = "INSERT INTO user (username, all_permission, create_permission, delete_permission, drop_permission, execute_permission, insert_permission, select_permission, show_permission, update_permission) VALUES ('$strUsername', '$bolAll', '$bolCreate','$bolDelete','$bolDrop','$bolExecute','$bolInsert','$bolSelect','$bolShow','$bolUpdate')";
+$sql = "INSERT INTO user (username, firstname, lastname, all_permission, create_permission, delete_permission, drop_permission, execute_permission, insert_permission, select_permission, show_permission, update_permission) VALUES ('$strUsername', '$strFirst', '$strLast' ,'$bolAll', '$bolCreate','$bolDelete','$bolDrop','$bolExecute','$bolInsert','$bolSelect','$bolShow','$bolUpdate')";
 
 if(mysqli_query($link, $sql)){
     echo "Records inserted successfully.";
