@@ -2,11 +2,21 @@
 
 $link = mysqli_connect("localhost", "root", "root", "database-manager");
 
-  if(isset($_GET["user_number"])) {
+$username = $_POST["username"];
 
-    $id = $_GET["user_number"];
+$sql = "SELECT `firstname`, `lastname` FROM `user` WHERE `username` LIKE '${username}'";
 
-    $sql = "SELECT * FROM user WHERE user_number = $id";
+$index = [];
 
-    
-  };
+$result = $link->query($sql);
+
+while($row = $result->fetch_assoc()) {
+
+$user_row = ['strFirst'=> $row['firstname'], 'strLast'=>$row['lastname']] ;
+
+array_push($index, $user_row);
+}
+echo json_encode($index);
+
+$link->close();
+?>

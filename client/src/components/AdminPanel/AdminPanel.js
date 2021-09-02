@@ -13,6 +13,8 @@ class AdminPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      strFirst: '',
+      strLast: '',
       strUsername: '',
       bolAll: false,
       bolCreate: false,
@@ -35,6 +37,8 @@ class AdminPanel extends Component {
 
     var fd = new FormData();
     fd.append('content', 'test');
+    fd.append('strFirst', this.state.strFirst)
+    fd.append('strLast', this.state.strLast)
     fd.append('strUsername', this.state.strUsername)
     fd.append('bolAll', this.state.bolAll)
     fd.append('bolCreate', this.state.bolCreate)
@@ -57,6 +61,8 @@ class AdminPanel extends Component {
     // reset form
     .then(
       this.setState({
+          strFirst: '',
+          strLast: '',
           strUsername: '',
           bolAll: false,
           bolCreate: false,
@@ -135,6 +141,18 @@ class AdminPanel extends Component {
                   value={this.state.strUsername}
                   onChange={e => this.setState({ strUsername: e.target.value })}
                 />
+                <label className="username">First name</label>
+                <div style={{ postition: 'relative' }}>
+                <input className="firstname" type="text" id="firstname" placeholder="first name..."
+                  value={this.state.strFirst}
+                  onChange={e => this.setState({ strFirst: e.target.value })}
+                />
+                <label className="lastname">Last name</label>
+                <input className="firstname" type="text" id="firstname" placeholder="last name..."
+                  value={this.state.strLast}
+                  onChange={e => this.setState({ strLast: e.target.value })}
+                />
+                </div>
 
                 <br/>
                 <br/>

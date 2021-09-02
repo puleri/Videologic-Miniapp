@@ -15,12 +15,12 @@
 .login-element {
   color: black;
   position: absolute;
-  left:30%;
+  left:25%;
   right: 30%;
   height: 50%;
   width: 50%;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 10px;
   border-radius: 15px;
 }
 .login-form {
@@ -30,15 +30,15 @@
 }
 #login-header {
   position: relative;
-  font-size: 45px;
+  font-size: 35px;
 }
 #login-header2 {
   margin-top: -20px;
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
 }
 .login-label {
-  font-size: 20px;
+  font-size: 16px;
   margin:10px;
   color: black;
 }
@@ -70,6 +70,7 @@
 }
 #email::placeholder, #password::placeholder {
   padding-left: 5px;
+  font-size: 14px;
   color: #999798;
 }
 #sign-in-button {

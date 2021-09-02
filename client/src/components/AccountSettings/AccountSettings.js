@@ -55,34 +55,120 @@ class AccountSettings extends Component {
       permissionsStyle = { };
       deleteAcctStyle = { color: "black", borderRight: "5px solid rgb(194,38,15)" };
     }
+    switch (this.state.active) {
+      case "Credentials":
+        return (
+          <>
+          <div className="tab-container">
+            <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+              Profile
+            </Link>
+            <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+              Credentials
+            </Link>
+            <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+              Permissions
+            </Link>
+            <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+              Delete Account
+            </Link>
+            <div className="tab-highlight">
 
-    return (
-      <>
-      <div className="tab-container">
-        <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
-          Profile
-        </Link>
-        <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
-          Credentials
-        </Link>
-        <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
-          Permissions
-        </Link>
-        <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
-          Delete Account
-        </Link>
-        <div className="tab-highlight">
+            </div>
+            <div className="settings-side-bar">
+            <i className="settings-icon-header fas fa-cogs"></i>
+            </div>
+          </div>
+            <div className="settings-container">
+              <Credentials />
+            </div>
+          </>
+        )
+        case "Permissions":
+          return (
+            <>
+            <div className="tab-container">
+              <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+                Profile
+              </Link>
+              <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+                Credentials
+              </Link>
+              <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+                Permissions
+              </Link>
+              <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+                Delete Account
+              </Link>
+              <div className="tab-highlight">
 
-        </div>
-        <div className="settings-side-bar">
-        <i className="settings-icon-header fas fa-cogs"></i>
-        </div>
-      </div>
-        <div className="settings-container">
-          <DeleteAccount />
-        </div>
-      </>
-    )
+              </div>
+              <div className="settings-side-bar">
+              <i className="settings-icon-header fas fa-cogs"></i>
+              </div>
+            </div>
+              <div className="settings-container">
+                <Permissions />
+              </div>
+            </>
+          )
+      case "Delete Account":
+        return (
+          <>
+          <div className="tab-container">
+            <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+              Profile
+            </Link>
+            <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+              Credentials
+            </Link>
+            <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+              Permissions
+            </Link>
+            <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+              Delete Account
+            </Link>
+            <div className="tab-highlight">
+
+            </div>
+            <div className="settings-side-bar">
+            <i className="settings-icon-header fas fa-cogs"></i>
+            </div>
+          </div>
+            <div className="settings-container">
+              <DeleteAccount />
+            </div>
+          </>
+        )
+      default:
+        return (
+          <>
+          <div className="tab-container">
+            <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+              Profile
+            </Link>
+            <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+              Credentials
+            </Link>
+            <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+              Permissions
+            </Link>
+            <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+              Delete Account
+            </Link>
+            <div className="tab-highlight">
+
+            </div>
+            <div className="settings-side-bar">
+            <i className="settings-icon-header fas fa-cogs"></i>
+            </div>
+          </div>
+            <div className="settings-container">
+              <Profile />
+            </div>
+          </>
+        )
+    }
   }
 }
 
