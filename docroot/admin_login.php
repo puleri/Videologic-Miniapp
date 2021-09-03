@@ -37,7 +37,12 @@ foreach ($index as $v) {
       // echo json_encode($strValidPassword);
       if ($strValidPassword == $strPassword)
         {
-          echo json_encode("Logging in...");
+          $bytes = random_bytes(20);
+          $strBytes = strval(bin2hex($bytes));
+          // set the login token SQL
+          $tokenSQL = "UPDATE `user` SET `token` = '${strBytes}' WHERE `user`.`username` = '${strEmail}'";
+          mysqli_query($link, $tokenSQL);
+          echo json_encode("Logging in..." . $strBytes);
         }
       }
       // Returning 1 or 0 if user exists

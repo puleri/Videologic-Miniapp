@@ -44,13 +44,14 @@ class Login extends Component {
     // .then(console.log(login.get('email')))
     .then(res => res.json())
     .then(response => {
+      console.log(response.substring(0,13))
       // create an object with a uniqid and abstract this logic away from the front end
-      if (response === "Logging in..."){
-        this.props.setUser(this.state.email)
+      if (response.substring(0,13) === "Logging in..."){
+        this.props.setUser(this.state.email, response.substring(14, 53))
         this.props.history.push('/')
         // localStorage.setItem('user', this.state.email)
-        // const loggedIn = localStorage.getItem('user')
-        // console.log("logged in user in storage is, ", loggedIn);
+        const loggedIn = localStorage.getItem('token')
+        console.log("logged in user in storage is, ", loggedIn);
         // next delete local storage user on logout
     } else {
       throw Error("Cannot log in");

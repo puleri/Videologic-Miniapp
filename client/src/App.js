@@ -20,21 +20,25 @@ class App extends Component {
     super()
     this.state = {
       user: null,
+      token: null,
       msgAlerts: []
     }
   }
   // This function is passed to the header and the login form
   // and is excecuted on the App component in order to update
   // State in both the login form and the header component
-  setUser = user => {
+  setUser = (user, token) => {
     localStorage.setItem('user', user);
-    this.setState({ user })
+    localStorage.setItem('token', token);
+    this.setState({ user: user, token: token })
+    console.log(localStorage.getItem('token'))
   }
 
 
   logOut = () => {
     localStorage.removeItem("user");
-    this.setState({ user: null })
+    localStorage.removeItem("token");
+    this.setState({ user: null, token:null })
   }
 
   deleteAlert = (id) => {
