@@ -36,6 +36,16 @@ class App extends Component {
 
 
   logOut = () => {
+    const user = localStorage.getItem('user');
+    var fd = new FormData();
+    fd.append('email', user);
+    fetch(`http://localhost:9000/docroot/admin_logout.php`, {
+      method: 'POST',
+      body: fd
+    })
+    .then(response => console.log(response))
+    .catch(err => console.err)
+    
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     this.setState({ user: null, token:null })
