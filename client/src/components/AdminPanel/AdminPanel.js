@@ -143,12 +143,12 @@ class AdminPanel extends Component {
                 />
                 <label className="username">First name</label>
                 <div style={{ postition: 'relative' }}>
-                <input className="firstname" type="text" id="firstname" placeholder="first name..."
+                <input className="firstname" type="text" id="lastname" placeholder="first name..."
                   value={this.state.strFirst}
                   onChange={e => this.setState({ strFirst: e.target.value })}
                 />
                 <label className="lastname">Last name</label>
-                <input className="firstname" type="text" id="firstname" placeholder="last name..."
+                <input className="firstname" type="text" id="lastname" placeholder="last name..."
                   value={this.state.strLast}
                   onChange={e => this.setState({ strLast: e.target.value })}
                 />
