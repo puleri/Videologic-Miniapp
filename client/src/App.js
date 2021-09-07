@@ -45,7 +45,7 @@ class App extends Component {
     })
     .then(response => console.log(response))
     .catch(err => console.err)
-    
+
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     this.setState({ user: null, token:null })
@@ -62,6 +62,20 @@ class App extends Component {
     this.setState((state) => {
       return { msgAlerts: [...state.msgAlerts, { heading, message, variant, id }] }
     })
+  }
+
+  isAuth = () => {
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('user');
+    var fd = new FormData();
+    fd.append('email', user);
+    fd.append('token', token);
+    fetch(`http://localhost:9000/docroot/is_auth.php`, {
+      method: 'POST',
+      body: fd
+    })
+    .then(response => console.log(response))
+    .catch(err => console.err)
   }
   render() {
     const { user } = this.state
@@ -89,7 +103,7 @@ class App extends Component {
       )} />
 
       <Route path='/AccountSettings' render={() => (
-        <AccountSettings />
+        <AccountSettings isAuth={this.isAuth}/>
       )} />
 
       <Route path="/DBUserLogin" component={DBUserLogin} />

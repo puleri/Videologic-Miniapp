@@ -19,6 +19,9 @@ class AccountSettings extends Component {
     }
     this.handleClick = this.handleClick.bind(this);
   }
+  componentDidMount() {
+    console.log("isAuth is", this.props.isAuth())
+  }
   handleClick(e) {
     console.log(e.target.innerHTML)
     this.setState({
@@ -60,18 +63,18 @@ class AccountSettings extends Component {
         return (
           <>
           <div className="tab-container">
-            <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+            <button style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
               Profile
-            </Link>
-            <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+            </button>
+            <button style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
               Credentials
-            </Link>
-            <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+            </button>
+            <button style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
               Permissions
-            </Link>
-            <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+            </button>
+            <button style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
               Delete Account
-            </Link>
+            </button>
             <div className="tab-highlight">
 
             </div>
@@ -88,18 +91,18 @@ class AccountSettings extends Component {
           return (
             <>
             <div className="tab-container">
-              <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+              <button style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
                 Profile
-              </Link>
-              <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+              </button>
+              <button style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
                 Credentials
-              </Link>
-              <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+              </button>
+              <button style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
                 Permissions
-              </Link>
-              <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+              </button>
+              <button style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
                 Delete Account
-              </Link>
+              </button>
               <div className="tab-highlight">
 
               </div>
@@ -116,18 +119,18 @@ class AccountSettings extends Component {
         return (
           <>
           <div className="tab-container">
-            <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+            <button style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
               Profile
-            </Link>
-            <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+            </button>
+            <button style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
               Credentials
-            </Link>
-            <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+            </button>
+            <button style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
               Permissions
-            </Link>
-            <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+            </button>
+            <button style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
               Delete Account
-            </Link>
+            </button>
             <div className="tab-highlight">
 
             </div>
@@ -144,18 +147,18 @@ class AccountSettings extends Component {
         return (
           <>
           <div className="tab-container">
-            <Link style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
+            <button style={ profileStyle } onClick={this.handleClick} className="tab profile-tab">
               Profile
-            </Link>
-            <Link style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
+            </button>
+            <button style={ credentialsStyle } onClick={this.handleClick} className="tab credentials-tab">
               Credentials
-            </Link>
-            <Link style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
+            </button>
+            <button style={ permissionsStyle } onClick={this.handleClick} className="tab permissions-tab">
               Permissions
-            </Link>
-            <Link style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
+            </button>
+            <button style={ deleteAcctStyle } onClick={this.handleClick} className="tab deleteAcct-tab">
               Delete Account
-            </Link>
+            </button>
             <div className="tab-highlight">
 
             </div>

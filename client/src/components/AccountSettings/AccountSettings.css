@@ -36,6 +36,8 @@
   z-index: 1;
 }
 .tab {
+  letter-spacing: 1px;
+  cursor: pointer;
   position: absolute;
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
@@ -46,6 +48,8 @@
   width: 252px;
   left: 0;
   padding-top: 15px;
+  border: none;
+  background: none;
 }
 .profile-tab {
   top: 50px;
