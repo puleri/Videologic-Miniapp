@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar'
 import ListGroup from 'react-bootstrap/ListGroup'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 import icon from '../Header/icon.png';
 import './Footer.css';
 

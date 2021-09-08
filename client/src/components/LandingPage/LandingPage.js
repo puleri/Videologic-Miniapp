@@ -17,23 +17,26 @@ class LandingPage extends Component {
           <h1 className="h1-landing-header">Reliable relational databases. We make 'em intuitive. You use 'em intuitively.</h1>
           <img className="human h1-landing-header" src={human} alt="minimalist art of a human in a circle surrounded by small shapes" />
         </div>
-        <div className="h2-landing-header">
-        <h4>Happily managing your database in Columbus, OH<img className="ohio" src={ohio} alt="ohio"/></h4>
-        </div>
-        <div className="landing-pt2">
-        <div>
-        <h4 className="pt2-copy">Hello world</h4>
-        </div>
+        
         <div className="landing-3">
-            <div id="db-icons">
-            <label className="db1">A</label><label className="db1">C</label><label className="db1">U</label>
+          <div className="h2-landing-header">
+            <h4>Happily managing your database in Columbus, OH<img className="ohio" src={ohio} alt="ohio"/></h4>
+          </div>
+          <h2 className="pt2-header">About us</h2>
+            <div className="landing-pt2">
+                <img className="pt2-img" src={human2} alt="people in front of wireframe" />
+                <p className="pt2-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vulputate libero nec erat viverra, sed ullamcorper sem fermentum. Suspendisse dapibus congue ipsum. Nullam bibendum nunc id metus elementum venenatis. Integer pharetra sagittis sem nec luctus. Sed volutpat dignissim justo vel aliquet. Morbi nec porta nisi. Sed ultrices luctus malesuada. Vivamus sit amet est porttitor ex placerat viverra vel id eros.</p>
             </div>
-            <img className="landing-database" src={database} alt="database"/>
-            <img className="landing-database" src={database_white} alt="database white"/>
-            <img className="landing-database" src={database_grey} alt="database grey"/>
         </div>
-        <img src={human2} alt="people in front of wireframe" />
-        </div>
+
+          <div className="landing-4">
+              <div id="db-icons">
+                <label className="db1">A</label><label className="db1">C</label><label className="db1">U</label>
+              </div>
+              <img className="landing-database" src={database} alt="database"/>
+              <img className="landing-database" src={database_white} alt="database white"/>
+              <img className="landing-database" src={database_grey} alt="database grey"/>
+          </div>
       </>
     )
   }

@@ -8,15 +8,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-var config = {
-  apiKey: "AIzaSyANfy_Z_kjxIi-U4xQPjq6g4WyQR0o4TkI",
-  authDomain: "kaiserwebapp.firebaseapp.com",
-  projectId: "kaiserwebapp",
-  storageBucket: "kaiserwebapp.appspot.com",
-  messagingSenderId: "1075982375673",
-  appId: "1:1075982375673:web:85497c565b6f2be7fea028",
-  measurementId: "G-LSZXN7TQEJ"
-}
+// var config = {
+//   apiKey: "AIzaSyANfy_Z_kjxIi-U4xQPjq6g4WyQR0o4TkI",
+//   authDomain: "kaiserwebapp.firebaseapp.com",
+//   projectId: "kaiserwebapp",
+//   storageBucket: "kaiserwebapp.appspot.com",
+//   messagingSenderId: "1075982375673",
+//   appId: "1:1075982375673:web:85497c565b6f2be7fea028",
+//   measurementId: "G-LSZXN7TQEJ"
+// }
 
 // firebase.initializeApp(config);
 
