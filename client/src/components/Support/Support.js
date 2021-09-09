@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-// import logo from './elephant.png';
+import Footer from '../Footer/Footer.js';
+import './Support.css';
 import 'whatwg-fetch';
 
 class Support extends Component {
@@ -41,6 +42,7 @@ class Support extends Component {
   render()
   {
     return (
+      <>
       <div className="support-container-div">
       <div className="support-top">
       <h1 id="founded-watermark">Since 2000</h1>
@@ -86,6 +88,10 @@ class Support extends Component {
         </div>
       </div>
       </div>
+      <div className="Support-Footer">
+        <Footer />
+      </div>
+      </>
     )
   }
 }
