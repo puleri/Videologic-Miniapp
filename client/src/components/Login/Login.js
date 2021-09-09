@@ -1,6 +1,7 @@
 // import react and destructure component out of it to avoid tying "React.Component"
 // import router and this pages css
 import React, { Component } from 'react';
+import Footer from '../Footer/Footer.js';
 import { withRouter } from 'react-router-dom';
 import "./Login.css";
 import 'whatwg-fetch';
@@ -79,6 +80,7 @@ class Login extends Component {
       )
     }
     return (
+      <>
       <div className="login">
         <div className="blob">
         <svg width="205%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -133,6 +135,10 @@ class Login extends Component {
           </form>
         </div>
       </div>
+      <div className="Login-Footer">
+        <Footer />
+      </div>
+      </>
     )
   }
 }

@@ -163,3 +163,8 @@ summary:before {
   top: 500px;
   right: 50px
 }
+
+.Panel-Footer {
+  position: absolute;
+  top: 800px;
+}
