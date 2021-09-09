@@ -5,6 +5,7 @@ import ActiveUsers from '../ActiveUsers/ActiveUsers.js';
 import AdminCount from '../AdminCount/AdminCount.js'
 import Checkmark from '../Checkmark/Checkmark.js'
 import TicketCounter from '../TicketCounter/TicketCounter.js';
+import Footer from '../Footer/Footer.js';
 import "./AdminPanel.css";
 import { withRouter } from 'react-router-dom';
 
@@ -82,6 +83,7 @@ class AdminPanel extends Component {
   render() {
     if (localStorage.getItem('user')=== "1") {
       return (
+        <>
         <div className="admin-container">
           <div className="admin-panel">
             <h1 className="admin-header">Admin Panel</h1>
@@ -219,6 +221,10 @@ class AdminPanel extends Component {
             </div>
           </div>
         </div>
+        <div className="Panel-Footer">
+          <Footer />
+        </div>
+        </>
       )
     }
     else {

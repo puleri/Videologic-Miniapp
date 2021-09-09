@@ -10,12 +10,15 @@
   margin-bottom: 35px;
 
 }
+.Panel-Footer {
+  position: absolute;
+  top: 1870px;
+}
 
 @media (min-width: 1337px) {
   .lastname {
     position: absolute;
     top: 135px;
-
   }
   .fname {
     margin-top: -90px !important;
@@ -26,5 +29,9 @@
   }
   #lastname {
     margin-right: 20vw !important;
+  }
+  .Panel-Footer {
+    position: absolute;
+    top: 970px;
   }
 }
