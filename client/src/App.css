@@ -6,12 +6,10 @@ body, html {
   min-height: 100% !important;
   overflow: auto;
 }
-footer {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
-}
+
 .main-content {
+  overflow: auto;
+
 }
 
 .grid {

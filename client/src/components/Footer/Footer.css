@@ -29,7 +29,6 @@
   font-family: 'Montserrat', sans-serif;
   background-color: lightgray;
   position:relative;
-  bottom: 0;
   height: 150px;
   width: 100vw;
 }
@@ -80,9 +79,9 @@
   bottom:0;
 }
   @media (max-width: 1337px) {
-    .Footer {
+    /* .Footer {
       top: 215vh;
-    }
+    } */
   }
 @media only screen and (min-width: 764px) {
     .F1 {

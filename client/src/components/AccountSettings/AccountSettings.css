@@ -63,3 +63,7 @@
 .deleteAcct-tab {
   top: 400px;
 }
+.Profile-Footer {
+  position: absolute;
+  z-index: 2;
+}

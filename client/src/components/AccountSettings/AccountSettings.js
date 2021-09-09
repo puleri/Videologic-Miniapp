@@ -4,7 +4,7 @@ import Profile from './Profile.js';
 import Credentials from './Credentials.js';
 import Permissions from './Permissions.js';
 import DeleteAccount from './DeleteAccount.js';
-
+import Footer from '../Footer/Footer.js';
 
 import "./AccountSettings.css";
 
@@ -85,7 +85,9 @@ class AccountSettings extends Component {
             <div className="settings-container">
               <Credentials />
             </div>
-          </>
+            <div className="Profile-Footer">
+              <Footer />
+            </div>          </>
         )
         case "Permissions":
           return (
@@ -113,7 +115,9 @@ class AccountSettings extends Component {
               <div className="settings-container">
                 <Permissions />
               </div>
-            </>
+              <div className="Profile-Footer">
+                <Footer />
+              </div>            </>
           )
       case "Delete Account":
         return (
@@ -141,7 +145,9 @@ class AccountSettings extends Component {
             <div className="settings-container">
               <DeleteAccount />
             </div>
-          </>
+            <div className="Profile-Footer">
+              <Footer />
+            </div>          </>
         )
       default:
         return (
@@ -168,6 +174,9 @@ class AccountSettings extends Component {
           </div>
             <div className="settings-container">
               <Profile />
+            </div>
+            <div className="Profile-Footer">
+              <Footer />
             </div>
           </>
         )

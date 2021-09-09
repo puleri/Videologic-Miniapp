@@ -8,7 +8,6 @@ import Header from './components/Header/Header.js';
 import AdminPanel from './components/AdminPanel/AdminPanel.js'
 import Support from './components/Support/Support.js'
 import ThankYou from './components/ThankYou/ThankYou.js'
-import Footer from './components/Footer/Footer.js'
 import UserView from './components/UserView/Userview.js';
 import JCLDAP from './components/JCLDAP/JCLDAP.js'
 import DBUserLogin from './components/DBUserLogin/DBUserLogin.js'
@@ -113,9 +112,6 @@ class App extends Component {
       <AuthenticatedRoute user={user} path='/UserView' render={() => (
             <UserView msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
-      <Route path='/' render={() => (
-          <Footer />
-        )}/>
       </div>
     </div>
   );
