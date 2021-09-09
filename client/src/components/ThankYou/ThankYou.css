@@ -1,0 +1,9 @@
+#ty-icon {
+  filter: drop-shadow(0 0 2px #b8d2db) sepia(100%)hue-rotate(190deg)saturate(500%) brightness(3.5);
+  height: 60px;
+  position: absolute;
+  top: 100px;
+  left: 48%;
+  /* text-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 20px 4px #b8d2db, inset 0 0 20px 4px #b8d2db; */
+}
