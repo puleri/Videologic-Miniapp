@@ -27,28 +27,33 @@ class Header extends Component {
       // const loggedIn = localStorage.getItem('user')
       return (
         <>
-        <div className="colorheader"><div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div></div>
-        <div className="Nav-containter">
-          <div className="brand">
-            <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>
+
+          <div className="colorheader"><div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div></div>
+
+          <div className="Nav-container">
+
+            <div className="brand">
+              <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>
+            </div>
+            <div className="calendar">
+              <Link style={{ textDecoration: 'none' }} to="/"><i className="fas fa-home"/><div className="icon-text">Home</div></Link>
+            </div>
+            <div className="calendar">
+              <Link style={{ textDecoration: 'none' }} to="/AdminPanel"><i className="fas fa-adjust"/><div className="icon-text">Administrator</div></Link>
+            </div>
+            <div className="calendar">
+              <Link style={{ textDecoration: 'none' }} to="/Support"><i className="far fa-comment-alt"/><div className="icon-text">Support</div></Link>
+            </div>
+            <div className="calendar">
+              <Link style={{ textDecoration: 'none' }} to="/AccountSettings"><i className="account-icon far fa-user-circle"></i><div className="icon-text">Account</div></Link>
+            </div>
+            <div className="calendar">
+              <button className="logout-header" onClick={this.logOut}><i className="logout-icon fas fa-sign-out-alt" /><br/><div className="icon-text">Log out</div></button>
+            </div>
+
           </div>
-          <div className="calendar">
-            <Link style={{ textDecoration: 'none' }} to="/"><i className="fas fa-home"/><div className="icon-text">Home</div></Link>
-          </div>
-          <div className="calendar">
-            <Link style={{ textDecoration: 'none' }} to="/AdminPanel"><i className="fas fa-adjust"/><div className="icon-text">Administrator</div></Link>
-          </div>
-          <div className="calendar">
-            <Link style={{ textDecoration: 'none' }} to="/Support"><i className="far fa-comment-alt"/><div className="icon-text">Support</div></Link>
-          </div>
-          <div className="calendar">
-            <Link style={{ textDecoration: 'none' }} to="/AccountSettings"><i className="account-icon far fa-user-circle"></i><div className="icon-text">Account</div></Link>
-          </div>
-          <div className="calendar">
-            <button className="logout-header" onClick={this.logOut}><i className="logout-icon fas fa-sign-out-alt" /><br/><div className="icon-text">Log out</div></button>
-          </div>
-        </div>
-        <div id="Navbar-bottomline"></div>
+
+          <div id="Navbar-bottomline"></div>
         </>
 
       )

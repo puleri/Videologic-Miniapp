@@ -2,6 +2,14 @@
   position: relative;
   padding-bottom: 2px;
 }
+.Nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 67px;
+  background: white;
+}
 .logout-header {
   margin-top: 18px;
   border: none;

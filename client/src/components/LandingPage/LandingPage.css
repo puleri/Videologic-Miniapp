@@ -1,15 +1,26 @@
 
 .landing-2 {
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
   padding: 10px 0 210px 0;
-  background-color: #ebebeb;
-
+  margin-top: -30px;
+}
+.landing-2::before {
+  content: '';
+  transform: skewY(-2deg);
+  z-index: -2;
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #ebebeb;
 }
 .h1-landing-header {
   font-size: 40px;
-  margin: 80px 80px 0;
+  margin: 100px 80px 0;
 }
 .h2-landing-header {
   margin: -90px 90px 90px;
@@ -21,9 +32,7 @@
   border-width: 60px;
   filter: drop-shadow(13px 9px 35px lightgray);
 }
-.landing-3 {
 
-}
 #db-icons {
   display: flex;
   align-items: center;
@@ -74,4 +83,18 @@ margin: 10px 85px;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+.landing-4 {
+  position:relative;
+}
+.landing-4::before {
+  content: '';
+  transform: skewY(2deg);
+  z-index: -2;
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #ebebeb;
 }
