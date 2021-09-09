@@ -92,7 +92,7 @@ margin: 10px 85px;
   transform: skewY(2deg);
   z-index: -2;
   position: absolute;
-  top:0;
+  bottom: -30px;
   left: 0;
   height: 100%;
   width: 100%;

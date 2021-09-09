@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from "../Footer/Footer.js";
 import { withRouter } from 'react-router-dom';
 import "./LandingPage.css";
 import ohio from "./ohio.png";
@@ -17,7 +18,7 @@ class LandingPage extends Component {
           <h1 className="h1-landing-header">Reliable relational databases. We make 'em intuitive. You use 'em intuitively.</h1>
           <img className="human h1-landing-header" src={human} alt="minimalist art of a human in a circle surrounded by small shapes" />
         </div>
-        
+
         <div className="landing-3">
           <div className="h2-landing-header">
             <h4>Happily managing your database in Columbus, OH<img className="ohio" src={ohio} alt="ohio"/></h4>
@@ -37,6 +38,7 @@ class LandingPage extends Component {
               <img className="landing-database" src={database_white} alt="database white"/>
               <img className="landing-database" src={database_grey} alt="database grey"/>
           </div>
+          <Footer />
       </>
     )
   }
