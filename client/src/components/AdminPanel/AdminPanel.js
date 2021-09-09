@@ -141,9 +141,9 @@ class AdminPanel extends Component {
                   value={this.state.strUsername}
                   onChange={e => this.setState({ strUsername: e.target.value })}
                 />
-                <label className="username">First name</label>
+                <label className="fname username">First name</label>
                 <div style={{ postition: 'relative' }}>
-                <input className="firstname" type="text" id="lastname" placeholder="first name..."
+                <input className="fname-inp firstname" type="text" id="firstname" placeholder="first name..."
                   value={this.state.strFirst}
                   onChange={e => this.setState({ strFirst: e.target.value })}
                 />
