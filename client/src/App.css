@@ -4,12 +4,11 @@ body, html {
   margin: 0;
   padding: 0;
   min-height: 100% !important;
-  overflow: auto;
+  overflow: visible;
 }
 
 .main-content {
-  overflow: auto;
-
+  overflow: visible;
 }
 
 .grid {
@@ -20,7 +19,7 @@ body, html {
 }
 
 .App {
-  overflow: auto;
+  overflow: visible;
   position: relative;
   text-align: center;
   margin:0;
