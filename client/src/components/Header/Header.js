@@ -64,7 +64,7 @@ class Header extends Component {
       return (
         <>
         <div className="colorheader"><div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div></div>
-        <div className="Nav-containter">
+        <div className="Nav-container">
           <div className="brand">
             <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>
           </div>
@@ -90,7 +90,7 @@ class Header extends Component {
     return (
       <>
       <div className="colorheader"><div className="top-accent-blue"></div><div className="top-accent-red"></div><div className="top-accent-purple"></div><div className="top-accent-green"></div><div className="top-accent-yellow"></div></div>
-      <div className="Nav-containter">
+      <div className="Nav-container">
         <div className="brand">
           <h4>Videologic</h4><img id="Nav-icon" src={icon} alt="Videologic Logo"/>
         </div>
