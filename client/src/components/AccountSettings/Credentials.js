@@ -5,6 +5,14 @@ import "./Profile.css";
 
 export default function Credentials() {
   const [show, setShow] = useState(false);
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.persist()
+    // validate old password then update if password matches
+    // console.log("Old password is: ", oldPassword,"\nNew password is: ", newPassword)
+  }
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -17,15 +25,15 @@ export default function Credentials() {
           </Modal.Header>
           <Modal.Body>
             <label>Old Password</label>
-            <input className="old-pass" placeholder="old password..."/>
+            <input onChange={(e) => setOldPassword(e.target.value)} type="password" className="old-pass" placeholder="old password..."/>
             <label>New Password</label>
-            <input className="old-pass" placeholder="new password..."/>
+            <input onChange={(e) => setNewPassword(e.target.value)} type="password" name="new-password" className="old-pass" placeholder="new password..."/>
           </Modal.Body>
           <Modal.Footer>
             <button className="modal-close" onClick={handleClose}>
               Cancel
             </button>
-            <button className="modal-submit-pass" onClick={handleClose}>
+            <button className="modal-submit-pass" name="password-change" onClick={handleSubmit}>
               Update Password
             </button>
           </Modal.Footer>

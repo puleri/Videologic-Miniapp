@@ -6,6 +6,11 @@ import "./Profile.css";
 export default function DeleteAccount() {
   const [show, setShow] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.persist()
+    console.log(e.target.name)
+  }
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -26,7 +31,7 @@ export default function DeleteAccount() {
           <button className="modal-close" onClick={handleClose}>
             Cancel
           </button>
-          <button className="modal-submit" onClick={handleClose}>
+          <button className="modal-submit" name="delete-account" onClick={handleSubmit}>
             Delete Account
           </button>
         </Modal.Footer>
