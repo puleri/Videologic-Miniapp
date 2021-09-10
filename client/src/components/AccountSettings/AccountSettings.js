@@ -23,7 +23,7 @@ class AccountSettings extends Component {
     console.log("isAuth is", this.props.isAuth())
   }
   handleClick(e) {
-    console.log(e.target.innerHTML)
+    // console.log(e.target.innerHTML)
     this.setState({
       active: e.target.innerHTML
     })

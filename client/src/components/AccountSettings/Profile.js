@@ -37,7 +37,7 @@ class Profile extends Component {
       this.setState({
         username: username
       })
-      console.log('username is', username)
+      // console.log('username is', username)
     }
     componentDidMount() {
       this.getProfile()

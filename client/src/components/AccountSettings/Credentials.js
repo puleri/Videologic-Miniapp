@@ -12,21 +12,27 @@ export default function Credentials() {
     return (
       <>
         <Modal className="pw-modal" show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-        <Modal.Title>Please enter your current password followed by your new password</Modal.Title>
-      </Modal.Header>
-      <Modal.Body></Modal.Body>
-      <Modal.Footer>
-        <button variant="secondary" onClick={handleClose}>
-          Close
-        </button>
-        <button variant="primary" onClick={handleClose}>
-          Save Changes
-        </button>
-      </Modal.Footer>
+          <Modal.Header>
+            <Modal.Title>Please enter your current password followed by your new password</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <label>Old Password</label>
+            <input className="old-pass" placeholder="old password..."/>
+            <label>New Password</label>
+            <input className="old-pass" placeholder="new password..."/>
+          </Modal.Body>
+          <Modal.Footer>
+            <button className="modal-close" onClick={handleClose}>
+              Cancel
+            </button>
+            <button className="modal-submit" onClick={handleClose}>
+              Update Password
+            </button>
+          </Modal.Footer>
         </Modal>
+
         <div className="profile-card-container">
-        <i className="account-cogs fas fa-cogs"></i>
+          <i className="account-cogs fas fa-cogs"></i>
           <h3 className="account-header">Change Password</h3>
           <p>Update your password with your credentials</p>
           <button onClick={handleShow} className="change-password">Change Password</button>
