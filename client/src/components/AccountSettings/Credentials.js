@@ -12,7 +12,7 @@ export default function Credentials() {
     return (
       <>
         <Modal className="pw-modal" show={show} onHide={handleClose}>
-          <Modal.Header>
+          <Modal.Header className="modal-header">
             <Modal.Title>Please enter your current password followed by your new password</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -25,7 +25,7 @@ export default function Credentials() {
             <button className="modal-close" onClick={handleClose}>
               Cancel
             </button>
-            <button className="modal-submit" onClick={handleClose}>
+            <button className="modal-submit-pass" onClick={handleClose}>
               Update Password
             </button>
           </Modal.Footer>
