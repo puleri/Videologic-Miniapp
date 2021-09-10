@@ -30,7 +30,7 @@ class App extends Component {
     localStorage.setItem('user', user);
     localStorage.setItem('token', token);
     this.setState({ user: user, token: token })
-    console.log(localStorage.getItem('token'))
+    // console.log(localStorage.getItem('token'))
   }
 
 
@@ -42,7 +42,7 @@ class App extends Component {
       method: 'POST',
       body: fd
     })
-    .then(response => console.log(response))
+    // .then(response => console.log(response))
     .catch(err => console.err)
 
     localStorage.removeItem("user");
@@ -73,7 +73,7 @@ class App extends Component {
       method: 'POST',
       body: fd
     })
-    .then(response => console.log(response))
+    // .then(response => console.log(response))
     .catch(err => console.err)
   }
   render() {

@@ -3,6 +3,7 @@
   padding-bottom: 2px;
 }
 .Nav-container {
+  pointer-events: all;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -43,6 +44,7 @@
   opacity: 1;
 }
 .calendar {
+  z-index: 10;
   transition: margin-top 200ms ease-out;
 }
 .calendar:hover {

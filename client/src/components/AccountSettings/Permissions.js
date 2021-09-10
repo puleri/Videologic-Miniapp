@@ -3,6 +3,40 @@ import React, { Component } from 'react';
 import "./Profile.css";
 
 class Permissions extends Component {
+  
+  // React way to get scroll height --
+  // ************ DO NOT DELETE********************
+//   constructor() {
+//     super()
+//     this.state = {
+//       theposition: 0
+//     }
+//   }
+//   componentDidMount() {
+//   window.addEventListener('scroll', this.listenToScroll)
+// }
+//
+// componentWillUnmount() {
+//   window.removeEventListener('scroll', this.listenToScroll)
+// }
+//
+// listenToScroll = () => {
+//   const winScroll =
+//     document.body.scrollTop || document.documentElement.scrollTop
+//
+//   const height =
+//     document.documentElement.scrollHeight -
+//     document.documentElement.clientHeight
+//
+//   const scrolled = winScroll / height
+//   const rounded = Math.round(100*scrolled);
+//
+//   this.setState({
+//     theposition: rounded,
+//   })
+//   console.log(this.state.theposition)
+// }
+//  *********** DO NOT DELETE **************
   render() {
     return (
       <>
