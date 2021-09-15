@@ -38,6 +38,7 @@
   margin-top: -42px;
   opacity: 0;
   height: 60px;
+  position: absolute;
   transition: opacity 200ms ease-out;
 }
 .icon-text:hover {
@@ -45,10 +46,15 @@
 }
 .calendar {
   z-index: 10;
+  position: relative;
+  margin-top: -18px;
   transition: margin-top 200ms ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .calendar:hover {
-  margin-top: -6px;
+  margin-top: -24px;
 }
 .account-icon {
   font-size: 22px;
