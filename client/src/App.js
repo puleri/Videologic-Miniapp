@@ -13,6 +13,8 @@ import JCLDAP from './components/JCLDAP/JCLDAP.js'
 import DBUserLogin from './components/DBUserLogin/DBUserLogin.js'
 import LandingPage from './components/LandingPage/LandingPage.js';
 import AccountSettings from './components/AccountSettings/AccountSettings.js';
+import Testing from './components/Testing/Testing.js';
+
 
 class App extends Component {
   constructor() {
@@ -23,6 +25,11 @@ class App extends Component {
       msgAlerts: []
     }
   }
+// clearing local storage for when working on the same dev port as other projects
+  // componentDidMount() {
+  //   localStorage.clear()
+  // }
+
   // This function is passed to the header and the login form
   // and is excecuted on the App component in order to update
   // State in both the login form and the header component
@@ -99,6 +106,10 @@ class App extends Component {
 
       <Route path='/AdminPanel' render={() => (
         <AdminPanel />
+      )} />
+
+      <Route path='/Testing' render={() => (
+        <Testing />
       )} />
 
       <Route path='/AccountSettings' render={() => (

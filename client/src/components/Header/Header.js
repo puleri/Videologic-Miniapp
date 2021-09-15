@@ -39,6 +39,9 @@ class Header extends Component {
               <Link style={{ textDecoration: 'none' }} to="/"><i className="fas fa-home"/><div className="icon-text">Home</div></Link>
             </div>
             <div className="calendar">
+              <Link style={{ textDecoration: 'none' }} to="/Testing"><i class="fas fa-flask"></i><div className="icon-text">Testing</div></Link>
+            </div>
+            <div className="calendar">
               <Link style={{ textDecoration: 'none' }} to="/AdminPanel"><i className="fas fa-adjust"/><div className="icon-text">Administrator</div></Link>
             </div>
             <div className="calendar">
