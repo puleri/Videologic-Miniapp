@@ -60,7 +60,7 @@
 .test-case-table {
   outline: 1px solid gray;
   overflow: scroll;
-  max-height: 600px;
+  max-height: 400px;
   margin: 0 80px 30px 50px;
 }
 .test-table-header {
@@ -68,6 +68,9 @@
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: bold;
+}
+.index-passing {
+  accent-color: #CBECC3;
 }
 .test-delete {
   margin-top: 0;

@@ -69,7 +69,6 @@ handleSubmit = (event) => {
   // reset form
   .then(
     this.setState({
-      testCases: [],
       description: '',
       date: '',
       expected: '',
@@ -83,7 +82,33 @@ handleSubmit = (event) => {
   } );
 }
 
+
+permission(data) {
+  if (data === '1') {
+    return <i className="db-check fas fa-check"></i>;
+  }
+}
+
   render () {
+    const handleChange = (event) => {
+      event.persist()
+      // this.setState({ user: this.state.users.find(user => user.user_number === this.props.location.search) })
+      // console.log('event.target.name is', event.target.name)
+      if (event.target.checked) {
+        this.setState(oldVal => {
+          return { ...oldVal, [event.target.name] : '1' }
+        }
+        // , () => { console.log(this.state) }
+        )
+      }
+        else {
+          this.setState(oldVal => {
+            return { ...oldVal, [event.target.name] : '0' }
+          }
+        // , () => { console.log(this.state) }
+        )
+      }
+    }
     // reference for test index
     const tests = this.state.testCases
 
@@ -175,7 +200,7 @@ handleSubmit = (event) => {
                 <td>{test.test_date}</td>
                 <td>{test.actual_results}</td>
                 <td>{test.additional_notes}</td>
-                <td>{test.passing}</td>
+                <td><input className="index-passing" name="bolUpdate" onChange={handleChange} defaultChecked={test.passing === '1' ? 'checked' : ''} type="checkbox"/></td>
                 <td><i className="test-delete far fa-trash-alt"></i></td>
               </tr>
             )
