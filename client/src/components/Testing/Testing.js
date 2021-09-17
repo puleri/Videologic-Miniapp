@@ -47,8 +47,10 @@ componentDidMount() {
 
 handleSubmit = (event) => {
   event.persist()
-  console.log(this.setState)
 
+  if (this.state.description === '' || this.state.date === '' || this.state.expected === '' || this.state.actual === '') {
+    return console.log("Error: Please fill out required fields")
+  }
   var fd = new FormData();
   fd.append('content', 'test');
   fd.append('strDescript', this.state.description)
@@ -120,6 +122,7 @@ permission(data) {
           <div className="form-group">
             <label className="test-create-label">Test description</label>
             <textarea
+            required
             className="case-create-child"
             type='text'
             value={this.state.description}
@@ -129,7 +132,9 @@ permission(data) {
           <div className="form-group">
             <label className="test-create-label">Date</label>
             <input
+            required
             className="case-create-child"
+            id="test-date"
             type='date'
             value={this.state.date}
             onChange={e => this.setState({ date: e.target.value })}
@@ -138,6 +143,7 @@ permission(data) {
           <div className="form-group">
             <label className="test-create-label">Expected results</label>
             <textarea
+            required
             className="case-create-child"
             type='text'
             value={this.state.expected}
@@ -147,6 +153,7 @@ permission(data) {
           <div className="form-group">
             <label className="test-create-label">Actual results</label>
             <textarea
+            required
             className="case-create-child"
             type='text'
             value={this.state.actual}
@@ -165,14 +172,19 @@ permission(data) {
           <div className="form-group">
             <label className="test-create-label">Additional notes</label>
             <textarea
+            required
             className="case-create-child"
             type='text'
             value={this.state.additional}
             onChange={e => this.setState({ additional: e.target.value })}
             placeholder="additional notes..."/>
           </div>
-          <button className="case-create-submit"
-          onClick={this.handleSubmit}>Create Case</button>
+          <input
+          value="Create Case"
+          type="submit"
+          onClick={this.handleSubmit}
+          className="case-create-submit"
+          />
         </div>
 
         <div className="test-case-notes">
@@ -181,6 +193,7 @@ permission(data) {
 
         <div className="test-case-table">
           <table>
+            <tbody>
               <tr className="test-table-header">
                 <td>id</td>
                 <td>description</td>
@@ -205,7 +218,7 @@ permission(data) {
               </tr>
             )
           })}
-
+            </tbody>
           </table>
         </div>
       </div>
