@@ -4,11 +4,15 @@ import './Testing.css';
 export default class Testing extends Component {
   constructor() {
     super()
+    const today = new Date()
+    const month = (today.getMonth() + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+    const day = (today.getDate()).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+    const date = today.getFullYear() + '-' + month + '-' + day
 
     this.state = {
       testCases: [],
       description: '',
-      date: '',
+      date: date,
       expected: '',
       actual: '',
       pass: false,
@@ -24,7 +28,7 @@ indexTests() {
   .then(res => res.json())
   .then(response => {
     this.setState({ testCases: response })
-    console.log('state is', this.state.testCases)
+    // console.log('state is', this.state.testCases)
   })
   // .then(this.setState(prevState => ({
   //   users: {
@@ -36,9 +40,47 @@ indexTests() {
     console.log(err)
   });
 }
-
+// On Load
 componentDidMount() {
   this.indexTests();
+}
+
+handleSubmit = (event) => {
+  event.persist()
+  console.log(this.setState)
+
+  var fd = new FormData();
+  fd.append('content', 'test');
+  fd.append('strDescript', this.state.description)
+  fd.append('strDate', this.state.date)
+  fd.append('strExpected', this.state.expected)
+  fd.append('strActual', this.state.actual)
+  fd.append('bolPass', this.state.pass)
+  fd.append('strAdditional', this.state.additional)
+
+  // console.log(Array.from(fd));
+  fetch(`http://localhost:9000/docroot/create_test_case.php`, {
+    method: 'POST',
+    body: fd,
+  }).then(res => res.json())
+  .then(response => {
+    console.log('response: ', response)
+  })
+  // reset form
+  .then(
+    this.setState({
+      testCases: [],
+      description: '',
+      date: '',
+      expected: '',
+      actual: '',
+      pass: false,
+      additional: '',
+    })
+  )
+  .catch(err => {
+    console.log(err)
+  } );
 }
 
   render () {
@@ -66,7 +108,7 @@ componentDidMount() {
             type='date'
             value={this.state.date}
             onChange={e => this.setState({ date: e.target.value })}
-            placeholder="date..."/>
+            />
           </div>
           <div className="form-group">
             <label className="test-create-label">Expected results</label>
@@ -105,7 +147,7 @@ componentDidMount() {
             placeholder="additional notes..."/>
           </div>
           <button className="case-create-submit"
-          onClick={() => console.log(this.state)}>Create Case</button>
+          onClick={this.handleSubmit}>Create Case</button>
         </div>
 
         <div className="test-case-notes">
@@ -134,7 +176,7 @@ componentDidMount() {
                 <td>{test.actual_results}</td>
                 <td>{test.additional_notes}</td>
                 <td>{test.passing}</td>
-                <td><i class="test-delete far fa-trash-alt"></i></td>
+                <td><i className="test-delete far fa-trash-alt"></i></td>
               </tr>
             )
           })}

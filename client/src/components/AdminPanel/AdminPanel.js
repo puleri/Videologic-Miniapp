@@ -28,10 +28,6 @@ class AdminPanel extends Component {
       bolUpdate: false
     }
   }
-  handleCheck = (event) => {
-    event.persist()
-    // console.log(this.state)
-  }
 
   handleSubmit = (event) => {
     event.persist()

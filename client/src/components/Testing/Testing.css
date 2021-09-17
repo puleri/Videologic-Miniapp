@@ -2,13 +2,14 @@
   pointer-events: all;
   height: 900px;
 }
-.test-case-create {
+.test-case-create.test-case-create {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
   flex-wrap: wrap;
   flex-direction: row;
   margin: 20px 50px;
+  accent-color: #CBECC3;
 }
 .case-create-child.case-create-child {
   display: block;
@@ -20,7 +21,7 @@
   border: none;
   background: #eFeFeF7F;
   font-family: "Montserrat", sans-serif;
-  color: gray;
+  color: black;
   border-bottom: 1px solid gray;
   width: 100% !important;
   box-sizing: border-box;
@@ -70,7 +71,7 @@
 }
 .test-delete {
   margin-top: 0;
-  color: #945c34;
+  color: #945c54;
   margin-right: 5px;
   transition: color .3s;
 }
