@@ -729,6 +729,7 @@ label.chk-label {
 }
 
 .db-U:hover {
+  cursor: pointer;
   color: #bd6d1a;
 }
 
@@ -740,6 +741,7 @@ label.chk-label {
 }
 
 .db-D:hover {
+  cursor: pointer;
   color: #8a2516;
 }
 .dbU-D-th {

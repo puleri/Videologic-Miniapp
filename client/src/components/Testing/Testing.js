@@ -41,13 +41,10 @@ componentDidMount() {
   this.indexTests();
 }
 
-// tableContentsHTML() {this.state.testCases.map((el, i) => (
-//   <td key={i}>
-//     {el.id ? 'yes' : 'no'}
-//   </td>
-// ))
-
   render () {
+    // reference for test index
+    const tests = this.state.testCases
+
   return (
       <div className="test-container">
         <h2 style={{margin: "20px 50px",textAlign:'left'}}>Test Case Planning and Execution</h2>
@@ -117,6 +114,31 @@ componentDidMount() {
 
         <div className="test-case-table">
           <table>
+              <tr className="test-table-header">
+                <td>id</td>
+                <td>description</td>
+                <td>expected_results</td>
+                <td>test_date</td>
+                <td>actual_results</td>
+                <td>additional_notes</td>
+                <td>passing</td>
+                <td>delete</td>
+              </tr>
+          { tests.map(test => {
+            return (
+              <tr key={test.id}>
+                <td>{test.id}</td>
+                <td>{test.description}</td>
+                <td>{test.expected_results}</td>
+                <td>{test.test_date}</td>
+                <td>{test.actual_results}</td>
+                <td>{test.additional_notes}</td>
+                <td>{test.passing}</td>
+                <td><i class="test-delete far fa-trash-alt"></i></td>
+              </tr>
+            )
+          })}
+
           </table>
         </div>
       </div>
