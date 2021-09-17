@@ -6,7 +6,13 @@ export default class Testing extends Component {
     super()
 
     this.state = {
-      testCases: []
+      testCases: [],
+      description: '',
+      date: '',
+      expected: '',
+      actual: '',
+      pass: false,
+      additional: '',
     }
   }
 // On load
@@ -43,16 +49,66 @@ componentDidMount() {
 
   render () {
   return (
-      <>
+      <div className="test-container">
         <h2 style={{margin: "20px 50px",textAlign:'left'}}>Test Case Planning and Execution</h2>
 
         <div className="test-case-create">
-          <input placeholder="test description..."/>
-          <input placeholder="date..."/>
-          <input placeholder="expected results..."/>
-          <input placeholder="actual results..."/>
-          <input placeholder="pass/fail..."/>
-          <input placeholder="additional notes..."/>
+          <div className="form-group">
+            <label className="test-create-label">Test description</label>
+            <textarea
+            className="case-create-child"
+            type='text'
+            value={this.state.description}
+            onChange={e => this.setState({ description: e.target.value })}
+            placeholder="test description..."/>
+          </div>
+          <div className="form-group">
+            <label className="test-create-label">Date</label>
+            <input
+            className="case-create-child"
+            type='date'
+            value={this.state.date}
+            onChange={e => this.setState({ date: e.target.value })}
+            placeholder="date..."/>
+          </div>
+          <div className="form-group">
+            <label className="test-create-label">Expected results</label>
+            <textarea
+            className="case-create-child"
+            type='text'
+            value={this.state.expected}
+            onChange={e => this.setState({ expected: e.target.value })}
+            placeholder="expected results..."/>
+          </div>
+          <div className="form-group">
+            <label className="test-create-label">Actual results</label>
+            <textarea
+            className="case-create-child"
+            type='text'
+            value={this.state.actual}
+            onChange={e => this.setState({ actual: e.target.value })}
+            placeholder="actual results..."/>
+          </div>
+          <div className="form-group">
+            <label className="test-create-label">Passing</label>
+            <input
+            id="case-create-check"
+            type='checkbox'
+            onChange={() =>
+              this.setState({ pass: !this.state.pass })}
+            checked={this.state.pass}/>
+          </div>
+          <div className="form-group">
+            <label className="test-create-label">Additional notes</label>
+            <textarea
+            className="case-create-child"
+            type='text'
+            value={this.state.additional}
+            onChange={e => this.setState({ additional: e.target.value })}
+            placeholder="additional notes..."/>
+          </div>
+          <button className="case-create-submit"
+          onClick={() => console.log(this.state)}>Create Case</button>
         </div>
 
         <div className="test-case-notes">
@@ -63,7 +119,7 @@ componentDidMount() {
           <table>
           </table>
         </div>
-      </>
+      </div>
     )
   }
 }

@@ -1,0 +1,57 @@
+.test-container {
+  pointer-events: all;
+}
+.test-case-create {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 20px 50px;
+}
+.case-create-child.case-create-child {
+  display: block;
+  height: 100px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin: 15px 0;
+  border-radius: 5px;
+  border: none;
+  background: #eFeFeF7F;
+  font-family: "Montserrat", sans-serif;
+  color: gray;
+  border-bottom: 1px solid gray;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+#case-create-check {
+  margin: 25px 0;
+  height: 20px;
+  width: 100%;
+}
+.form-group {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 40px;
+}
+.case-create-submit {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  background: #56bf3b4F;
+  margin: 20px 40px 40px 0;
+  width: 100%;
+  height: 40px;
+  transition: background .3s ease-out, width .3s ease-out;
+}
+.case-create-submit:hover {
+  background: #56bf3b7F;
+  cursor: pointer;
+}
+.case-create-submit:active {
+  width: 90%;
+  background: #56bf3b9F;
+}
