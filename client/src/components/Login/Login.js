@@ -48,7 +48,7 @@ class Login extends Component {
       console.log(response.substring(0,13))
       // create an object with a uniqid and abstract this logic away from the front end
       if (response.substring(0,13) === "Logging in..."){
-        this.props.setUser(this.state.email, response.substring(14, 53))
+        this.props.setUser(this.state.email, response.substring(13, 53))
         this.props.history.push('/')
         // localStorage.setItem('user', this.state.email)
         const loggedIn = localStorage.getItem('token')

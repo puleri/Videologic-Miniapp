@@ -10,9 +10,23 @@ export default function Credentials() {
 
   const handleSubmit = (e) => {
     e.persist()
+    const token = localStorage.getItem('token')
+
+    var fd = new FormData();
+    fd.append('strToken', token);
+    fd.append('strOldPW', oldPassword);
+    fd.append('strNewPW', newPassword);
+    fetch(`http://localhost:9000/docroot/change_pw.php`, {
+      method: 'POST',
+      body: fd
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.err)
+    // console.log('username is', username)
+  }
     // validate old password then update if password matches
     // console.log("Old password is: ", oldPassword,"\nNew password is: ", newPassword)
-  }
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
