@@ -98,3 +98,6 @@ margin: 10px 85px;
   width: 100%;
   background: #ebebeb;
 }
+.Landing-Footer {
+  pointer-events: all;
+}

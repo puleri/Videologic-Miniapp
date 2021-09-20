@@ -38,7 +38,7 @@ class LandingPage extends Component {
               <img className="landing-database" src={database_white} alt="database white"/>
               <img className="landing-database" src={database_grey} alt="database grey"/>
           </div>
-          <Footer />
+          <Footer className="Landing-Footer"/>
       </>
     )
   }

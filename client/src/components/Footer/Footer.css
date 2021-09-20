@@ -1,3 +1,6 @@
+footer {
+  pointer-events: all;
+}
 .Footer_c {
   text-transform: uppercase;
   color: black !important;
