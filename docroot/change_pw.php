@@ -24,19 +24,23 @@ $strOldPass_Row = ['password'=> $row['password']];
 
 array_push($strOldPass, $strOldPass_Row);
 }
+$strOldPass = $strOldPass[0]['password'];
 
-echo json_encode($strOldPass);
+// echo json_encode($strOldPass);
 // Check if old password matches credentials
-// if($strOldPW === $strOldPass) {
-//
-// }
 
-// Update password SQL
-// $sql = "UPDATE `user` SET `password` = '${strNewPW}' WHERE `token` LIKE '${strToken}'";
-//
+if($strOldPW === $strOldPass) {
+  // Update password SQL
+  $sql = "UPDATE `user` SET `password` = '${strNewPW}' WHERE `token` LIKE '${strToken}'";
+
+  $result = $link->query($sql);
+}
+if($strOldPW != $strOldPass)
+{
+  header($_SERVER["SERVER_PROTOCOL"] . " 401 Unauthorized");
+}
+
 // $user = [];
-//
-// $result = $link->query($sql);
 //
 // while($row = $result->fetch_assoc()) {
 //
