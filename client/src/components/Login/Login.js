@@ -15,7 +15,8 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      user: null
+      user: null,
+      errAlert: ''
     }
     this.signIn = this.signIn.bind(this);
     // const loggedIn = localStorage.getItem('user')
@@ -60,6 +61,7 @@ class Login extends Component {
     })
     // .then(console.log(this.props))
     .catch(err => {
+      this.setState({ errAlert: 'Whoops! There has been a problem, please try again later.' })
       console.log(err.toString())
     } );
 
@@ -113,6 +115,7 @@ class Login extends Component {
             <h2 id="login-header">Welcome back!</h2>
             <h4 id="login-header2">Sign in to continue</h4>
             <hr className="hr"/>
+            <p>{this.state.errAlert}</p>
             <label className="login-label">Email</label>
             <input
             value={this.state.email}
