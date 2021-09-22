@@ -17,6 +17,7 @@ export default class Testing extends Component {
       actual: '',
       pass: false,
       additional: '',
+      errMessage: ''
     }
   }
 // On load
@@ -49,7 +50,7 @@ handleSubmit = (event) => {
   event.persist()
 
   if (this.state.description === '' || this.state.date === '' || this.state.expected === '' || this.state.actual === '') {
-    return console.log("Error: Please fill out required fields")
+    return this.setState({ errMessage: "*Please fill out required fields*" })
   }
   var fd = new FormData();
   fd.append('content', 'test');
@@ -77,6 +78,7 @@ handleSubmit = (event) => {
       actual: '',
       pass: false,
       additional: '',
+      errMessage: ''
     })
   )
   .catch(err => {
@@ -118,9 +120,10 @@ permission(data) {
       <div className="test-container">
         <h2 style={{margin: "20px 50px",textAlign:'left'}}>Test Case Planning and Execution</h2>
 
+        <p className="required">*Required</p>
         <div className="test-case-create">
           <div className="form-group">
-            <label className="test-create-label">Test description</label>
+            <label className="test-create-label">Test description*</label>
             <textarea
             required
             className="case-create-child"
@@ -130,7 +133,7 @@ permission(data) {
             placeholder="test description..."/>
           </div>
           <div className="form-group">
-            <label className="test-create-label">Date</label>
+            <label className="test-create-label">Date*</label>
             <input
             required
             className="case-create-child"
@@ -141,7 +144,7 @@ permission(data) {
             />
           </div>
           <div className="form-group">
-            <label className="test-create-label">Expected results</label>
+            <label className="test-create-label">Expected results*</label>
             <textarea
             required
             className="case-create-child"
@@ -151,7 +154,7 @@ permission(data) {
             placeholder="expected results..."/>
           </div>
           <div className="form-group">
-            <label className="test-create-label">Actual results</label>
+            <label className="test-create-label">Actual results*</label>
             <textarea
             required
             className="case-create-child"
@@ -185,6 +188,7 @@ permission(data) {
           onClick={this.handleSubmit}
           className="case-create-submit"
           />
+          <p className="test-errMessage">{this.state.errMessage}</p>
         </div>
 
         <div className="test-case-notes">
