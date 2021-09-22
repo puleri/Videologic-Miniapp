@@ -32,7 +32,21 @@ class LandingPage extends Component {
 
           <div className="landing-4">
               <div id="db-icons">
-                <label className="db1">A</label><label className="db1">C</label><label className="db1">U</label>
+                <div className="db-group">
+                  <label className="db1">A</label>
+                  <h3>Administrator</h3>
+                  <p>Administrators are able to create, update, and delete users, as well as tailor unique roles to them with ease.</p>
+                </div>
+
+                <div className="db-group">
+                  <label className="db1">U</label>
+                  <h3>User</h3>
+                </div>
+
+                <div className="db-group">
+                  <label className="db1">C</label>
+                  <h3>Customer</h3>
+                </div>
               </div>
               <img className="landing-database" src={database} alt="database"/>
               <img className="landing-database" src={database_white} alt="database white"/>
