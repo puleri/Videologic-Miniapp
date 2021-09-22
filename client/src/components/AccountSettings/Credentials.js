@@ -21,7 +21,12 @@ export default function Credentials() {
       body: fd
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(res => {
+      console.log(res)
+    })
+    .then(setShow(false))
+    .then(setNewPassword(''))
+    .then(setOldPassword(''))
     .catch(err => console.err)
     // console.log('username is', username)
   }
@@ -39,9 +44,9 @@ export default function Credentials() {
           </Modal.Header>
           <Modal.Body>
             <label>Old Password</label>
-            <input onChange={(e) => setOldPassword(e.target.value)} type="password" className="old-pass" placeholder="old password..."/>
+            <input onChange={(e) => setOldPassword(e.target.value)}  value={oldPassword} type="password" className="old-pass" placeholder="old password..."/>
             <label>New Password</label>
-            <input onChange={(e) => setNewPassword(e.target.value)} type="password" name="new-password" className="old-pass" placeholder="new password..."/>
+            <input onChange={(e) => setNewPassword(e.target.value)}  value={newPassword} type="password" name="new-password" className="old-pass" placeholder="new password..."/>
           </Modal.Body>
           <Modal.Footer>
             <button className="modal-close" onClick={handleClose}>
