@@ -12,8 +12,13 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-// Attempt insert query execution
-$sql = "SELECT `username` FROM `user` WHERE `token` LIKE '${strToken}'";
+// Check if old password matches credentials
+if($strOldPW === $sqlOldPW) {
+  
+}
+
+// Update password SQL
+$sql = "UPDATE `user` SET `password` = '${strNewPW}' WHERE `token` LIKE '${strToken}'";
 
 $user = [];
 
@@ -27,6 +32,7 @@ array_push($user, $user_row);
 }
 
 echo json_encode($user);
+
 
 $link->close();
 ?>
