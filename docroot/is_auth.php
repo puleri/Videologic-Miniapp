@@ -1,4 +1,4 @@
-<?php
+-=]<?php
 require_once './db_connection.php';
 require_once '../vendor/autoload.php';
 
@@ -24,7 +24,7 @@ $tokenSQL = $index[0]['token'];
 if ($tokenSQL == $strToken) {
     return (True);
 } else {
-  header('HTTP/1.1 401 Unauthorized');
+  // header('HTTP/1.1 401 Unauthorized');
 }
 
 
