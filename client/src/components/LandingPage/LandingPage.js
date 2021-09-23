@@ -41,11 +41,15 @@ class LandingPage extends Component {
                 <div className="db-group">
                   <label className="db1">U</label>
                   <h3>User</h3>
+                  <p>Administrators are able to create, update, and delete users, as well as tailor unique roles to them with ease.</p>
+
                 </div>
 
                 <div className="db-group">
                   <label className="db1">C</label>
                   <h3>Customer</h3>
+                  <p>Administrators are able to create, update, and delete users, as well as tailor unique roles to them with ease.</p>
+
                 </div>
               </div>
               <img className="landing-database" src={database} alt="database"/>
