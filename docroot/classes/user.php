@@ -1,9 +1,6 @@
 <?php
 
-// $link = mysqli_connect("localhost", "root", "root", "database-manager");
-
 class User {
-  public $strId;
   public $test = "test";
 
   function __construct($strId)
@@ -17,37 +14,36 @@ class User {
   }
 
 
-  public static function delete_user()
+  public function delete_user()
   {
-    echo "hello <br />";
     $link = mysqli_connect("localhost", "root", "root", "database-manager");
-    echo "after link <br />";
-    print_r($this->strId);
-    echo "<br/> after class variable reference";
-    // echo "DELETE FROM `user` WHERE `user_number` = $this['strId']";
+    // echo "after link <br />";
+    // print_r($this->strId);
+    // echo "<br/> after class variable reference";
+    $sql = "DELETE FROM `user` WHERE `user_number` = $this->strId";
 
-    // if($link === false)
-    // {
-    //     die("ERROR: Could not connect. " . mysqli_connect_error());
-    // }
-    // if(mysqli_query($link, $sql))
-    // {
-    //     echo "Record deleted successfully.";
-    // }
-    // else
-    // {
-    //     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-    // }
+    if($link === false)
+    {
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
+    if(mysqli_query($link, $sql))
+    {
+        echo "Record deleted successfully.";
+    }
+    else
+    {
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
 
 
-    // echo json_encode("Record deleted successfully");
+    echo json_encode("Record deleted successfully");
   }
 
 }
 
-$objUser = new User('29');
+// $objUser = new User('29');
 // var_dump($objUser);
-$objUser::delete_user();
+// $objUser->delete_user();
 
 
 

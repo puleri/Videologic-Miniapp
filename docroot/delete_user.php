@@ -3,11 +3,11 @@ require_once './classes/user.php';
 
 // $test = new User('test');
 // $test->test();
-$link = mysqli_connect("localhost", "root", "root", "database-manager");
+// $link = mysqli_connect("localhost", "root", "root", "database-manager");
 
 $strId = $_POST['user_number'];
 
-$objUser = new User($strId);
+$objUser = new User(29);
 
 $objUser->delete_user();
 //
