@@ -4,10 +4,10 @@ require_once './classes/user.php';
 // $test = new User('test');
 // $test->test();
 // $link = mysqli_connect("localhost", "root", "root", "database-manager");
-
+$strToken = $_POST['token'];
 $strId = $_POST['user_number'];
 
-$objUser = new User($strId);
+$objUser = new User($strId, '', '', $strToken);
 
 $objUser->delete_user();
 //

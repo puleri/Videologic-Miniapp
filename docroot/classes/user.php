@@ -5,12 +5,12 @@
 class User {
   public $test = "test";
 
-  function __construct($strId, $strEmail, $strPassword)
+  function __construct($strId, $strEmail, $strPassword, $strToken)
   {
     $this->strId = $strId;
     $this->strEmail = $strEmail;
     $this->strPassword = $strPassword;
-
+    $this->strToken = $strToken;
   }
 
   public function test() {
@@ -81,24 +81,50 @@ class User {
     // echo "after link <br />";
     // print_r($this->strId);
     // echo "<br/> after class variable reference";
-    $sql = "DELETE FROM `user` WHERE `user_number` = $this->strId";
 
-    if($link === false)
-    {
-        die("ERROR: Could not connect. " . mysqli_connect_error());
+    // if strId is not sent, this means the user is attempting to delete
+    // their own profile -- use the token to delete the user
+    if ($this->strToken) {
+      $sql = "DELETE FROM `user` WHERE `token` = $this->strToken";
+
+      if($link === false)
+      {
+          die("ERROR: Could not connect. " . mysqli_connect_error());
+      }
+      if(mysqli_query($link, $sql))
+      {
+          echo "Record deleted successfully.";
+      }
+      else
+      {
+          echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+      }
+
+
+      echo json_encode("Record deleted successfully");
     }
-    if(mysqli_query($link, $sql))
-    {
-        echo "Record deleted successfully.";
-    }
+    // if no token, it is an admin deleting and thus we must use the user's id 
     else
-    {
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+      {
+        $sql = "DELETE FROM `user` WHERE `user_number` = $this->strId";
+
+        if($link === false)
+        {
+            die("ERROR: Could not connect. " . mysqli_connect_error());
+        }
+        if(mysqli_query($link, $sql))
+        {
+            echo "Record deleted successfully.";
+        }
+        else
+        {
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        }
+
+
+        echo json_encode("Record deleted successfully");
     }
-
-
-    echo json_encode("Record deleted successfully");
-  }
+}
 
 }
 
