@@ -7,7 +7,7 @@ require_once './classes/user.php';
 
 $strId = $_POST['user_number'];
 
-$objUser = new User(29);
+$objUser = new User($strId);
 
 $objUser->delete_user();
 //
