@@ -36,12 +36,15 @@ class LandingPage extends Component {
                   <label className="db1">A</label>
                   <h3>Administrator</h3>
                   <p>Administrators are able to create, update, and delete users, as well as tailor unique roles to them with ease.</p>
+                  <img className="landing-database" src={database} alt="database"/>
+
                 </div>
 
                 <div className="db-group">
                   <label className="db1">U</label>
                   <h3>User</h3>
                   <p>Administrators are able to create, update, and delete users, as well as tailor unique roles to them with ease.</p>
+                  <img className="landing-database" src={database_white} alt="database white"/>
 
                 </div>
 
@@ -49,12 +52,10 @@ class LandingPage extends Component {
                   <label className="db1">C</label>
                   <h3>Customer</h3>
                   <p>Administrators are able to create, update, and delete users, as well as tailor unique roles to them with ease.</p>
+                  <img className="landing-database" src={database_grey} alt="database grey"/>
 
                 </div>
               </div>
-              <img className="landing-database" src={database} alt="database"/>
-              <img className="landing-database" src={database_white} alt="database white"/>
-              <img className="landing-database" src={database_grey} alt="database grey"/>
           </div>
           <Footer className="Landing-Footer"/>
       </>
