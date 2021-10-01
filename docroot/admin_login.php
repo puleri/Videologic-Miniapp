@@ -10,13 +10,13 @@ require_once './classes/user.php';
 //
 $strEmail = $_POST['email'];
 $strPassword = $_POST['password'];
-
+//
 // $strEmail = '1';
 // $strPassword = '1';
 
 
-$objUser = new User('', $strEmail, $strPassword);
-
+$objUser = new User('', $strEmail, $strPassword, '');
+//
 $objUser->login_user();
 
 // //  First check if user exists

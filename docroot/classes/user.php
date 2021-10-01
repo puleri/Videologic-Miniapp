@@ -103,7 +103,7 @@ class User {
 
       echo json_encode("Record deleted successfully");
     }
-    // if no token, it is an admin deleting and thus we must use the user's id 
+    // if no token, it is an admin deleting and thus we must use the user's id
     else
       {
         $sql = "DELETE FROM `user` WHERE `user_number` = $this->strId";
