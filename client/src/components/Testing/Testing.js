@@ -45,6 +45,19 @@ indexTests() {
 componentDidMount() {
   this.indexTests();
 }
+handleDelete = (id) => {
+  console.log(id)
+  var testId = new FormData();
+  testId.append('strId', id)
+
+  fetch(`http://localhost:9000/docroot/delete_test_case.php`, {
+    method: 'POST',
+    body: testId,
+  })
+    .then(res => res.json())
+    .then(res => console.log("res", res))
+    .catch(err => console.log(err))
+}
 
 handleSubmit = (event) => {
   event.persist()
@@ -218,7 +231,7 @@ permission(data) {
                 <td>{test.actual_results}</td>
                 <td>{test.additional_notes}</td>
                 <td><input className="index-passing" name="bolUpdate" onChange={handleChange} defaultChecked={test.passing === '1' ? 'checked' : ''} type="checkbox"/></td>
-                <td><i className="test-delete far fa-trash-alt"></i></td>
+                <td><i onClick={ () => this.handleDelete(test.id) } className="test-delete far fa-trash-alt"></i></td>
               </tr>
             )
           })}

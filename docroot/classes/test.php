@@ -4,9 +4,9 @@ class Test {
 
   public $className = "Test";
 
-  // function __construct() {
-  //
-  // }
+   function __construct($strId) {
+    $this->strId = $strId;
+  }
 
 
   public function index_tests()
@@ -27,6 +27,28 @@ class Test {
     $link->close();
 
   }
+
+
+  public function delete_test()
+    {
+      $link = mysqli_connect("localhost", "root", "root", "database-manager");
+
+          $sql = "DELETE FROM `test_cases` WHERE `id` = '$this->strId'";
+
+          if($link === false)
+          {
+              die("ERROR: Could not connect. " . mysqli_connect_error());
+          }
+          if(mysqli_query($link, $sql))
+          {
+              echo "Record deleted successfully.";
+          }
+          else
+          {
+              echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+          }
+
+    }
 
 
 

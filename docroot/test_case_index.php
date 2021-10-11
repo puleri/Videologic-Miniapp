@@ -2,7 +2,7 @@
 
 require_once './classes/test.php';
 
-$objTests = new Test();
+$objTests = new Test('');
 // var_dump ($objTests);
 
 $objTests->index_tests();
