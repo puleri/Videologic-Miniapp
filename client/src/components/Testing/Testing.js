@@ -45,8 +45,20 @@ indexTests() {
 componentDidMount() {
   this.indexTests();
 }
+
 handleDelete = (id) => {
-  console.log(id)
+  // NEXT REMOVE FROM ARR OF OBJECTS for fast loading
+  var arrU = this.state.testCases
+  // reference the index of the user to be deleted
+  const index = arrU.findIndex(function(test) {
+    return test.id === id
+  })
+  // remove from array referencing the users state
+  arrU.splice(index, 1);
+  // console.log('new arr', arrU)
+  this.setState({
+    testCases: arrU
+  })
   var testId = new FormData();
   testId.append('strId', id)
 
@@ -54,8 +66,8 @@ handleDelete = (id) => {
     method: 'POST',
     body: testId,
   })
+  .then(res => console.log("state", this.state))
     .then(res => res.json())
-    .then(res => console.log("res", res))
     .catch(err => console.log(err))
 }
 
