@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Videologic-Miniapp/static/css/main.4aee2c51.chunk.css",
+    "main.js": "/Videologic-Miniapp/static/js/main.6629ff68.chunk.js",
+    "main.js.map": "/Videologic-Miniapp/static/js/main.6629ff68.chunk.js.map",
+    "runtime-main.js": "/Videologic-Miniapp/static/js/runtime-main.57b522ed.js",
+    "runtime-main.js.map": "/Videologic-Miniapp/static/js/runtime-main.57b522ed.js.map",
+    "static/js/2.71a9f581.chunk.js": "/Videologic-Miniapp/static/js/2.71a9f581.chunk.js",
+    "static/js/2.71a9f581.chunk.js.map": "/Videologic-Miniapp/static/js/2.71a9f581.chunk.js.map",
+    "static/js/3.4053eb2f.chunk.js": "/Videologic-Miniapp/static/js/3.4053eb2f.chunk.js",
+    "static/js/3.4053eb2f.chunk.js.map": "/Videologic-Miniapp/static/js/3.4053eb2f.chunk.js.map",
+    "index.html": "/Videologic-Miniapp/index.html",
+    "static/css/main.4aee2c51.chunk.css.map": "/Videologic-Miniapp/static/css/main.4aee2c51.chunk.css.map",
+    "static/js/2.71a9f581.chunk.js.LICENSE.txt": "/Videologic-Miniapp/static/js/2.71a9f581.chunk.js.LICENSE.txt",
+    "static/media/Human-pt2.be87fbb3.png": "/Videologic-Miniapp/static/media/Human-pt2.be87fbb3.png",
+    "static/media/Human.2ca8c0bf.png": "/Videologic-Miniapp/static/media/Human.2ca8c0bf.png",
+    "static/media/database-grey.507b64a1.png": "/Videologic-Miniapp/static/media/database-grey.507b64a1.png",
+    "static/media/database-white.bc5d336a.png": "/Videologic-Miniapp/static/media/database-white.bc5d336a.png",
+    "static/media/database.ca6c1097.png": "/Videologic-Miniapp/static/media/database.ca6c1097.png",
+    "static/media/ohio.95abff49.png": "/Videologic-Miniapp/static/media/ohio.95abff49.png",
+    "static/media/App.css": "/Videologic-Miniapp/static/media/support-hero.d97f44ee.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.57b522ed.js",
+    "static/js/2.71a9f581.chunk.js",
+    "static/css/main.4aee2c51.chunk.css",
+    "static/js/main.6629ff68.chunk.js"
+  ]
+}
