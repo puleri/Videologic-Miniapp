@@ -77,6 +77,28 @@ handleSubmit = (event) => {
   if (this.state.description === '' || this.state.date === '' || this.state.expected === '' || this.state.actual === '') {
     return this.setState({ errMessage: "*Please fill out required fields*" })
   }
+
+  // reference the index of the tests before submit
+  var arrU = this.state.testCases
+  //  reference to passing bool
+  const isPassing = (bool) => this.state.pass ? '1' : '0';
+  const testToAdd = {
+    id: '...',
+    description: this.state.description,
+    test_date: this.state.date,
+    expected_results: this.state.expected,
+    actual_results: this.state.actual,
+    passing: isPassing(this.state.pass),
+    additional_notes: this.state.additional,
+  }
+
+  // reference for test cases + new case
+  arrU = [...arrU, testToAdd];
+  // updating state so no refresh is needed
+  this.setState({
+    testCases: arrU
+  })
+
   var fd = new FormData();
   fd.append('content', 'test');
   fd.append('strDescript', this.state.description)
