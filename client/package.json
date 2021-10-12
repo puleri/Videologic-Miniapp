@@ -1,8 +1,8 @@
 {
-  "name": "client",
+  "name": "Videologic-Miniapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://puleri.github.io/Videologic-Miniapp"
+  "homepage": "http://puleri.github.io/Videologic-Miniapp",
   "dependencies": {
     "-": "^0.0.1",
     "@testing-library/jest-dom": "^5.12.0",
